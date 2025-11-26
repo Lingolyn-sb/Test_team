@@ -301,7 +301,6 @@ public class Main {
             }
         }
         while (opcionprincipal != 1 && opcionprincipal != 2);
-        modalidadTradicionalojuegos();
     }
 
     private static void modalidadTradicionalojuegos() {
