@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 import java.util.Arrays;
-public class Application {
+public class Main {
     static Scanner sc = new Scanner(System.in);
     static String usuario;
     static String nnombre;
@@ -112,8 +112,7 @@ public class Application {
             if (sc.hasNextInt()) {
                 opcionprincipal = sc.nextInt();
             } else {
-                sc.next(); // Consumir entrada no válida
-                opcionprincipal = 0; // Para forzar el default/repetir
+                opcionprincipal = 0;
             }
 
             switch (opcionprincipal) {
@@ -150,32 +149,30 @@ public class Application {
                         switch (nivelSpellingBee) {
                             case 1:
                                 nnombre = "Básico";
-                                PALABRAS_JUEGO = nsbBasico; // <-- ASIGNACIÓN CLAVE
+                                PALABRAS_JUEGO = nsbBasico;
                                 break;
                             case 2:
                                 nnombre = "Medio";
-                                PALABRAS_JUEGO = nsbMedio; // <-- ASIGNACIÓN CLAVE
+                                PALABRAS_JUEGO = nsbMedio;
                                 break;
                             case 3:
                                 nnombre = "Normal";
-                                PALABRAS_JUEGO = nsbNormal; // <-- ASIGNACIÓN CLAVE
+                                PALABRAS_JUEGO = nsbNormal;
                                 break;
                             case 4:
                                 nnombre = "Difícil";
-                                PALABRAS_JUEGO = nsbDificil; // <-- ASIGNACIÓN CLAVE
+                                PALABRAS_JUEGO = nsbDificil;
                                 break;
                             case 5:
                                 nnombre = "Experto";
-                                PALABRAS_JUEGO = nsbExpert; // <-- ASIGNACIÓN CLAVE
+                                PALABRAS_JUEGO = nsbExpert;
                                 break;
                             default:
-                                System.out.print("Opción invalida. Ese número no corresponde a ningún nivel. Intenta de nuevo: ");
+                                System.out.print("              Opción invalida. Ese número no corresponde a ningún nivel. Intenta de nuevo: ");
                                 break;
                         }
                     }
                     while (nivelSpellingBee < 1 || nivelSpellingBee > 5);
-                    // Consumir el salto de línea pendiente después de sc.nextInt()
-                    sc.nextLine();
 
                     /*Preguntar modalidad Spelling Bee */
                     System.out.println("\n\n");
@@ -203,7 +200,7 @@ public class Application {
                                 modalidadRetosyJuegosSpellingBee();
                                 break;
                             default:
-                                System.out.print("Opción invalida, debes ingresar 1 o 2. Intenta de nuevo: ");
+                                System.out.print("          Opción invalida, debes ingresar 1 o 2. Intenta de nuevo: ");
                                 break;
                         }
                     }
@@ -215,12 +212,13 @@ public class Application {
                     /*Preguntar modalidad Vocabulario*/
                     System.out.println(usuario + ", elegiste:\n ");
                     String art2 =
-                            "           _     ____  ____ ____  ____  _     _     ____  ____  _  ____ \n" +
-                                    "          / \\ |\\/  _ \\/   _Y  _ \\/  _ \\/ \\ /\\/ \\   /  _ \\/  __\\/ \\/  _ \\\n" +
-                                    "          | | //| / \\||  / | / \\|| | //| | ||| |   | / \\||  \\/|| || / \\|\n" +
-                                    "          | \\// | \\_/||  \\_| |-||| |_\\\\| \\_/|| |_/\\| |-|||    /| || \\_/|\n" +
-                                    "          \\__/  \\____/\\____|_/ \\|\\____/\\____/\\____/\\_/ \\|\\_/\\_\\\\_/\\____/\n" +
-                                    "                                                                 \n";
+                            "           /==========================================================\\\n" +
+                                    "           ||__     __              _           _            _       ||\n" +
+                                    "           ||\\ \\   / /__   ___ __ _| |__  _   _| | __ _ _ __(_) ___  ||\n" +
+                                    "           || \\ \\ / / _ \\ / __/ _` | '_ \\| | | | |/ _` | '__| |/ _ \\ ||\n" +
+                                    "           ||  \\ V / (_) | (_| (_| | |_) | |_| | | (_| | |  | | (_) |||\n" +
+                                    "           ||   \\_/ \\___/ \\___\\__,_|_.__/ \\__,_|_|\\__,_|_|  |_|\\___/ ||\n" +
+                                    "           \\==========================================================/\n";
                     System.out.println(art2);
                     System.out.println("\n");
                     /*DECLARACION DE NIVELES VOCABULARIO*/
@@ -504,8 +502,6 @@ public class Application {
                         switch (sbJuego) {
                             case 1:
                                 allnombre = "juego Ahorcado";
-                                // Consumir el salto de línea pendiente después de sc.nextInt()
-                                sc.nextLine();
                                 sbjAhorcado();
                                 break;
                             case 2:
@@ -549,6 +545,11 @@ public class Application {
         }
         contadorIncorrectas = 0;
         letrasIncorrectas = new char[INTENTOS_MAXIMOS];
+        String artAhorcado=("/==========================================================================\\\n" +
+                "||01000001 01101000 01101111 01110010 01100011 01100001 01100100 01101111 ||\n" +
+                "\\==========================================================================/");
+        System.out.print(artAhorcado);
+        System.out.println(" ");
         bienvenida();
         System.out.println("En este juego deberás:\n"+ "1. Adivinar la palabra letra por letra, completándola antes de que se terminen tus intentos.\n" + "2. Cada letra correcta se mostrará en su posición correspondiente, mientras que los errores se contabilizan.\n" + "3. Recibirás retroalimentación inmediata, y si no logras adivinar la palabra, al finalizar se mostrará la palabra completa.");
         contador();
@@ -586,8 +587,10 @@ public class Application {
         mostrarMuñeco();
         if (palabraCompletada()) {
             System.out.println("¡Ganaste! La palabra era: " + palabraSecreta);
+            ganaste();
         } else {
             System.out.println("¡Perdiste! El ahorcado se completó. La palabra era: " + palabraSecreta);
+            perdiste();
         }
     }
     private static void seleccionarPalabra() {
@@ -726,10 +729,44 @@ public class Application {
         contador();
     }
 
+
     public static void vjAdiviniarPalabras() {
         bienvenida();
         System.out.println("En este juego deberás:\n1. Adivinar la palabra en inglés que se te presenta escribiéndola correctamente, usando las pistas que recibas.\n2. Cada intento recibirá retroalimentación inmediata, y si fallas, el sistema mostrará la palabra correcta.\n3. Al finalizar la ronda, verás un resumen de resultados con tus aciertos y errores.");
         contador();
+    }
+
+    private static void ganaste()
+    {
+        System.out.println("Que bien");
+        String artGanaste=("      .-.         .--''-.\n" +
+                "    .'   '.     /'       `.\n" +
+                "    '.     '. ,'          |\n" +
+                " o    '.o   ,'        _.-'\n" +
+                "  \\.--./'. /.:. :._:.'\n" +
+                " .'    '._-': ': ': ': ':\n" +
+                ":(#) (#) :  ': ': ': ': ':>-\n" +
+                " ' ____ .'_.:' :' :' :' :'\n" +
+                "  '\\__/'/ | | :' :' :'\n" +
+                "        \\  \\ \\\n" +
+                "        '  ' '");
+        System.out.print(artGanaste);
+    }
+    private static void perdiste()
+    {
+        System.out.println("BUena suerte para la proxima");
+        String artPerdiste=("      .-.         .--''-.\n" +
+                "    .'   '.     /'       `.\n" +
+                "    '.     '. ,'          |\n" +
+                " o    '.o   ,'        _.-'\n" +
+                "  \\.--./'. /.:. :._:.'\n" +
+                " .\\   /'._-':#0: ':#0: ':\n" +
+                ":(#) (#) :  ':#0: ':#0: ':>#=-\n" +
+                " ' ____ .'_.:J0:' :J0:' :'\n" +
+                "  'V  V'/ | |\":' :'\":'\n" +
+                "        \\  \\ \\\n" +
+                "        '  ' '");
+        System.out.print(artPerdiste);
     }
 
 }
