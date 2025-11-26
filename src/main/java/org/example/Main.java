@@ -9,6 +9,7 @@ public class Main {
     static String nivel;
     static final String[] PALABRAS_BASE = {};
     static String[] PALABRAS_JUEGO = PALABRAS_BASE;
+    static String[][] PALABRAS_VOCABULARIO;
     static String palabraSecreta;
     static char[] palabraAdivinada;
     static char[] letrasIncorrectas = new char[6];
@@ -209,27 +210,48 @@ public class Main {
 
                 case 2:
                     nivel = "la categoría gramatical";
-                    /*Preguntar modalidad Vocabulario*/
-                    System.out.println(usuario + ", elegiste:\n ");
-                    String art2 =
-                            "           /==========================================================\\\n" +
-                                    "           ||__     __              _           _            _       ||\n" +
-                                    "           ||\\ \\   / /__   ___ __ _| |__  _   _| | __ _ _ __(_) ___  ||\n" +
-                                    "           || \\ \\ / / _ \\ / __/ _` | '_ \\| | | | |/ _` | '__| |/ _ \\ ||\n" +
-                                    "           ||  \\ V / (_) | (_| (_| | |_) | |_| | | (_| | |  | | (_) |||\n" +
-                                    "           ||   \\_/ \\___/ \\___\\__,_|_.__/ \\__,_|_|\\__,_|_|  |_|\\___/ ||\n" +
-                                    "           \\==========================================================/\n";
-                    System.out.println(art2);
-                    System.out.println("\n");
-                    /*DECLARACION DE NIVELES VOCABULARIO*/
-                    String[] nvVerboregulares = { "play", "work", "talk", "watch", "clean", "open", "help", "start", "call", "live" };
-                    String[] nvVerbosirregulares = {"go", "eat", "see", "take", "come", "drink", "write", "begin", "run", "break"};
-                    String[] nvSustantivo = {"career", "skill", "knowledge", "solution", "environment", "experience", "luggage", "customer", "opinion", "traffic"};
-                    String[] nvPreposiciones = {"across", "against", "through", "except for", "towards", "unlike", "in spite of", "by", "during", "untill"};
-                    String[] nvAdjetivos = {"crowded", "comfortable", "polite", "rude", "easy", "available", "necessary", "successful", "tired", "exciting"};
-                    String[] nvExpresionescomunes = {"I suppose so", "hold on a minute", "never mind", "to be honest", "looking forward to", "how about", "by the way", "at least", "as far as I know", "it's up to you"};
-
-                    int nivelVocabulario;
+                        /*Preguntar modalidad Vocabulario*/
+                        System.out.println(usuario + ", elegiste:\n ");
+                        String art2 =
+                                "           /==========================================================\\\n" +
+                                        "           ||__     __              _           _            _       ||\n" +
+                                        "           ||\\ \\   / /__   ___ __ _| |__  _   _| | __ _ _ __(_) ___  ||\n" +
+                                        "           || \\ \\ / / _ \\ / __/ _` | '_ \\| | | | |/ _` | '__| |/ _ \\ ||\n" +
+                                        "           ||  \\ V / (_) | (_| (_| | |_) | |_| | | (_| | |  | | (_) |||\n" +
+                                        "           ||   \\_/ \\___/ \\___\\__,_|_.__/ \\__,_|_|\\__,_|_|  |_|\\___/ ||\n" +
+                                        "           \\==========================================================/\n";
+                        System.out.println(art2);
+                        System.out.println("\n");
+                        /*DECLARACION DE NIVELES VOCABULARIO*/
+                        String [][] nvVerboregulares = {
+                                        {"play","Complete the sentence with the correct English word:\n,Would you ____ chess with me after the soccer training"},
+                                        {"work","Complete the sentence with the correct English word:\n,How can you ____ for long hours without coffee"},
+                                        {"talk","Complete the sentence with the correct English word:\n,Now that we don´t ____ on instagram, i feel better"},
+                                        {"watch","Complete the sentence with the correct English word:\n,If i was you, i will don´t want to _____ that movie, it´s so sad"},
+                                        {"clean","Complete the sentence with the correct English word:\n,Oh wow, you have to _____ really well, this place is so spotless"},
+                                        {"open","Complete the sentence with the correct English word:\n,Can you ____ the windows, i´ts getting hot in here"},
+                                        {"help","Complete the sentence with the correct English word:\n,I need some ____, this shopping bags are too heavy"},
+                                        {"start","Complete the sentence with the correct English word:\n,Are you ready to _____, the time is ending"},
+                                        {"call","Complete the sentence with the correct English word:\n,My party has been updated. ____ me to know the new information"},
+                                        {"live","Complete the sentence with the correct English word:\n,I don´t wanna ____ forever, because I know I´ll be living in vain"}
+                        };
+                        String[][] nvVerbosirregulares = {
+                                {"go"},
+                                {"eat"},
+                                {"see"},
+                                {"take"},
+                                {"come"},
+                                {"drink"},
+                                {"write"},
+                                {"begin"},
+                                {"run"},
+                                {"break"}
+                        };
+                        String[][] nvSustantivo = {{"career"}, {"skill"}, {"knowledge"}, {"solution"}, {"environment"}, {"experience"}, {"luggage"}, {"customer"}, {"opinion"}, {"traffic"}};
+                        String[][] nvPreposiciones = {{"across"}, {"against"}, {"through"}, {"except for"}, {"towards"}, {"unlike"}, {"in spite of"}, {"by"}, {"during"}, {"untill"}};
+                        String[][] nvAdjetivos = {{"crowded"}, {"comfortable"}, {"polite"}, {"rude"}, {"easy"}, {"available"}, {"necessary"}, {"successful"}, {"tired"}, {"exciting"}};
+                        String[][] nvExpresionescomunes = {{"I suppose so"}, {"hold on a minute"}, {"never mind"}, {"to be honest"}, {"looking forward to"}, {"how about"}, {"by the way"}, {"at least"}, {"as far as I know"}, {"it's up to you"}};
+                        int nivelVocabulario;
                     System.out.println("            Ingresa la categoría gramatical que deseas estudiar (recuerda que se dara por hecho que ya has cursado las categorías gramaticales anterirores a ella):");
                     System.out.println("            1.Verbo\n" + "            2.Sustantivo\n" + "            3.Preposiciones\n" + "            4.Adjetivos\n" + "            5.Expresiones comunes");
 
