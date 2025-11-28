@@ -266,7 +266,7 @@ public class Main {
                     System.out.println("            Ingresa la categoría gramatical que deseas estudiar (recuerda que se dara por hecho que ya has cursado las categorías gramaticales anterirores a ella):");
                     System.out.println("            1.Verbo\n" + "            2.Sustantivo\n" + "            3.Preposiciones\n" + "            4.Adjetivos\n" + "            5.Expresiones comunes");
 
-                    do {
+                   do {
                         if (sc.hasNextInt()) {
                             nivelVocabulario = sc.nextInt();
                         } else {
@@ -289,11 +289,11 @@ public class Main {
                                     switch (formadeverbo) {
                                         case 1:
                                             System.out.println("Has elegido verbos regulares");
-
+                                            PALABRAS_VOCABULARIO = nvVerboregulares;
                                             break;
                                         case 2:
                                             System.out.println("Has elegido verbos irregulares");
-
+                                            PALABRAS_VOCABULARIO = nvVerbosirregulares;
                                             break;
                                         default:
                                             System.out.print("Opción invalida, debes ingresar 1 o 2. Intenta de nuevo: ");
@@ -303,22 +303,22 @@ public class Main {
                                 break;
                             case 2:
                                 nnombre = "Sustantivo";
-
+                                PALABRAS_VOCABULARIO = nvSustantivo;
                                 break;
 
                             case 3:
                                 nnombre = "Preposiciones";
-
+                                PALABRAS_VOCABULARIO = nvPreposiciones;
                                 break;
 
                             case 4:
                                 nnombre = "Adjetivos";
-
+                                PALABRAS_VOCABULARIO = nvAdjetivos;
                                 break;
 
                             case 5:
                                 nnombre = "Expresiones comunes";
-
+                                PALABRAS_VOCABULARIO = nvExpresionescomunes;
                                 break;
 
                             default:
@@ -328,6 +328,7 @@ public class Main {
                         }
                     }
                     while (nivelVocabulario < 1 || nivelVocabulario > 5);
+                    modalidadTradicionalojuegos();
                     break;
                 default:
                     System.out.print("Opción invalida, debes ingresar 1 o 2. Intenta de nuevo: ");
