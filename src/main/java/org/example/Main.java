@@ -222,32 +222,43 @@ public class Main {
                                         "           \\==========================================================/\n";
                         System.out.println(art2);
                         System.out.println("\n");
-                        /*DECLARACION DE NIVELES VOCABULARIO*/
+                       /*DECLARACION DE NIVELES VOCABULARIO*/
                         String [][] nvVerboregulares = {
-                                        {"play","Complete the sentence with the correct English word:\n,Would you ____ chess with me after the soccer training"},
-                                        {"work","Complete the sentence with the correct English word:\n,How can you ____ for long hours without coffee"},
-                                        {"talk","Complete the sentence with the correct English word:\n,Now that we don´t ____ on instagram, i feel better"},
-                                        {"watch","Complete the sentence with the correct English word:\n,If i was you, i will don´t want to _____ that movie, it´s so sad"},
-                                        {"clean","Complete the sentence with the correct English word:\n,Oh wow, you have to _____ really well, this place is so spotless"},
-                                        {"open","Complete the sentence with the correct English word:\n,Can you ____ the windows, i´ts getting hot in here"},
-                                        {"help","Complete the sentence with the correct English word:\n,I need some ____, this shopping bags are too heavy"},
-                                        {"start","Complete the sentence with the correct English word:\n,Are you ready to _____, the time is ending"},
-                                        {"call","Complete the sentence with the correct English word:\n,My party has been updated. ____ me to know the new information"},
-                                        {"live","Complete the sentence with the correct English word:\n,I don´t wanna ____ forever, because I know I´ll be living in vain"}
+                                        {"play","Complete the sentence with the correct English word:\nWould you ____ chess with me after the soccer training","Read the definition and write the correct English word:\nTo engage in a game or sport for fun or competition","Write the English word for this Spanish meaning:\nJugar"},
+                                        {"work","Complete the sentence with the correct English word:\nHow can you ____ for long hours without coffee","Read the definition and write the correct English word:\nTo perform tasks or duties, usually for money or effort","Write the English word for this Spanish meaning:\nTrabajar"},
+                                        {"talk","Complete the sentence with the correct English word:\nNow that we don´t ____ on instagram, i feel better","Read the definition and write the correct English word:\nTo communicate with someone using words","Write the English word for this Spanish meaning:\nHablar"},
+                                        {"watch","Complete the sentence with the correct English word:\nIf i was you, i will don´t want to _____ that movie, it´s so sad", "Read the definition and write the correct English word:\nTo look at something attentively, especially a movie or TV show.","Write the English word for this Spanish meaning:\nMirar"},
+                                        {"clean","Complete the sentence with the correct English word:\nOh wow, you have to _____ really well, this place is so spotless", "Read the definition and write the correct English word:\nTo make a place free from dirt or mess.","Write the English word for this Spanish meaning:\nLimpiar"},
+                                        {"open","Complete the sentence with the correct English word:\nCan you ____ the windows, i´ts getting hot in here", "Read the definition and write the correct English word:\nTo move something so that it is no longer closed.","Write the English word for this Spanish meaning:\nAbrir"},
+                                        {"help","Complete the sentence with the correct English word:\nI need some ____, this shopping bags are too heavy", "Read the definition and write the correct English word:\nTo give assistance to someone in need.","Write the English word for this Spanish meaning:\nAyudar"},
+                                        {"start","Complete the sentence with the correct English word:\nAre you ready to _____, the time is ending", "Read the definition and write the correct English word:\nTo begin an activity or action.","Write the English word for this Spanish meaning:\nEmpezar"},
+                                        {"call","Complete the sentence with the correct English word:\nMy party has been updated. ____ me to know the new information","Read the definition and write the correct English word:\nTo contact someone by phone.","Write the English word for this Spanish meaning:\nLlamar"},
+                                        {"live","Complete the sentence with the correct English word:\nI don´t wanna ____ forever, because I know I´ll be living in vain", "Read the definition and write the correct English word:\nTo exist in a particular place or time.","Write the English word for this Spanish meaning:\nVivir"}
                         };
                         String[][] nvVerbosirregulares = {
-                                {"go"},
-                                {"eat"},
-                                {"see"},
-                                {"take"},
-                                {"come"},
-                                {"drink"},
-                                {"write"},
-                                {"begin"},
-                                {"run"},
-                                {"break"}
+                                {"go","Complete the sentence with the correct English word:\nI want to ____ to the park this afternoon.","Read the definition and write the correct English word:\nTo move from one place to another.","Write the English word for this Spanish meaning:\nIr"},
+                                {"eat","Complete the sentence with the correct English word:\nLet’s ____ pizza for dinner tonight.","Read the definition and write the correct English word:\nTo put food into the mouth, chew, and swallow.","Write the English word for this Spanish meaning:\nComer"},
+                                {"see","Complete the sentence with the correct English word:\nDid you ____ that amazing rainbow yesterday?","Read the definition and write the correct English word:\nTo notice or perceive with the eyes.","Write the English word for this Spanish meaning:\nVer"},
+                                {"take","Complete the sentence with the correct English word:\nCan you ____ this book back to the library?","Read the definition and write the correct English word:\nTo get into one’s possession; to carry or bring.","Write the English word for this Spanish meaning:\nTomar"},
+                                {"come","Complete the sentence with the correct English word:\nPlease ____ to my house tomorrow for lunch.","Read the definition and write the correct English word:\nTo move toward or arrive at a place.","Write the English word for this Spanish meaning:\nCome"},
+                                {"drink","Complete the sentence with the correct English word:\nI need to ____ some water after running.","Read the definition and write the correct English word:\nTo swallow liquid.","Write the English word for this Spanish meaning:\nBeber"},
+                                {"write","Complete the sentence with the correct English word:\nShe wants to ____ a letter to her friend.","Read the definition and write the correct English word:\nTo form words on paper or screen with a pen or keyboard.","Write the English word for this Spanish meaning:\nEscribir"},
+                                {"begin","Complete the sentence with the correct English word:\nThe class will ____ at nine o’clock sharp.","Read the definition and write the correct English word:\nTo start or commence something.","Write the English word for this Spanish meaning:\nComenzar"},
+                                {"run","Complete the sentence with the correct English word:\nHe likes to ____ every morning before breakfast.","Read the definition and write the correct English word:\nTo move quickly with your legs.","Write the English word for this Spanish meaning:\nCorrer"},
+                                {"break","Complete the sentence with the correct English word:\nBe careful not to ____ that glass, it’s fragile.","Read the definition and write the correct English word:\nTo separate into pieces by force.","Write the English word for this Spanish meaning:\nRomper"},
                         };
-                        String[][] nvSustantivo = {{"career"}, {"skill"}, {"knowledge"}, {"solution"}, {"environment"}, {"experience"}, {"luggage"}, {"customer"}, {"opinion"}, {"traffic"}};
+                        String[][] nvSustantivo = {
+                                {"career","Complete the sentence with the correct English word:\nShe built a successful ____ in medicine.","Read the definition and write the correct English word:\nA profession or occupation pursued for a significant period of life.","Write the English word for this Spanish meaning:\nCarrera"},
+                                {"skill","Complete the sentence with the correct English word:\nGood communication is an important ____.","Read the definition and write the correct English word:\nThe ability to do something well, usually gained through training or practice.","Write the English word for this Spanish meaning:\nHabilidad"},
+                                {"knowledge","Complete the sentence with the correct English word:\nHis ____ of history is impressive.","Read the definition and write the correct English word:\nInformation, understanding, or awareness gained through learning or experience.","Write the English word for this Spanish meaning:\nConocimiento"},
+                                {"solution","Complete the sentence with the correct English word:\nWe need a ____ to fix this problem.","Read the definition and write the correct English word:\nAn answer or way to resolve a difficulty.","Write the English word for this Spanish meaning:\nSolución"},
+                                {"environment","Complete the sentence with the correct English word:\nProtecting the ____ is everyone’s responsibility.","Read the definition and write the correct English word:\nThe surroundings or conditions in which people, animals, or plants live.","Write the English word for this Spanish meaning:\nAmbiente"},
+                                {"experience","Complete the sentence with the correct English word:\nShe has five years of ____ in teaching.","Read the definition and write the correct English word:\nPractical contact with and observation of facts or events.","Write the English word for this Spanish meaning:\nExperencia"},
+                                {"luggage","Complete the sentence with the correct English word:\nDon’t forget your ____ at the airport.","Read the definition and write the correct English word:\nBags and suitcases used for traveling.","Write the English word for this Spanish meaning:\nEquipaje"},
+                                {"customer","Complete the sentence with the correct English word:\nThe shop assistant helped the ____.","Read the definition and write the correct English word:\nA person who buys goods or services.","Write the English word for this Spanish meaning:\nCliente"},
+                                {"opinion","Complete the sentence with the correct English word:\nIn my ____, this book is excellent.","Read the definition and write the correct English word:\nA personal view, belief, or judgment.","Write the English word for this Spanish meaning:\nOpinión"},
+                                {"traffic","Complete the sentence with the correct English word:\nWe were late because of heavy ____.","Read the definition and write the correct English word:\nThe movement of vehicles on roads.","Write the English word for this Spanish meaning:\nTráfico"},
+                        };
                         String[][] nvPreposiciones = {{"across"}, {"against"}, {"through"}, {"except for"}, {"towards"}, {"unlike"}, {"in spite of"}, {"by"}, {"during"}, {"untill"}};
                         String[][] nvAdjetivos = {{"crowded"}, {"comfortable"}, {"polite"}, {"rude"}, {"easy"}, {"available"}, {"necessary"}, {"successful"}, {"tired"}, {"exciting"}};
                         String[][] nvExpresionescomunes = {{"I suppose so"}, {"hold on a minute"}, {"never mind"}, {"to be honest"}, {"looking forward to"}, {"how about"}, {"by the way"}, {"at least"}, {"as far as I know"}, {"it's up to you"}};
@@ -701,10 +712,89 @@ public class Main {
     }
 
     public static void modalidadTradicionalVocabulario(){
-        bienvenida();
-        System.out.println("En cada ronda, usted deberá:\n1- Escribir el significado en español de una palabra que se muestre en inglés,\n2- Escribir la palabra en inglés a partir de su significado en español, o\n3- Seleccionar la traducción correcta entre varias opciones.\nAdemás:\nCada palabra incluirá ejemplos contextualizados, como frases o fragmentos de conversación, para ayudarle a comprender y usar correctamente el vocabulario.\nRecibirá retroalimentación inmediata en cada intento, y al finalizar un nivel o categoría, podrá revisar un resumen con sus aciertos y errores.\nLas palabras que no domine serán retomadas automáticamente por el sistema en repaso.");
-        contador();
-    }
+            aciertos = 0;
+            errores = 0;
+            contadorFallos = 0;
+            for (int i = 0; i < palabrasFalladas.length; i++) palabrasFalladas[i] = -1;
+            bienvenida();
+            System.out.println("En cada ronda, usted deberá:\n1- Escribir el significado en español de una palabra que se muestre en inglés,\n2- Escribir la palabra en inglés a partir de su significado en español, o\n3- Seleccionar la traducción correcta entre varias opciones.\nAdemás:\nCada palabra incluirá ejemplos contextualizados, como frases o fragmentos de conversación, para ayudarle a comprender y usar correctamente el vocabulario.\nRecibirá retroalimentación inmediata en cada intento, y al finalizar un nivel o categoría, podrá revisar un resumen con sus aciertos y errores.\nLas palabras que no domine serán retomadas automáticamente por el sistema en repaso.");
+            contador();
+
+            // PRIMERA RONDA
+            for (int i = 0; i < 10; i++) {
+                int pista = (int)(Math.random() * 3);
+                pistaUsada[i] = pista;
+
+                String prompt = PALABRAS_VOCABULARIO[i][pista + 1];
+                System.out.println("Pregunta " + (i+1) + ":");
+                System.out.println(PALABRAS_VOCABULARIO[i][pista+1]);
+                System.out.print("Tu respuesta: ");
+                String respuesta = sc.nextLine().trim();
+
+                String correcta = PALABRAS_VOCABULARIO[i][0].trim();
+
+                if (respuesta.equalsIgnoreCase(correcta)) {
+                    System.out.println("\n✔ Correcto!");
+                    aciertos++;
+                } else {
+                    System.out.println("\n✘ Incorrecto. La respuesta correcta era: " + correcta);
+                    errores++;
+                    palabrasFalladas[contadorFallos++] = i;
+                }
+
+                System.out.println("Presiona ENTER para continuar...");
+                sc.nextLine();// pausa hasta que el usuario presione Enter
+            }
+
+            // SEGUNDA RONDA
+            if (contadorFallos > 0) {
+                System.out.println("\n--- Ronda de repaso para palabras falladas ---");
+                for (int f = 0; f < contadorFallos; f++) {
+                    int indicePalabra = palabrasFalladas[f];
+
+
+                    int pista2;
+                    do {
+                        pista2 = (int)(Math.random() * 3);
+                    } while (pista2 == pistaUsada[indicePalabra]);
+
+                    String prompt2 = PALABRAS_VOCABULARIO[indicePalabra][pista2 + 1];
+                    System.out.println("\nRepetición palabra " + (f + 1) + ":");
+                    System.out.println(prompt2);
+
+                    System.out.print("Tu respuesta: ");
+                    String respuesta2 = sc.nextLine().trim().toLowerCase();
+
+                    String correcta2 =PALABRAS_VOCABULARIO[indicePalabra][0].toLowerCase();
+
+                    if (respuesta2.equals(correcta2)) {
+                        System.out.println("✔ Correcto!");
+                        aciertos++;
+                    } else {
+                        System.out.println("✘ Incorrecto de nuevo. La correcta era: " + correcta2);
+                        errores++;
+                    }
+
+                    System.out.println("Presiona ENTER para continuar...");
+                    sc.nextLine();
+                }
+            }
+
+            // RESUMEN FINAL
+            System.out.println("\n--- RESULTADOS FINALES ---");
+            System.out.println("Aciertos: " + aciertos);
+            System.out.println("Errores: " + errores);
+            if (contadorFallos > 0) {
+                System.out.print("Palabras que preguntamos otra vez: ");
+                for (int i = 0; i < contadorFallos; i++) {
+                    System.out.print(PALABRAS_VOCABULARIO[palabrasFalladas[i]][0] + (i < contadorFallos - 1 ? ", " : "\n"));
+                    return;
+                }
+            }
+
+
+
+        }
 
     public static void modalidadJuegosVocabulario() {
         System.out.println("Has elegido la Modalidad Juegos, en el nivel " + nnombre);
