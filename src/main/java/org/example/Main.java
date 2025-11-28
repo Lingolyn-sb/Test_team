@@ -259,9 +259,42 @@ public class Main {
                                 {"opinion","Complete the sentence with the correct English word:\nIn my ____, this book is excellent.","Read the definition and write the correct English word:\nA personal view, belief, or judgment.","Write the English word for this Spanish meaning:\nOpinión"},
                                 {"traffic","Complete the sentence with the correct English word:\nWe were late because of heavy ____.","Read the definition and write the correct English word:\nThe movement of vehicles on roads.","Write the English word for this Spanish meaning:\nTráfico"},
                         };
-                        String[][] nvPreposiciones = {{"across"}, {"against"}, {"through"}, {"except for"}, {"towards"}, {"unlike"}, {"in spite of"}, {"by"}, {"during"}, {"untill"}};
-                        String[][] nvAdjetivos = {{"crowded"}, {"comfortable"}, {"polite"}, {"rude"}, {"easy"}, {"available"}, {"necessary"}, {"successful"}, {"tired"}, {"exciting"}};
-                        String[][] nvExpresionescomunes = {{"I suppose so"}, {"hold on a minute"}, {"never mind"}, {"to be honest"}, {"looking forward to"}, {"how about"}, {"by the way"}, {"at least"}, {"as far as I know"}, {"it's up to you"}};
+                    String[][] nvPreposiciones = {
+                            {"across"},
+                            {"against"},
+                            {"through"},
+                            {"except for"},
+                            {"towards"},
+                            {"unlike"},
+                            {"in spite of"},
+                            {"by"},
+                            {"during"},
+                            {"untill"}
+                    };
+                    String[][] nvAdjetivos = {
+                            {"crowded"},
+                            {"comfortable"},
+                            {"polite"},
+                            {"rude"},
+                            {"easy"},
+                            {"available"},
+                            {"necessary"},
+                            {"successful"},
+                            {"tired"},
+                            {"exciting"}
+                    };
+                    String[][] nvExpresionescomunes = {
+                            {"I suppose so"},
+                            {"hold on a minute"},
+                            {"never mind"},
+                            {"to be honest"},
+                            {"looking forward to"},
+                            {"how about"},
+                            {"by the way"},
+                            {"at least"},
+                            {"as far as I know"},
+                            {"it's up to you"}
+                    };
                         int nivelVocabulario;
                     System.out.println("            Ingresa la categoría gramatical que deseas estudiar (recuerda que se dara por hecho que ya has cursado las categorías gramaticales anterirores a ella):");
                     System.out.println("            1.Verbo\n" + "            2.Sustantivo\n" + "            3.Preposiciones\n" + "            4.Adjetivos\n" + "            5.Expresiones comunes");
