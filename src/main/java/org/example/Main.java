@@ -511,8 +511,7 @@ public class Main {
     }
 
 
-    }
-
+    
     public static void modalidadRetosyJuegosSpellingBee() {
         System.out.println("Has elegido la Modalidad Retos y Juegos, en el nivel " + nnombre);
         System.out.println("¿Deseas cursar 1- Retos o 2-Juegos?");
