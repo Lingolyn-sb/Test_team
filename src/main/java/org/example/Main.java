@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 import java.util.Arrays;
-public class Aplication {
+public class Main {
     static Scanner sc = new Scanner(System.in);
     static String usuario;
     static String nnombre;
