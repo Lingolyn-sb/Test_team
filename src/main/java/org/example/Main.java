@@ -1179,18 +1179,18 @@ public class Main {
         while(vjuego<1 || vjuego>3);
     }
 
-  public static void vjPalabrasRelacionadas() {
+ public static void vjPalabrasRelacionadas() {
         aciertos = 0;
         errores = 0;
         contadorFallos = 0;
         for (int i = 0; i < palabrasFalladas.length; i++) palabrasFalladas[i] = -1;
         bienvenida();
-        System.out.println("En este juego deberás:\n1. Escribir el sinónimo o antónimo en inglés de la palabra que se te presente, según indique el ejercicio.\n2. La respuesta correcta debe ser una palabra que ya hayas aprendido previamente en el submódulo de vocabulario, modalidad tradicional.\n3. Cada intento recibirá retroalimentación inmediata, indicándote si acertaste o no.\n4. Al finalizar el juego, verás un resumen de resultados con tus aciertos y errores, para identificar qué palabras necesitas repasar.");
+        System.out.println("En cada ronda, usted deberá:\n1- Escribir el significado en español de una palabra que se muestre en inglés,\n2- Escribir la palabra en inglés a partir de su significado en español, o\n3- Seleccionar la traducción correcta entre varias opciones.\nAdemás:\nCada palabra incluirá ejemplos contextualizados, como frases o fragmentos de conversación, para ayudarle a comprender y usar correctamente el vocabulario.\nRecibirá retroalimentación inmediata en cada intento, y al finalizar un nivel o categoría, podrá revisar un resumen con sus aciertos y errores.\nLas palabras que no domine serán retomadas automáticamente por el sistema en repaso.");
         contador();
 
         // PRIMERA RONDA
         for (int i = 0; i < 10; i++) {
-            int pista = (int) (Math.random() * 1);
+            int pista = (int) (Math.random() * 3);
             pistaUsada[i] = pista;
 
             String prompt = PALABRAS_RELACIONADAS[i][pista + 1];
