@@ -7,6 +7,8 @@ public class Main {
     static String nnombre;
     static String allnombre;
     static String nivel;
+     static int nivelSpellingBee;
+    
     static int aciertos = 0;
     static int errores = 0;
     static int[] palabrasFalladas = new int[10];
@@ -402,28 +404,51 @@ public class Main {
         System.out.println("Instrucciones:");
     }
 
+   public static String[][] obtenerMatrizPorNivel(String nivel) {
+        switch (nivelSpellingBee) {
+            case 1:
+                return nsbBasico;
+            case 2:
+                return nsbMedio;
+            case 3:
+                return nsbNormal;
+            case 4:
+                return nsbDificil;
+            case 5:
+                return nsbExpert;
+            default:
+                return nsbBasico; // solo formalidad
+        }
+    }
+
+
+
     public static void modalidadTradicionalSpellingBee() {
+
+        String[][] matriz = obtenerMatrizPorNivel(nivel);
+
         aciertos = 0;
         errores = 0;
         contadorFallos = 0;
         for (int i = 0; i < palabrasFalladas.length; i++) palabrasFalladas[i] = -1;
 
         bienvenida();
-        System.out.println("1- Se te mostrará la traducción, la definición en inglés de una palabra, o una oración con un espacio en blanco donde falta la palabra.\n2- Escribe la palabra en inglés correcta que corresponda a lo que se muestra.\n 3- Cada intento recibirá retroalimentación inmediata para saber si acertaste o no.\n4- Al terminar la ronda, verás un resumen con tus aciertos y errores para evaluar tu desempeño.");
+        System.out.println("1- Se te mostrará la traducción, la definición en inglés de una palabra, o una oración con un espacio en blanco.\n2- Escribe la palabra correcta.\n3- Cada intento recibe retroalimentación inmediata.\n4- Al final verás tu resumen.");
         contador();
 
         // PRIMERA RONDA
         for (int i = 0; i < 10; i++) {
-            int pista = (int)(Math.random() * 3);
+            int pista = (int) (Math.random() * 3);
             pistaUsada[i] = pista;
 
-            String prompt = nsbBasico[i][pista + 1];
-            System.out.println("Pregunta " + (i+1) + ":");
-            System.out.println(nsbBasico[i][pista+1]);
+            String prompt = matriz[i][pista + 1];
+            System.out.println("Pregunta " + (i + 1) + ":");
+            System.out.println(prompt);
+
             System.out.print("Tu respuesta: ");
             String respuesta = sc.nextLine().trim();
 
-            String correcta = nsbBasico[i][0].trim();
+            String correcta = matriz[i][0].trim();
 
             if (respuesta.equalsIgnoreCase(correcta)) {
                 System.out.println("\n✔ Correcto!");
@@ -435,29 +460,29 @@ public class Main {
             }
 
             System.out.println("Presiona ENTER para continuar...");
-            sc.nextLine();// pausa hasta que el usuario presione Enter
+            sc.nextLine();
         }
 
         // SEGUNDA RONDA
         if (contadorFallos > 0) {
             System.out.println("\n--- Ronda de repaso para palabras falladas ---");
             for (int f = 0; f < contadorFallos; f++) {
-                int indicePalabra = palabrasFalladas[f];
 
+                int indicePalabra = palabrasFalladas[f];
 
                 int pista2;
                 do {
-                    pista2 = (int)(Math.random() * 3);
+                    pista2 = (int) (Math.random() * 3);
                 } while (pista2 == pistaUsada[indicePalabra]);
 
-                String prompt2 = nsbBasico[indicePalabra][pista2 + 1];
+                String prompt2 = matriz[indicePalabra][pista2 + 1];
                 System.out.println("\nRepetición palabra " + (f + 1) + ":");
                 System.out.println(prompt2);
 
                 System.out.print("Tu respuesta: ");
                 String respuesta2 = sc.nextLine().trim().toLowerCase();
 
-                String correcta2 = nsbBasico[indicePalabra][0].toLowerCase();
+                String correcta2 = matriz[indicePalabra][0].toLowerCase();
 
                 if (respuesta2.equals(correcta2)) {
                     System.out.println("✔ Correcto!");
@@ -476,13 +501,14 @@ public class Main {
         System.out.println("\n--- RESULTADOS FINALES ---");
         System.out.println("Aciertos: " + aciertos);
         System.out.println("Errores: " + errores);
+
         if (contadorFallos > 0) {
             System.out.print("Palabras que preguntamos otra vez: ");
             for (int i = 0; i < contadorFallos; i++) {
-                System.out.print(nsbBasico[palabrasFalladas[i]][0] + (i < contadorFallos - 1 ? ", " : "\n"));
-                return;
+                System.out.print(matriz[palabrasFalladas[i]][0] + (i < contadorFallos - 1 ? ", " : "\n"));
             }
         }
+    }
 
 
     }
