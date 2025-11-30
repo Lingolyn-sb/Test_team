@@ -703,6 +703,39 @@ public class Aplication {
         }
     }
 
+ public static void ganaste()
+    {
+        System.out.println("Que bien");
+        String artGanaste=("      .-.         .--''-.\n" +
+                "    .'   '.     /'       `.\n" +
+                "    '.     '. ,'          |\n" +
+                " o    '.o   ,'        _.-'\n" +
+                "  \\.--./'. /.:. :._:.'\n" +
+                " .'    '._-': ': ': ': ':\n" +
+                ":(#) (#) :  ': ': ': ': ':>-\n" +
+                " ' ____ .'_.:' :' :' :' :'\n" +
+                "  '\\__/'/ | | :' :' :'\n" +
+                "        \\  \\ \\\n" +
+                "        '  ' '");
+        System.out.print(artGanaste);
+    }
+    public static void perdiste()
+    {
+        System.out.println("BUena suerte para la proxima");
+        String artPerdiste=("      .-.         .--''-.\n" +
+                "    .'   '.     /'       `.\n" +
+                "    '.     '. ,'          |\n" +
+                " o    '.o   ,'        _.-'\n" +
+                "  \\.--./'. /.:. :._:.'\n" +
+                " .\\   /'._-':#0: ':#0: ':\n" +
+                ":(#) (#) :  ':#0: ':#0: ':>#=-\n" +
+                " ' ____ .'_.:J0:' :J0:' :'\n" +
+                "  'V  V'/ | |\":' :'\":'\n" +
+                "        \\  \\ \\\n" +
+                "        '  ' '");
+        System.out.print(artPerdiste);
+    }
+    
     public static void sbjCompletarLetrasFaltantes(){
         bienvenida();
         System.out.println("En este juego deberás:\n1. Completar la palabra escribiendo las letras que faltan en los espacios correspondientes.\n2. Cada intento recibirá retroalimentación inmediata, y se contabilizarán tus aciertos y errores.\n3. Presta atención a la posición de cada letra, ya que solo contará si la colocas en el lugar correcto.");
@@ -851,37 +884,6 @@ public class Aplication {
         contador();
     }
 
-    private static void ganaste()
-    {
-        System.out.println("Que bien");
-        String artGanaste=("      .-.         .--''-.\n" +
-                "    .'   '.     /'       `.\n" +
-                "    '.     '. ,'          |\n" +
-                " o    '.o   ,'        _.-'\n" +
-                "  \\.--./'. /.:. :._:.'\n" +
-                " .'    '._-': ': ': ': ':\n" +
-                ":(#) (#) :  ': ': ': ': ':>-\n" +
-                " ' ____ .'_.:' :' :' :' :'\n" +
-                "  '\\__/'/ | | :' :' :'\n" +
-                "        \\  \\ \\\n" +
-                "        '  ' '");
-        System.out.print(artGanaste);
-    }
-    private static void perdiste()
-    {
-        System.out.println("BUena suerte para la proxima");
-        String artPerdiste=("      .-.         .--''-.\n" +
-                "    .'   '.     /'       `.\n" +
-                "    '.     '. ,'          |\n" +
-                " o    '.o   ,'        _.-'\n" +
-                "  \\.--./'. /.:. :._:.'\n" +
-                " .\\   /'._-':#0: ':#0: ':\n" +
-                ":(#) (#) :  ':#0: ':#0: ':>#=-\n" +
-                " ' ____ .'_.:J0:' :J0:' :'\n" +
-                "  'V  V'/ | |\":' :'\":'\n" +
-                "        \\  \\ \\\n" +
-                "        '  ' '");
-        System.out.print(artPerdiste);
-    }
+   
 
 }
