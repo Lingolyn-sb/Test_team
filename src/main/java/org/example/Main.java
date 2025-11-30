@@ -247,40 +247,40 @@ public class Main {
                             {"traffic","Complete the sentence with the correct English word:\nWe were late because of heavy ____.","Read the definition and write the correct English word:\nThe movement of vehicles on roads.","Write the English word for this Spanish meaning:\nTráfico"},
                     };
                     String[][] nvPreposiciones = {
-                            {"across"},
-                            {"against"},
-                            {"through"},
-                            {"except for"},
-                            {"towards"},
-                            {"unlike"},
-                            {"in spite of"},
-                            {"by"},
-                            {"during"},
-                            {"untill"}
+                            {"above","Complete the sentence with the correct English word:\nThe picture is hanging ____ the fireplace.","Read the definition and write the correct English word:\nAt a higher level or position.","Write the English word for this Spanish meaning:\nEncima de"},
+                            {"below","Complete the sentence with the correct English word:\nThe valley lies ____ the mountains.","Read the definition and write the correct English word:\nAt a lower level or position.","Write the English word for this Spanish meaning:\nDebajo de"},
+                            {"between","Complete the sentence with the correct English word:\nThe ball is ____ the two chairs.","Read the definition and write the correct English word:\nIn the middle of two things.","Write the English word for this Spanish meaning:\nEntre"},
+                            {"among","Complete the sentence with the correct English word:\nShe was happy to be ____ friends.","Read the definition and write the correct English word:\nSurrounded by, in the company of.","Write the English word for this Spanish meaning:\nEntre"},
+                            {"inside","Complete the sentence with the correct English word:\nThe cat is hiding ____ the box.","Read the definition and write the correct English word:\nWithin the interior of something.","Write the English word for this Spanish meaning:\nDentro de"},
+                            {"outside","Complete the sentence with the correct English word:\nLet’s wait ____ the house until they arrive.","Read the definition and write the correct English word:\nNot inside; in the open air.","Write the English word for this Spanish meaning:\nFuera de"},
+                            {"onto","Complete the sentence with the correct English word:\nHe climbed ____ the roof to fix it.","Read the definition and write the correct English word:\nMoving to a position on top of something.","Write the English word for this Spanish meaning:\nSobre"},
+                            {"off","Complete the sentence with the correct English word:\nPlease take your shoes ____ the table.","Read the definition and write the correct English word:\nAway from a place or position.","Write the English word for this Spanish meaning:\nFuera de"},
+                            {"around","Complete the sentence with the correct English word:\nThey walked ____ the park together.","Read the definition and write the correct English word:\nIn a circular direction or surrounding.","Write the English word for this Spanish meaning:\nAlrededor de"},
+                            {"near","Complete the sentence with the correct English word:\nThe school is ____ the library.","Read the definition and write the correct English word:\nClose to something.","Write the English word for this Spanish meaning:\nCerca de"}
                     };
                     String[][] nvAdjetivos = {
-                            {"crowded"},
-                            {"comfortable"},
-                            {"polite"},
-                            {"rude"},
-                            {"easy"},
-                            {"available"},
-                            {"necessary"},
-                            {"successful"},
-                            {"tired"},
-                            {"exciting"}
+                            {"happy","Complete the sentence with the correct English word:\nShe feels ____ because she passed the exam.","Read the definition and write the correct English word:\nFeeling or showing pleasure.","Write the English word for this Spanish meaning:\nFeliz"},
+                            {"sad","Complete the sentence with the correct English word:\nHe looked ____ after hearing the bad news.","Read the definition and write the correct English word:\nFeeling sorrow or unhappiness.","Write the English word for this Spanish meaning:\nTriste"},
+                            {"big","Complete the sentence with the correct English word:\nThat is a very ____ house.","Read the definition and write the correct English word:\nOf large size.","Write the English word for this Spanish meaning:\nGrande"},
+                            {"small","Complete the sentence with the correct English word:\nThe puppy is so ____.","Read the definition and write the correct English word:\nOf little size.","Write the English word for this Spanish meaning:\nPequeño"},
+                            {"fast","Complete the sentence with the correct English word:\nThe car is really ____.","Read the definition and write the correct English word:\nMoving quickly.","Write the English word for this Spanish meaning:\nRápido"},
+                            {"slow","Complete the sentence with the correct English word:\nThe turtle is ____.","Read the definition and write the correct English word:\nNot fast.","Write the English word for this Spanish meaning:\nLento"},
+                            {"beautiful","Complete the sentence with the correct English word:\nThe garden looks ____.","Read the definition and write the correct English word:\nPleasing to the senses.","Write the English word for this Spanish meaning:\nHermoso"},
+                            {"ugly","Complete the sentence with the correct English word:\nThe painting is ____.","Read the definition and write the correct English word:\nNot attractive.","Write the English word for this Spanish meaning:\nFeo"},
+                            {"strong","Complete the sentence with the correct English word:\nShe is ____ enough to lift heavy boxes.","Read the definition and write the correct English word:\nHaving power or force.","Write the English word for this Spanish meaning:\nFuerte"},
+                            {"weak","Complete the sentence with the correct English word:\nHe felt ____ after the long illness.","Read the definition and write the correct English word:\nLacking strength.","Write the English word for this Spanish meaning:\nDébil"}
                     };
                     String[][] nvExpresionescomunes = {
-                            {"I suppose so"},
-                            {"hold on a minute"},
-                            {"never mind"},
-                            {"to be honest"},
-                            {"looking forward to"},
-                            {"how about"},
-                            {"by the way"},
-                            {"at least"},
-                            {"as far as I know"},
-                            {"it's up to you"}
+                            {"How are you?","Complete the sentence with the correct English expression:\n____, I’m fine thanks.","Read the definition and write the correct English expression:\nA common greeting asking about someone’s well-being.","Write the English expression for this Spanish meaning:\n¿Cómo estás?"},
+                            {"What’s up?","Complete the sentence with the correct English expression:\n____, nothing much.","Read the definition and write the correct English expression:\nAn informal way to ask what is happening.","Write the English expression for this Spanish meaning:\n¿Qué tal?"},
+                            {"Long time no see.","Complete the sentence with the correct English expression:\n____, I missed you!","Read the definition and write the correct English expression:\nUsed when you meet someone after a long period.","Write the English expression for this Spanish meaning:\n¡Cuánto tiempo sin verte!"},
+                            {"Take care.","Complete the sentence with the correct English expression:\nGoodbye and ____.","Read the definition and write the correct English expression:\nA phrase used to wish safety and well-being.","Write the English expression for this Spanish meaning:\nCuídate"},
+                            {"See you later.","Complete the sentence with the correct English expression:\nBye, ____!","Read the definition and write the correct English expression:\nA casual way to say farewell until next time.","Write the English expression for this Spanish meaning:\nNos vemos luego"},
+                            {"Nice to meet you.","Complete the sentence with the correct English expression:\nHello, ____.","Read the definition and write the correct English expression:\nA polite phrase when meeting someone for the first time.","Write the English expression for this Spanish meaning:\nEncantado de conocerte"},
+                            {"Have a good day.","Complete the sentence with the correct English expression:\nBye, ____!","Read the definition and write the correct English expression:\nA phrase wishing someone a pleasant day.","Write the English expression for this Spanish meaning:\nQue tengas un buen día"},
+                            {"Don’t worry.","Complete the sentence with the correct English expression:\n____, everything will be fine.","Read the definition and write the correct English expression:\nUsed to reassure someone not to be concerned.","Write the English expression for this Spanish meaning:\nNo te preocupes"},
+                            {"It’s up to you.","Complete the sentence with the correct English expression:\nChoose the movie, ____.","Read the definition and write the correct English expression:\nMeans the decision depends on the person.","Write the English expression for this Spanish meaning:\nDepende de ti"},
+                            {"By the way.","Complete the sentence with the correct English expression:\n____, did you finish your homework?","Read the definition and write the correct English expression:\nUsed to introduce a new topic or reminder.","Write the English expression for this Spanish meaning:\nPor cierto"}
                     };
                     int nivelVocabulario;
                     System.out.println("            Ingresa la categoría gramatical que deseas estudiar (recuerda que se dara por hecho que ya has cursado las categorías gramaticales anterirores a ella):");
