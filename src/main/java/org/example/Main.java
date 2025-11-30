@@ -573,64 +573,69 @@ public class Main {
                     //PALABRAS VOCABULARIO JUEGO COMPLETAR ORACIONES
                     //PALABRAS VOCABULARIO ADIVIDAR PALABRAS
                         int nivelVocabulario;
-                        System.out.println("            Ingresa la categoría gramatical que deseas estudiar (recuerda que se dara por hecho que ya has cursado las categorías gramaticales anterirores a ella):");
-                        System.out.println("            1.Verbo\n" + "            2.Sustantivo\n" + "            3.Preposiciones\n" + "            4.Adjetivos\n" + "            5.Expresiones comunes");
+                    System.out.println("            Ingresa la categoría gramatical que deseas estudiar (recuerda que se dara por hecho que ya has cursado las categorías gramaticales anterirores a ella):");
+                    System.out.println("            1.Verbo\n" + "            2.Sustantivo\n" + "            3.Preposiciones\n" + "            4.Adjetivos\n" + "            5.Expresiones comunes");
 
-                        do {
-                            nivelVocabulario= sc.nextInt();
-                            switch (nivelVocabulario) {
-                                case 1:
-                                    nnombre = "Verbo";
-                                    int formadeverbo;
-                                    System.out.println("Selecciona la forma de verbo que deseas estudiar");
-                                    System.out.println("1.Verbos Regulares\n" + "2.Verbos Irregulares");
-                                    formadeverbo = sc.nextInt();
-                                    do{
-                                        switch (formadeverbo) {
-                                            case 1:
-                                                System.out.println("Has elegido verbos regulares");
-                                                PALABRAS_VOCABULARIO = nvVerboregulares;
-                                                break;
-                                            case 2:
-                                                System.out.println("Has elegido verbos irregulares");
-                                                PALABRAS_VOCABULARIO = nvVerbosirregulares;
-                                                break;
-                                            default:
-                                                System.out.print("Opción invalida, debes ingresar 1 o 2. Intenta de nuevo: ");
-                                                break;
-                                        }
+                    do {
+                        nivelVocabulario = sc.nextInt();
+                        switch (nivelVocabulario) {
+                            case 1:
+                                nnombre = "Verbo";
+                                int formadeverbo;
+                                System.out.println("Selecciona la forma de verbo que deseas estudiar");
+                                System.out.println("1.Verbos Regulares\n" + "2.Verbos Irregulares");
+                                formadeverbo = sc.nextInt();
+                                do {
+                                    switch (formadeverbo) {
+                                        case 1:
+                                            System.out.println("Has elegido verbos regulares");
+                                            PALABRAS_VOCABULARIO = nvVerboregulares;
+                                            PALABRAS_RELACIONADAS = sinyantVerbosRegulares;
+                                            break;
+                                        case 2:
+                                            System.out.println("Has elegido verbos irregulares");
+                                            PALABRAS_VOCABULARIO = nvVerbosirregulares;
+                                            PALABRAS_RELACIONADAS = sinyantVerbosIrregulares;
+                                            break;
+                                        default:
+                                            System.out.print("Opción invalida, debes ingresar 1 o 2. Intenta de nuevo: ");
+                                            break;
                                     }
-                                    while (formadeverbo < 1 || formadeverbo > 2);
-                                    break;
+                                }
+                                while (formadeverbo < 1 || formadeverbo > 2);
+                                break;
 
-                                case 2:
-                                    nnombre = "Sustantivo";
-                                    PALABRAS_VOCABULARIO = nvSustantivo;
-                                    break;
+                            case 2:
+                                nnombre = "Sustantivo";
+                                PALABRAS_VOCABULARIO = nvSustantivo;
+                                PALABRAS_RELACIONADAS = sinyantSustantivos;
+                                break;
 
-                                case 3:
-                                    nnombre = "Preposiciones";
-                                    PALABRAS_VOCABULARIO = nvPreposiciones;
-                                    break;
+                            case 3:
+                                nnombre = "Preposiciones";
+                                PALABRAS_VOCABULARIO = nvPreposiciones;
+                                PALABRAS_RELACIONADAS = sinyantPreposiciones;
+                                break;
 
-                                case 4:
-                                    nnombre = "Adjetivos";
-                                    PALABRAS_VOCABULARIO = nvAdjetivos;
-                                    break;
+                            case 4:
+                                nnombre = "Adjetivos";
+                                PALABRAS_VOCABULARIO = nvAdjetivos;
+                                PALABRAS_RELACIONADAS = sinyantAdjetivos;
+                                break;
 
-                                case 5:
-                                    nnombre = "Expresiones comunes";
-                                    PALABRAS_VOCABULARIO = nvExpresionescomunes;
-                                    break;
+                            case 5:
+                                nnombre = "Expresiones comunes";
+                                PALABRAS_VOCABULARIO = nvExpresionescomunes;
+                                PALABRAS_RELACIONADAS = sinyantExpresionesComunes;
+                                break;
 
-                                default:
-                                    System.out.print("Opción invalida. Ese número no corresponde a ninguna categoría gramatical. Intenta de nuevo: ");
-                                    break;
+                            default:
+                                System.out.print("Opción invalida. Ese número no corresponde a ninguna categoría gramatical. Intenta de nuevo: ");
+                                break;
 
-                            }
                         }
-                        while (nivelVocabulario < 1 || nivelVocabulario > 5);
-
+                    }
+                    while (nivelVocabulario < 1 || nivelVocabulario > 5);
 
                         System.out.println("         +=========================================================+");
                         System.out.println("         ||       Ahora elige la modalidad                         ||");
