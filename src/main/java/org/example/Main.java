@@ -291,12 +291,17 @@ public class Main {
                         switch (nivelVocabulario) {
                             case 1:
                                 nnombre = "Verbo";
-                                int formadeverbo;
                                 System.out.println("Selecciona la forma de verbo que deseas estudiar");
                                 System.out.println("1.Verbos Regulares\n" + "2.Verbos Irregulares");
+                                int formadeverbo;
+                                do {
+                                    if (sc.hasNextInt()) {
                                         formadeverbo = sc.nextInt();
-                                   do{
-                                        switch (formadeverbo) {
+                                    } else {
+                                        sc.next();
+                                        formadeverbo = 0;
+                                    }
+                                    switch (formadeverbo) {
                                         case 1:
                                             System.out.println("Has elegido verbos regulares");
                                             PALABRAS_VOCABULARIO = nvVerboregulares;
@@ -310,8 +315,8 @@ public class Main {
                                             break;
                                     }
                                 }
-                                   while (formadeverbo < 1 || formadeverbo > 2);
-                            break;
+                                while (formadeverbo < 1 || formadeverbo > 2);
+                                break;
 
                             case 2:
                                 nnombre = "Sustantivo";
