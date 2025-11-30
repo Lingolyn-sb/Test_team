@@ -22,6 +22,7 @@ public class Main {
         static String[] PALABRAS_JUEGO = PALABRAS_BASE;
         static String[][] PALABRAS_VOCABULARIO;
         static String[][] PALABRAS_RELACIONADAS;
+        static String[][] COMPLETAR_ORACIONES;
         static String palabraSecreta;
         static char[] palabraAdivinada;
         static char[] letrasIncorrectas = new char[6];
@@ -270,19 +271,19 @@ public class Main {
                                 {"strong","Complete the sentence with the correct English word:\nShe is ____ enough to lift heavy boxes.","Read the definition and write the correct English word:\nHaving power or force.","Write the English word for this Spanish meaning:\nFuerte"},
                                 {"weak","Complete the sentence with the correct English word:\nHe felt ____ after the long illness.","Read the definition and write the correct English word:\nLacking strength.","Write the English word for this Spanish meaning:\nDébil"}
                         };
-                        String[][] nvExpresionescomunes = {
-                                {"How are you?","Complete the sentence with the correct English expression:\n____, I’m fine thanks.","Read the definition and write the correct English expression:\nA common greeting asking about someone’s well-being.","Write the English expression for this Spanish meaning:\n¿Cómo estás?"},
-                                {"What’s up?","Complete the sentence with the correct English expression:\n____, nothing much.","Read the definition and write the correct English expression:\nAn informal way to ask what is happening.","Write the English expression for this Spanish meaning:\n¿Qué tal?"},
-                                {"Long time no see.","Complete the sentence with the correct English expression:\n____, I missed you!","Read the definition and write the correct English expression:\nUsed when you meet someone after a long period.","Write the English expression for this Spanish meaning:\n¡Cuánto tiempo sin verte!"},
-                                {"Take care.","Complete the sentence with the correct English expression:\nGoodbye and ____.","Read the definition and write the correct English expression:\nA phrase used to wish safety and well-being.","Write the English expression for this Spanish meaning:\nCuídate"},
-                                {"See you later.","Complete the sentence with the correct English expression:\nBye, ____!","Read the definition and write the correct English expression:\nA casual way to say farewell until next time.","Write the English expression for this Spanish meaning:\nNos vemos luego"},
-                                {"Nice to meet you.","Complete the sentence with the correct English expression:\nHello, ____.","Read the definition and write the correct English expression:\nA polite phrase when meeting someone for the first time.","Write the English expression for this Spanish meaning:\nEncantado de conocerte"},
-                                {"Have a good day.","Complete the sentence with the correct English expression:\nBye, ____!","Read the definition and write the correct English expression:\nA phrase wishing someone a pleasant day.","Write the English expression for this Spanish meaning:\nQue tengas un buen día"},
-                                {"Don’t worry.","Complete the sentence with the correct English expression:\n____, everything will be fine.","Read the definition and write the correct English expression:\nUsed to reassure someone not to be concerned.","Write the English expression for this Spanish meaning:\nNo te preocupes"},
-                                {"It’s up to you.","Complete the sentence with the correct English expression:\nChoose the movie, ____.","Read the definition and write the correct English expression:\nMeans the decision depends on the person.","Write the English expression for this Spanish meaning:\nDepende de ti"},
-                                {"By the way.","Complete the sentence with the correct English expression:\n____, did you finish your homework?","Read the definition and write the correct English expression:\nUsed to introduce a new topic or reminder.","Write the English expression for this Spanish meaning:\nPor cierto"}
-                        };
-                 // PALABRAS VOCABULARIO JUEGO PALABRAS RELACIONADAS
+                       String[][] nvExpresionescomunes = {
+                            {"How are you?", "Complete the sentence with the correct English expression:\n____, I’m fine thanks.", "Read the definition and write the correct English expression:\nA common greeting asking about someone’s well-being.", "Write the English expression for this Spanish meaning:\n¿Cómo estás?"},
+                            {"What’s up?", "Complete the sentence with the correct English expression:\n____, nothing much.", "Read the definition and write the correct English expression:\nAn informal way to ask what is happening.", "Write the English expression for this Spanish meaning:\n¿Qué tal?"},
+                            {"Long time no see", "Complete the sentence with the correct English expression:\n____, I missed you!", "Read the definition and write the correct English expression:\nUsed when you meet someone after a long period.", "Write the English expression for this Spanish meaning:\n¡Cuánto tiempo sin verte!"},
+                            {"Take care", "Complete the sentence with the correct English expression:\nGoodbye and ____.", "Read the definition and write the correct English expression:\nA phrase used to wish safety and well-being.", "Write the English expression for this Spanish meaning:\nCuídate"},
+                            {"See you later", "Complete the sentence with the correct English expression:\nBye, ____!", "Read the definition and write the correct English expression:\nA casual way to say farewell until next time.", "Write the English expression for this Spanish meaning:\nNos vemos luego"},
+                            {"Nice to meet you", "Complete the sentence with the correct English expression:\nHello, ____.", "Read the definition and write the correct English expression:\nA polite phrase when meeting someone for the first time.", "Write the English expression for this Spanish meaning:\nEncantado de conocerte"},
+                            {"Have a good day", "Complete the sentence with the correct English expression:\nBye, ____!", "Read the definition and write the correct English expression:\nA phrase wishing someone a pleasant day.", "Write the English expression for this Spanish meaning:\nQue tengas un buen día"},
+                            {"Don’t worry", "Complete the sentence with the correct English expression:\n____, everything will be fine.", "Read the definition and write the correct English expression:\nUsed to reassure someone not to be concerned.", "Write the English expression for this Spanish meaning:\nNo te preocupes"},
+                            {"It’s up to you", "Complete the sentence with the correct English expression:\nChoose the movie, ____.", "Read the definition and write the correct English expression:\nMeans the decision depends on the person.", "Write the English expression for this Spanish meaning:\nDepende de ti"},
+                            {"By the way", "Complete the sentence with the correct English expression:\n____, did you finish your homework?", "Read the definition and write the correct English expression:\nUsed to introduce a new topic or reminder.", "Write the English expression for this Spanish meaning:\nPor cierto"}
+                    };
+                    // PALABRAS VOCABULARIO JUEGO PALABRAS RELACIONADAS
                     String[][] sinyantVerbosRegulares = {
                         {"participate",
                                 "Complete the sentence with the correct English synonym:\nShe likes to ____ soccer every weekend. (play)",
@@ -571,12 +572,244 @@ public class Main {
                 };
 
                     //PALABRAS VOCABULARIO JUEGO COMPLETAR ORACIONES
+                    String[][] coVerbosregulares = {
+                            { "play", "Complete the sentence with the correct English word:\nEvery Saturday morning, the children ______ football in the park with their friends.", "Complete the sentence with the correct English word:\nWhen I feel stressed, I usually ______ the guitar for at least one hour.", "Complete the sentence with the correct English word:\nAt the party last night, they ______ different games to entertain the guests."},
+                            { "work", "Complete the sentence with the correct English word:\nMy father usually ______ in his office until late at night because he has many responsibilities.", "Complete the sentence with the correct English word:\nDuring the summer, many students ______ in restaurants to save money for school.", "Complete the sentence with the correct English word:\nShe ______ very hard on her project because she wants to get a promotion."},
+                            { "talk", "Complete the sentence with the correct English word:\nAfter dinner, we always ______ about our plans for the future.", "Complete the sentence with the correct English word:\nThe teacher ______ to the students about the importance of studying every day.", "Complete the sentence with the correct English word:\nYesterday, my best friend ______ to me for hours about her new job."},
+                            { "watch", "Complete the sentence with the correct English word:\nOn weekends, my family ______ movies together in the living room.", "Complete the sentence with the correct English word:\nAt night, he usually ______ the news to know what is happening in the world.", "Complete the sentence with the correct English word:\nLast summer, we ______ the stars from the beach until midnight."},
+                            { "clean", "Complete the sentence with the correct English word:\nEvery Sunday morning, my mother ______ the entire house before visitors arrive.", "Complete the sentence with the correct English word:\nThe workers ______ the office carefully because the manager asked them to.", "Complete the sentence with the correct English word:\nYesterday, I ______ my room and found many old photos."},
+                            { "open", "Complete the sentence with the correct English word:\nPlease ______ the window because it is very hot in here.", "Complete the sentence with the correct English word:\nEvery morning, the shopkeeper ______ his store at 9 o’clock sharp.", "Complete the sentence with the correct English word:\nWhen she ______ the box, she discovered a beautiful gift inside."},
+                            { "help", "Complete the sentence with the correct English word:\nThe nurse always ______ the patients with kindness and patience.", "Complete the sentence with the correct English word:\nMy brother ______ me with my homework when I don’t understand the exercises.", "Complete the sentence with the correct English word:\nYesterday, the volunteers ______ the old man carry his heavy bags."},
+                            { "start", "Complete the sentence with the correct English word:\nThe movie ______ at 8 p.m., so we need to arrive early.", "Complete the sentence with the correct English word:\nEvery day, she ______ her work by checking her emails first.", "Complete the sentence with the correct English word:\nLast week, the company ______ a new project to improve customer service."},
+                            { "call", "Complete the sentence with the correct English word:\nEvery evening, I ______ my grandmother to ask how she is.", "Complete the sentence with the correct English word:\nThe teacher ______ the students one by one to answer the questions.", "Complete the sentence with the correct English word:\nYesterday, my friend ______ me three times because she needed urgent help."},
+                            { "live", "Complete the sentence with the correct English word:\nMany people ______ in big cities because there are more job opportunities.", "Complete the sentence with the correct English word:\nMy cousins ______ in a small village near the mountains.", "Complete the sentence with the correct English word:\nWhen I was a child, we ______ in a house with a large garden."}
+                            };
+                    String[][] coVerbosIrregulares = {
+                            { "go", "Complete the sentence with the correct English word:\nEvery morning, I ______ to school by bus because it is faster than walking.", "Complete the sentence with the correct English word:\nLast summer, we ______ to the mountains to spend our holidays together.", "Complete the sentence with the correct English word:\nShe usually ______ to the gym after work to stay healthy."},
+                            { "eat", "Complete the sentence with the correct English word:\nAt lunchtime, the students ______ sandwiches and fruit in the cafeteria.", "Complete the sentence with the correct English word:\nYesterday, we ______ pizza while watching a movie at home.", "Complete the sentence with the correct English word:\nHe always ______ breakfast before leaving for the office."},
+                            { "see", "Complete the sentence with the correct English word:\nFrom the top of the tower, you can ______ the entire city and the river.", "Complete the sentence with the correct English word:\nLast night, I ______ a shooting star while walking in the garden.", "Complete the sentence with the correct English word:\nShe usually ______ her friends at the park on weekends."},
+                            { "take", "Complete the sentence with the correct English word:\nPlease ______ this book with you and return it next week.", "Complete the sentence with the correct English word:\nYesterday, he ______ a photo of the sunset because it looked amazing.", "Complete the sentence with the correct English word:\nShe always ______ notes during class to remember the important details."},
+                            { "come", "Complete the sentence with the correct English word:\nCan you ______ to my house tomorrow to study together?", "Complete the sentence with the correct English word:\nLast week, many visitors ______ to the museum to see the new exhibition.", "Complete the sentence with the correct English word:\nHe usually ______ home late because of his busy schedule."},
+                            { "drink", "Complete the sentence with the correct English word:\nAfter running in the park, I always ______ a glass of cold water.", "Complete the sentence with the correct English word:\nYesterday, she ______ tea with her grandmother in the afternoon.", "Complete the sentence with the correct English word:\nThey usually ______ coffee before starting their work in the morning."},
+                            { "write", "Complete the sentence with the correct English word:\nEvery day, the journalist ______ articles for the local newspaper.", "Complete the sentence with the correct English word:\nLast month, she ______ a letter to her best friend in Canada.", "Complete the sentence with the correct English word:\nHe usually ______ notes in his notebook during meetings."},
+                            { "begin", "Complete the sentence with the correct English word:\nThe class will ______ at 9 a.m., so please be on time.", "Complete the sentence with the correct English word:\nYesterday, the concert ______ with a beautiful piano solo.", "Complete the sentence with the correct English word:\nShe usually ______ her day by reading the news online."},
+                            { "run", "Complete the sentence with the correct English word:\nEvery morning, he ______ five kilometers to stay in shape.", "Complete the sentence with the correct English word:\nLast year, she ______ in a marathon and finished in the top ten.", "Complete the sentence with the correct English word:\nThe children usually ______ around the playground during recess."},
+                            { "break", "Complete the sentence with the correct English word:\nBe careful not to ______ the glass when you wash it.", "Complete the sentence with the correct English word:\nYesterday, he accidentally ______ his phone while playing football.", "Complete the sentence with the correct English word:\nShe usually ______ her pencil when she presses too hard while writing."}
+                    };
+                    String[][] coSustantivos = {
+                            { "career",
+                                    "Complete the sentence with the correct English word:\nShe decided to pursue a challenging ______ in medicine because she loves helping people.",
+                                    "Complete the sentence with the correct English word:\nAfter many years of dedication, he finally built a successful ______ in engineering.",
+                                    "Complete the sentence with the correct English word:\nChoosing the right ______ can influence your happiness and financial stability in the future."
+                            },
+                            { "skill",
+                                    "Complete the sentence with the correct English word:\nLearning a new ______ such as coding can open many opportunities in the future.",
+                                    "Complete the sentence with the correct English word:\nPublic speaking is an important ______ for leaders who want to inspire others.",
+                                    "Complete the sentence with the correct English word:\nShe practiced every day to improve her piano ______ and perform confidently."
+                            },
+                            { "knowledge",
+                                    "Complete the sentence with the correct English word:\nTeachers share their ______ with students to help them understand the world better.",
+                                    "Complete the sentence with the correct English word:\nReading books is one of the best ways to gain ______ about history and culture.",
+                                    "Complete the sentence with the correct English word:\nHis deep ______ of science helped him solve the complex problem quickly."
+                            },
+                            { "solution",
+                                    "Complete the sentence with the correct English word:\nThe engineer found a creative ______ to fix the problem in the machine.",
+                                    "Complete the sentence with the correct English word:\nWe need to find a practical ______ to reduce pollution in the city.",
+                                    "Complete the sentence with the correct English word:\nAfter hours of discussion, the team finally agreed on a ______ to the conflict."
+                            },
+                            { "environment",
+                                    "Complete the sentence with the correct English word:\nWe must protect the natural ______ to ensure a healthy planet for future generations.",
+                                    "Complete the sentence with the correct English word:\nThe company created a safe working ______ for all its employees.",
+                                    "Complete the sentence with the correct English word:\nChildren grow better in a positive ______ where they feel supported and loved."
+                            },
+                            { "experience",
+                                    "Complete the sentence with the correct English word:\nTraveling abroad was an unforgettable ______ that taught me many lessons.",
+                                    "Complete the sentence with the correct English word:\nShe gained valuable ______ while working as an intern in the hospital.",
+                                    "Complete the sentence with the correct English word:\nThe concert was an amazing ______ that I will never forget."
+                            },
+                            { "luggage",
+                                    "Complete the sentence with the correct English word:\nThe passengers carried heavy ______ through the airport before boarding the plane.",
+                                    "Complete the sentence with the correct English word:\nPlease check your ______ before leaving the hotel to avoid forgetting anything.",
+                                    "Complete the sentence with the correct English word:\nHer ______ was lost during the flight, so the airline had to deliver it later."
+                            },
+                            { "customer",
+                                    "Complete the sentence with the correct English word:\nThe shop assistant greeted the ______ politely and offered help with the products.",
+                                    "Complete the sentence with the correct English word:\nEvery ______ expects good service when they visit a restaurant or store.",
+                                    "Complete the sentence with the correct English word:\nThe company values each ______ and tries to meet their needs effectively."
+                            },
+                            { "opinion",
+                                    "Complete the sentence with the correct English word:\nEveryone has the right to express their ______ about important social issues.",
+                                    "Complete the sentence with the correct English word:\nIn my ______, teamwork is the key to success in any project.",
+                                    "Complete the sentence with the correct English word:\nShe shared her ______ on the book, and many classmates agreed with her."
+                            },
+                            { "traffic",
+                                    "Complete the sentence with the correct English word:\nWe were late because the heavy ______ delayed us for more than an hour.",
+                                    "Complete the sentence with the correct English word:\nThe city is working on new plans to reduce ______ during rush hours.",
+                                    "Complete the sentence with the correct English word:\nAccidents often happen when there is too much ______ on the highway."
+                            }
+                    };
+                    String[][] coPreposiciones = {
+                            { "above",
+                                    "Complete the sentence with the correct English word:\nThe stars shine brightly ______ the mountains, creating a breathtaking view at night.",
+                                    "Complete the sentence with the correct English word:\nThe helicopter hovered ______ the city, giving the passengers a clear view of the streets.",
+                                    "Complete the sentence with the correct English word:\nThe picture was placed ______ the sofa to decorate the living room."
+                            },
+                            { "below",
+                                    "Complete the sentence with the correct English word:\nThe valley lies ______ the snowy peaks, surrounded by forests and rivers.",
+                                    "Complete the sentence with the correct English word:\nThe answers are written ______ the questions on the exam paper.",
+                                    "Complete the sentence with the correct English word:\nThe basement is located ______ the main floor of the house."
+                            },
+                            { "between",
+                                    "Complete the sentence with the correct English word:\nThe playground is located ______ the school and the library, making it easy to find.",
+                                    "Complete the sentence with the correct English word:\nShe sat ______ her two best friends during the ceremony.",
+                                    "Complete the sentence with the correct English word:\nThe negotiations took place ______ the government and the workers’ union."
+                            },
+                            { "among",
+                                    "Complete the sentence with the correct English word:\nShe felt comfortable ______ her classmates because they welcomed her warmly.",
+                                    "Complete the sentence with the correct English word:\nThe treasure was hidden ______ the trees in the forest.",
+                                    "Complete the sentence with the correct English word:\nThere was a sense of excitement ______ the fans before the concert began."
+                            },
+                            { "inside",
+                                    "Complete the sentence with the correct English word:\nThe documents are stored ______ the drawer to keep them safe.",
+                                    "Complete the sentence with the correct English word:\nThe children stayed ______ the house because it was raining heavily.",
+                                    "Complete the sentence with the correct English word:\nThe cat is hiding ______ the box, waiting to surprise its owner."
+                            },
+                            { "outside",
+                                    "Complete the sentence with the correct English word:\nThe kids are playing ______ the house because the weather is sunny.",
+                                    "Complete the sentence with the correct English word:\nThere is a bench ______ the building where people can rest.",
+                                    "Complete the sentence with the correct English word:\nThe dog waited patiently ______ the store until its owner returned."
+                            },
+                            { "onto",
+                                    "Complete the sentence with the correct English word:\nThe child climbed ______ the chair to reach the cookies on the table.",
+                                    "Complete the sentence with the correct English word:\nThe ball rolled ______ the roof after the strong wind blew it away.",
+                                    "Complete the sentence with the correct English word:\nShe stepped ______ the stage confidently to deliver her speech."
+                            },
+                            { "off",
+                                    "Complete the sentence with the correct English word:\nPlease take your shoes ______ before entering the house.",
+                                    "Complete the sentence with the correct English word:\nThe bird suddenly flew ______ the branch and disappeared into the sky.",
+                                    "Complete the sentence with the correct English word:\nHe fell ______ the bike because the road was slippery."
+                            },
+                            { "around",
+                                    "Complete the sentence with the correct English word:\nThe children ran ______ the playground laughing and shouting with joy.",
+                                    "Complete the sentence with the correct English word:\nThere are many shops ______ the central square of the town.",
+                                    "Complete the sentence with the correct English word:\nShe wrapped a scarf ______ her neck to stay warm."
+                            },
+                            { "near",
+                                    "Complete the sentence with the correct English word:\nThere is a small café ______ the station where we can wait for the train.",
+                                    "Complete the sentence with the correct English word:\nThe school is located ______ the park, making it easy for children to play after class.",
+                                    "Complete the sentence with the correct English word:\nHe bought a house ______ the beach to enjoy the ocean view."
+                            }
+                    };
+                    String[][] coAdjetivos = {
+                            { "happy",
+                                    "Complete the sentence with the correct English word:\nShe felt ______ when she received the news that she had passed all her exams.",
+                                    "Complete the sentence with the correct English word:\nThe children were ______ to see their grandparents after such a long time.",
+                                    "Complete the sentence with the correct English word:\nHe was truly ______ on his wedding day, surrounded by family and friends."
+                            },
+                            { "sad",
+                                    "Complete the sentence with the correct English word:\nShe looked ______ after hearing that her best friend was moving to another country.",
+                                    "Complete the sentence with the correct English word:\nThe movie was so ______ that many people cried at the end.",
+                                    "Complete the sentence with the correct English word:\nHe felt ______ because he couldn’t attend the party with his friends."
+                            },
+                            { "big",
+                                    "Complete the sentence with the correct English word:\nThey live in a ______ house with a large garden and swimming pool.",
+                                    "Complete the sentence with the correct English word:\nThe company made a ______ investment in new technology last year.",
+                                    "Complete the sentence with the correct English word:\nShe carried a ______ box that was too heavy for her alone."
+                            },
+                            { "small",
+                                    "Complete the sentence with the correct English word:\nHe bought a ______ car because it was easier to park in the city.",
+                                    "Complete the sentence with the correct English word:\nThe child held a ______ toy in his hands and smiled.",
+                                    "Complete the sentence with the correct English word:\nThey live in a ______ apartment near the university."
+                            },
+                            { "fast",
+                                    "Complete the sentence with the correct English word:\nThe cheetah is a ______ animal that can run at incredible speeds.",
+                                    "Complete the sentence with the correct English word:\nShe typed so ______ that she finished the report in half the time.",
+                                    "Complete the sentence with the correct English word:\nThe train was very ______ and arrived earlier than expected."
+                            },
+                            { "slow",
+                                    "Complete the sentence with the correct English word:\nThe old man walked ______ along the path, enjoying the scenery.",
+                                    "Complete the sentence with the correct English word:\nThe internet connection was so ______ that it took hours to download the file.",
+                                    "Complete the sentence with the correct English word:\nHe spoke ______ so that everyone could understand his explanation clearly."
+                            },
+                            { "beautiful",
+                                    "Complete the sentence with the correct English word:\nThe garden looked ______ in spring, full of colorful flowers and green trees.",
+                                    "Complete the sentence with the correct English word:\nShe wore a ______ dress that caught everyone’s attention at the party.",
+                                    "Complete the sentence with the correct English word:\nThe sunset over the ocean was truly ______ and unforgettable."
+                            },
+                            { "ugly",
+                                    "Complete the sentence with the correct English word:\nThe building looked ______ because it hadn’t been painted in years.",
+                                    "Complete the sentence with the correct English word:\nHe thought the shoes were ______, but his sister liked them.",
+                                    "Complete the sentence with the correct English word:\nThe monster in the movie was so ______ that the children screamed."
+                            },
+                            { "strong",
+                                    "Complete the sentence with the correct English word:\nShe is a ______ woman who never gives up, even in difficult times.",
+                                    "Complete the sentence with the correct English word:\nThe bridge is ______ enough to support thousands of cars every day.",
+                                    "Complete the sentence with the correct English word:\nHe became ______ after months of training at the gym."
+                            },
+                            { "weak",
+                                    "Complete the sentence with the correct English word:\nAfter being sick for a week, he felt too ______ to go back to work.",
+                                    "Complete the sentence with the correct English word:\nThe chair was so ______ that it broke when someone sat on it.",
+                                    "Complete the sentence with the correct English word:\nShe was ______ after the long race and needed to rest."
+                            }
+                    };
+                    String[][] coExpresionesComunes = {
+                            { "How are you?",
+                                    "Complete the sentence with the correct English expression:\nWhen I meet my friend after class, I usually greet her by saying ______.",
+                                    "Complete the sentence with the correct English expression:\nAt the beginning of the phone call, he asked politely ______ to show interest.",
+                                    "Complete the sentence with the correct English expression:\nShe smiled and said ______ when she saw her neighbor in the morning."
+                            },
+                            { "What’s up?",
+                                    "Complete the sentence with the correct English expression:\nWhen I saw my cousin at the party, I casually said ______ to start the conversation.",
+                                    "Complete the sentence with the correct English expression:\nHe walked into the room and greeted everyone with a cheerful ______.",
+                                    "Complete the sentence with the correct English expression:\nFriends often say ______ when they want to know what’s happening."
+                            },
+                            { "Long time no see",
+                                    "Complete the sentence with the correct English expression:\nAfter meeting an old classmate at the mall, she exclaimed ______ with excitement.",
+                                    "Complete the sentence with the correct English expression:\nHe greeted his former teacher by saying ______ because they hadn’t met in years.",
+                                    "Complete the sentence with the correct English expression:\nWhen I saw my neighbor after months, I said ______ with a big smile."
+                            },
+                            { "Take care",
+                                    "Complete the sentence with the correct English expression:\nBefore leaving for her trip, her mother hugged her and said ______ warmly.",
+                                    "Complete the sentence with the correct English expression:\nHe ended the email with the words ______ to show kindness.",
+                                    "Complete the sentence with the correct English expression:\nWhen saying goodbye to a friend, it’s common to say ______."
+                            },
+                            { "See you later",
+                                    "Complete the sentence with the correct English expression:\nAfter finishing lunch, he waved at his friend and said ______ before leaving.",
+                                    "Complete the sentence with the correct English expression:\nShe told her classmates ______ because they would meet again in the afternoon.",
+                                    "Complete the sentence with the correct English expression:\nAt the end of the meeting, the manager smiled and said ______ to everyone."
+                            },
+                            { "Nice to meet you",
+                                    "Complete the sentence with the correct English expression:\nWhen introduced to a new colleague, she said ______ politely.",
+                                    "Complete the sentence with the correct English expression:\nHe shook hands and said ______ during the interview.",
+                                    "Complete the sentence with the correct English expression:\nAt the party, she greeted the guest with a smile and said ______."
+                            },
+                            { "Have a good day",
+                                    "Complete the sentence with the correct English expression:\nThe cashier smiled and said ______ after giving me the receipt.",
+                                    "Complete the sentence with the correct English expression:\nShe ended her message with ______ to wish her friend well.",
+                                    "Complete the sentence with the correct English expression:\nBefore leaving the office, he told his coworkers ______."
+                            },
+                            { "Don’t worry",
+                                    "Complete the sentence with the correct English expression:\nWhen she forgot her homework, the teacher said ______ and gave her another chance.",
+                                    "Complete the sentence with the correct English expression:\nHe told his friend ______ because the problem was already solved.",
+                                    "Complete the sentence with the correct English expression:\nShe comforted her brother by saying ______ after he made a mistake."
+                            },
+                            { "It’s up to you",
+                                    "Complete the sentence with the correct English expression:\nWhen deciding where to eat, he said ______ to let his friend choose.",
+                                    "Complete the sentence with the correct English expression:\nShe told her team ______ because they could decide the best strategy.",
+                                    "Complete the sentence with the correct English expression:\nHe shrugged and said ______ when asked about the movie choice."
+                            },
+                            { "By the way",
+                                    "Complete the sentence with the correct English expression:\nShe added ______ at the end of the conversation to mention something important.",
+                                    "Complete the sentence with the correct English expression:\nHe said ______ before reminding his friend about the meeting tomorrow.",
+                                    "Complete the sentence with the correct English expression:\nDuring the discussion, she used ______ to introduce a new topic."
+                            }
+                    };
                     //PALABRAS VOCABULARIO ADIVIDAR PALABRAS
                         int nivelVocabulario;
                     System.out.println("            Ingresa la categoría gramatical que deseas estudiar (recuerda que se dara por hecho que ya has cursado las categorías gramaticales anterirores a ella):");
                     System.out.println("            1.Verbo\n" + "            2.Sustantivo\n" + "            3.Preposiciones\n" + "            4.Adjetivos\n" + "            5.Expresiones comunes");
 
-                    do {
+                  do {
                         nivelVocabulario = sc.nextInt();
                         switch (nivelVocabulario) {
                             case 1:
@@ -591,11 +824,13 @@ public class Main {
                                             System.out.println("Has elegido verbos regulares");
                                             PALABRAS_VOCABULARIO = nvVerboregulares;
                                             PALABRAS_RELACIONADAS = sinyantVerbosRegulares;
-                                            break;
+                                            COMPLETAR_ORACIONES = coVerbosregulares;
+                                         break;
                                         case 2:
                                             System.out.println("Has elegido verbos irregulares");
                                             PALABRAS_VOCABULARIO = nvVerbosirregulares;
                                             PALABRAS_RELACIONADAS = sinyantVerbosIrregulares;
+                                            COMPLETAR_ORACIONES = coVerbosIrregulares;
                                             break;
                                         default:
                                             System.out.print("Opción invalida, debes ingresar 1 o 2. Intenta de nuevo: ");
@@ -609,24 +844,28 @@ public class Main {
                                 nnombre = "Sustantivo";
                                 PALABRAS_VOCABULARIO = nvSustantivo;
                                 PALABRAS_RELACIONADAS = sinyantSustantivos;
+                                COMPLETAR_ORACIONES = coSustantivos;
                                 break;
 
                             case 3:
                                 nnombre = "Preposiciones";
                                 PALABRAS_VOCABULARIO = nvPreposiciones;
                                 PALABRAS_RELACIONADAS = sinyantPreposiciones;
+                                COMPLETAR_ORACIONES = coPreposiciones;
                                 break;
 
                             case 4:
                                 nnombre = "Adjetivos";
                                 PALABRAS_VOCABULARIO = nvAdjetivos;
                                 PALABRAS_RELACIONADAS = sinyantAdjetivos;
+                                COMPLETAR_ORACIONES = coAdjetivos;
                                 break;
 
                             case 5:
                                 nnombre = "Expresiones comunes";
                                 PALABRAS_VOCABULARIO = nvExpresionescomunes;
                                 PALABRAS_RELACIONADAS = sinyantExpresionesComunes;
+                                COMPLETAR_ORACIONES = coExpresionesComunes;
                                 break;
 
                             default:
@@ -1140,15 +1379,12 @@ public class Main {
             System.out.println("\n--- RESULTADOS FINALES ---");
             System.out.println("Aciertos: " + aciertos);
             System.out.println("Errores: " + errores);
-            if (contadorFallos > 0) {
-                System.out.print("Palabras que preguntamos otra vez: ");
-                for (int i = 0; i < contadorFallos; i++) {
-                    System.out.print(PALABRAS_VOCABULARIO[palabrasFalladas[i]][0] + (i < contadorFallos - 1 ? ", " : "\n"));
-                    return;
-                }
+           if (contadorFallos > 0) {
+            System.out.print("Palabras que preguntamos otra vez: ");
+            for (int i = 0; i < contadorFallos; i++) {
+                System.out.print(COMPLETAR_ORACIONES[palabrasFalladas[i]][0] + (i < contadorFallos - 1 ? ", " : "\n"));
             }
-
-
+        }
 
         }
 
@@ -1257,23 +1493,96 @@ public class Main {
         System.out.println("\n--- RESULTADOS FINALES ---");
         System.out.println("Aciertos: " + aciertos);
         System.out.println("Errores: " + errores);
-        if (contadorFallos > 0) {
+       if (contadorFallos > 0) {
             System.out.print("Palabras que preguntamos otra vez: ");
             for (int i = 0; i < contadorFallos; i++) {
-                System.out.print(PALABRAS_RELACIONADAS[palabrasFalladas[i]][0] + (i < contadorFallos - 1 ? ", " : "\n"));
-                return;
+                System.out.print(COMPLETAR_ORACIONES[palabrasFalladas[i]][0] + (i < contadorFallos - 1 ? ", " : "\n"));
             }
         }
-
-
+         
     }
 
-    public static void vjCompletarOraciones(){
+    public static void vjCompletarOraciones() {
+        aciertos = 0;
+        errores = 0;
+        contadorFallos = 0;
+        for (int i = 0; i < palabrasFalladas.length; i++) palabrasFalladas[i] = -1;
         bienvenida();
         System.out.println("En este juego deberás:\n1. Completar oraciones incompletas en inglés escribiendo la palabra correcta en los espacios, usando el vocabulario que ya has aprendido.\n2. El sistema validará tu respuesta en tiempo real, indicándote si es correcta o incorrecta.\n3. Al finalizar cada ronda, verás un resumen de resultados con tus aciertos y errores, para reforzar las palabras que aún no dominas.");
         contador();
-    }
 
+        // PRIMERA RONDA
+        for (int i = 0; i < 10; i++) {
+            int pista = (int) (Math.random() * 3);
+            pistaUsada[i] = pista;
+
+            String prompt = COMPLETAR_ORACIONES[i][pista + 1];
+            System.out.println("Pregunta " + (i + 1) + ":");
+            System.out.println(COMPLETAR_ORACIONES[i][pista + 1]);
+            System.out.print("Tu respuesta: ");
+            String respuesta = sc.nextLine().trim();
+
+            String correcta = COMPLETAR_ORACIONES[i][0].trim();
+
+            if (respuesta.equalsIgnoreCase(correcta)) {
+                System.out.println("\n✔ Correcto!");
+                aciertos++;
+            } else {
+                System.out.println("\n✘ Incorrecto. La respuesta correcta era: " + correcta);
+                errores++;
+                palabrasFalladas[contadorFallos++] = i;
+            }
+
+            System.out.println("Presiona ENTER para continuar...");
+            sc.nextLine();// pausa hasta que el usuario presione Enter
+        }
+
+        // SEGUNDA RONDA
+        if (contadorFallos > 0) {
+            System.out.println("\n--- Ronda de repaso para palabras falladas ---");
+            for (int f = 0; f < contadorFallos; f++) {
+                int indicePalabra = palabrasFalladas[f];
+
+
+                int pista2;
+                do {
+                    pista2 = (int) (Math.random() * 3);
+                } while (pista2 == pistaUsada[indicePalabra]);
+
+                String prompt2 = COMPLETAR_ORACIONES[indicePalabra][pista2 + 1];
+                System.out.println("\nRepetición palabra " + (f + 1) + ":");
+                System.out.println(prompt2);
+
+                System.out.print("Tu respuesta: ");
+                String respuesta2 = sc.nextLine().trim().toLowerCase();
+
+                String correcta2 = COMPLETAR_ORACIONES[indicePalabra][0].toLowerCase();
+
+                if (respuesta2.equals(correcta2)) {
+                    System.out.println("✔ Correcto!");
+                    aciertos++;
+                } else {
+                    System.out.println("✘ Incorrecto de nuevo. La correcta era: " + correcta2);
+                    errores++;
+                }
+
+                System.out.println("Presiona ENTER para continuar...");
+                sc.nextLine();
+            }
+        }
+
+        // RESUMEN FINAL
+        System.out.println("\n--- RESULTADOS FINALES ---");
+        System.out.println("Aciertos: " + aciertos);
+        System.out.println("Errores: " + errores);
+        if (contadorFallos > 0) {
+            System.out.print("Palabras que preguntamos otra vez: ");
+            for (int i = 0; i < contadorFallos; i++) {
+                System.out.print(COMPLETAR_ORACIONES[palabrasFalladas[i]][0] + (i < contadorFallos - 1 ? ", " : "\n"));
+            }
+        }
+
+    }
 
     public static void vjAdiviniarPalabras() {
         bienvenida();
