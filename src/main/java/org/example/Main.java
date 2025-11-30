@@ -797,7 +797,7 @@ public class Main {
             case 6:
                 return nvExpresionescomunes;
             default:
-                return nsbBasico; // solo formalidad
+                return nvVerboregulares; // solo formalidad
         }
     }
     public static void modalidadTradicionalVocabulario(){
