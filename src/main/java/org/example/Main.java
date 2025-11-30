@@ -1223,7 +1223,7 @@ public class Main {
 
                 int pista2;
                 do {
-                    pista2 = (int) (Math.random() * 2);
+                    pista2 = (int) (Math.random() * 3);
                 } while (pista2 == pistaUsada[indicePalabra]);
 
                 String prompt2 = PALABRAS_RELACIONADAS[indicePalabra][pista2 + 1];
