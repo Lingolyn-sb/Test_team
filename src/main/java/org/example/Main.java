@@ -1,3 +1,5 @@
+package org.example;
+
 import java.util.Scanner;
 import java.util.Random;
 import java.util.Arrays;
@@ -38,7 +40,7 @@ public class Main {
     static String [][] nsbExpert = { {"embarrass", "Complete the sentence with the correct English word:\nDon’t say things that might ___ him.", "Read the definition and write the correct English word:\nTo make someone feel ashamed or uncomfortable.", "Write the English word for this Spanish meaning:\nAvergonzar"}, {"puncture", "Complete the sentence with the correct English word:\nBe careful not to ___ the tire.", "Read the definition and write the correct English word:\nA small hole made by a sharp object.", "Write the English word for this Spanish meaning:\nPinchar / perforar"}, {"sustainable", "Complete the sentence with the correct English word:\nWe need ___ energy solutions.", "Read the definition and write the correct English word:\nAble to be maintained without harming the environment.", "Write the English word for this Spanish meaning:\nSostenible"}, {"acknowledge", "Complete the sentence with the correct English word:\nPlease ___ that you received the email.", "Read the definition and write the correct English word:\nTo admit or accept that something is true.", "Write the English word for this Spanish meaning:\nReconocer"}, {"wriggle", "Complete the sentence with the correct English word:\nThe worm began to ___ on the ground.", "Read the definition and write the correct English word:\nTo twist and turn with small movements.", "Write the English word for this Spanish meaning:\nRetorcerse"}, {"grease", "Complete the sentence with the correct English word:\nThe pan is covered in ___.", "Read the definition and write the correct English word:\nA fatty or oily substance.", "Write the English word for this Spanish meaning:\nGrasa"}, {"harass", "Complete the sentence with the correct English word:\nIt is illegal to ___ someone at work.", "Read the definition and write the correct English word:\nTo repeatedly bother or disturb someone.", "Write the English word for this Spanish meaning:\nAcosar"}, {"deceive", "Complete the sentence with the correct English word:\nHe tried to ___ his friends with a lie.", "Read the definition and write the correct English word:\nTo make someone believe something that is not true.", "Write the English word for this Spanish meaning:\nEngañar"}, {"guarantee", "Complete the sentence with the correct English word:\nThe product comes with a one-year ___.", "Read the definition and write the correct English word:\nA promise that something will work or last.", "Write the English word for this Spanish meaning:\nGarantía"}, {"resilient", "Complete the sentence with the correct English word:\nChildren are often very ___ after facing challenges.", "Read the definition and write the correct English word:\nAble to recover quickly from difficulties; strong and adaptable.", "Write the English word for this Spanish meaning:\nResiliente"} };
 
 
- public static void main(String[] args) {
+    public static void main(String[] args) {
         /*Bienvenida*/
         char simbolo = (char) 42;
         System.out.println("\n");
@@ -96,6 +98,7 @@ public class Main {
 
     public static void registro() {
         System.out.println("                  Por favor, ingresa tu nombre (como quieres que te llamemos)");
+        System.out.print("                  ");
         usuario = sc.nextLine();
     }
 
@@ -108,7 +111,7 @@ public class Main {
         System.out.println("            ||       2.Vocabulario (ampliar palabras)                             ||");
         System.out.println("            +======================================================================+");
         System.out.println("\n\n                  Elige 1 o 2:");
-
+        System.out.print("                  ");
         /*leer que desea practicar*/
         do {
             opcionprincipal = sc.nextInt();
@@ -140,6 +143,7 @@ public class Main {
                     System.out.println("          1- Básico\n          2- Medio\n          3- Normal\n          4- Difícil\n          5- Experto");
 
                     do {
+                        System.out.print("                ");
                         nivelSpellingBee = sc.nextInt();
                         switch (nivelSpellingBee) {
                             case 1:
@@ -175,7 +179,8 @@ public class Main {
                     System.out.println("                         ||       1. Modalidad Tradicional            ||");
                     System.out.println("                         ||       2. Modalidad Retos y Juegos         ||");
                     System.out.println("                         +=============================================+");
-                    System.out.print("\n\n                  Ingresa 1 o 2: ");
+                    System.out.println("\n\n                  Ingresa 1 o 2: ");
+                    System.out.print("                  ");
                     int modalidadSpellingBee;
                     /*leer modalidad Spelling Bee*/
                     do {
@@ -199,21 +204,21 @@ public class Main {
                 case 2:
                     nivel = "la categoría gramatical";
                     /*Preguntar modalidad Vocabulario*/
-                    System.out.println("                  "+usuario + ", elegiste:\n ");
+                    System.out.println("                  "+ usuario + ", elegiste:\n ");
                     String art2 =
-                            "           /==========================================================\\\n" +
-                                    "           ||__     __              _           _            _       ||\n" +
-                                    "           ||\\ \\   / /__   ___ __ _| |__  _   _| | __ _ _ __(_) ___  ||\n" +
-                                    "           || \\ \\ / / _ \\ / __/ _` | '_ \\| | | | |/ _` | '__| |/ _ \\ ||\n" +
-                                    "           ||  \\ V / (_) | (_| (_| | |_) | |_| | | (_| | |  | | (_) |||\n" +
-                                    "           ||   \\_/ \\___/ \\___\\__,_|_.__/ \\__,_|_|\\__,_|_|  |_|\\___/ ||\n" +
-                                    "           \\==========================================================/\n";
+                            "               /============================================================\\\n" +
+                                    "               || __     __              _           _            _        ||\n" +
+                                    "               || \\ \\   / /__   ___ __ _| |__  _   _| | __ _ _ __(_) ___   ||\n" +
+                                    "               ||  \\ \\ / / _ \\ / __/ _` | '_ \\| | | | |/ _` | '__| |/ _ \\  ||\n" +
+                                    "               ||   \\ V / (_) | (_| (_| | |_) | |_| | | (_| | |  | | (_) | ||\n" +
+                                    "               ||    \\_/ \\___/ \\___\\__,_|_.__/ \\__,_|_|\\__,_|_|  |_|\\___/  ||\n" +
+                                    "               \\============================================================/\n";
                     System.out.println(art2);
                     System.out.println("\n");
                     /*DECLARACION DE NIVELES VOCABULARIO*/
                     String [][] nvVerboregulares = {
-                            {"play","Complete the sentence with the correct English word:\nWould you ____ chess with me after the soccer training","Read the definition and write the correct English word:\nTo engage in a game or sport for fun or competition","Write the English word for this Spanish meaning:\nJugar"},
-                            {"work","Complete the sentence with the correct English word:\nHow can you ____ for long hours without coffee","Read the definition and write the correct English word:\nTo perform tasks or duties, usually for money or effort","Write the English word for this Spanish meaning:\nTrabajar"},
+                            {"play","          Complete the sentence with the correct English word:\nWould you ____ chess with me after the soccer training","Read the definition and write the correct English word:\nTo engage in a game or sport for fun or competition","Write the English word for this Spanish meaning:\nJugar"},
+                            {"work","          Complete the sentence with the correct English word:\nHow can you ____ for long hours without coffee","Read the definition and write the correct English word:\nTo perform tasks or duties, usually for money or effort","Write the English word for this Spanish meaning:\nTrabajar"},
                             {"talk","Complete the sentence with the correct English word:\nNow that we don´t ____ on instagram, i feel better","Read the definition and write the correct English word:\nTo communicate with someone using words","Write the English word for this Spanish meaning:\nHablar"},
                             {"watch","Complete the sentence with the correct English word:\nIf i was you, i will don´t want to _____ that movie, it´s so sad", "Read the definition and write the correct English word:\nTo look at something attentively, especially a movie or TV show.","Write the English word for this Spanish meaning:\nMirar"},
                             {"clean","Complete the sentence with the correct English word:\nOh wow, you have to _____ really well, this place is so spotless", "Read the definition and write the correct English word:\nTo make a place free from dirt or mess.","Write the English word for this Spanish meaning:\nLimpiar"},
@@ -283,7 +288,7 @@ public class Main {
                             {"It’s up to you", "Complete the sentence with the correct English expression:\nChoose the movie, ____.", "Read the definition and write the correct English expression:\nMeans the decision depends on the person.", "Write the English expression for this Spanish meaning:\nDepende de ti"},
                             {"By the way", "Complete the sentence with the correct English expression:\n____, did you finish your homework?", "Read the definition and write the correct English expression:\nUsed to introduce a new topic or reminder.", "Write the English expression for this Spanish meaning:\nPor cierto"}
                     };
-                     // PALABRAS VOCABULARIO JUEGO PALABRAS RELACIONADAS
+                    // PALABRAS VOCABULARIO JUEGO PALABRAS RELACIONADAS
                     String[][] sinyantVerbosRegulares = {
                             {"participate",
                                     "Complete the sentence with the correct English synonym:\nShe likes to ____ soccer every weekend. (play)",
@@ -882,6 +887,7 @@ public class Main {
                     System.out.println("            1.Verbo\n" + "            2.Sustantivo\n" + "            3.Preposiciones\n" + "            4.Adjetivos\n" + "            5.Expresiones comunes");
 
                     do {
+                        System.out.print("            ");
                         nivelVocabulario = sc.nextInt();
                         switch (nivelVocabulario) {
                             case 1:
@@ -954,12 +960,13 @@ public class Main {
                     }
                     while (nivelVocabulario < 1 || nivelVocabulario > 5);
 
-                    System.out.println("         +=========================================================+");
-                    System.out.println("         ||       Ahora elige la modalidad                         ||");
-                    System.out.println("         ||       1. Modalidad Tradicional                         ||");
-                    System.out.println("         ||       2. Modalidad Juegos                              ||");
-                    System.out.println("         +=========================================================+");
-                    System.out.print("\n\n          Ingresa 1 o 2:\n ");
+                    System.out.println("                  +=========================================================+");
+                    System.out.println("                  ||       Ahora elige la modalidad                        ||");
+                    System.out.println("                  ||       1. Modalidad Tradicional                        ||");
+                    System.out.println("                  ||       2. Modalidad Juegos                             ||");
+                    System.out.println("                  +=========================================================+");
+                    System.out.print("\n\n                  Ingresa 1 o 2:\n ");
+                    System.out.print("                 ");
                     int modalidadVocabulario;
                     do {
                         modalidadVocabulario = sc.nextInt();
@@ -1023,7 +1030,7 @@ public class Main {
         pause(800);
         System.out.println("\n          Cargando instrucciones...\n");
         pause(1500);
-        System.out.println("          ¡Bienvenid@ " + usuario + " :D!\n\n    A continuación iniciará la ronda de " + allnombre + ", en " + nivel + " " + nnombre+"\n");
+        System.out.println("          ¡Bienvenid@ " + usuario + " :D!\n\n  A continuación iniciará la ronda de " + allnombre + ", en " + nivel + " " + nnombre+"\n");
         System.out.println("          ---------------------8<-------------[Instrucciones:]-----------------------\n");
 
     }
@@ -1477,7 +1484,7 @@ public class Main {
 
     }
     public static void modalidadJuegosVocabulario() {
-            System.out.println("Has elegido la Modalidad Juegos, en el nivel " + nnombre);
+        System.out.println("Has elegido la Modalidad Juegos, en el nivel " + nnombre);
         int vjuego;
         System.out.println("Ingresa el juego que te gustaría jugar\n1- Palabras relacionadas\n2- Completar oraciones\n3- Adivinar la palabra");
         do{
