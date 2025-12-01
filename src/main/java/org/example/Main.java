@@ -996,6 +996,8 @@ public class Main {
     public static void contador() {
         pause(4000);
         System.out.println("          ¿Estás list@?...\n");
+        System.out.println("          Presiona ENTER para continuar...\n");
+        sc.nextLine();
         sc.nextLine();
         System.out.println("          Mucha Suerte!!\n");
         pause(800);
