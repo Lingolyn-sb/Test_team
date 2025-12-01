@@ -1466,7 +1466,6 @@ public class Main {
         }
 
     }
-
     public static void modalidadJuegosVocabulario() {
             String[][] PR_ACCIONES = {
                     {"play", "Write a synonym of the following word:", "Write an antonym of the following word:", "participate", "stop"},
