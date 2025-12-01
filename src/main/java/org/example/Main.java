@@ -283,7 +283,7 @@ public class Main {
                             {"It’s up to you", "Complete the sentence with the correct English expression:\nChoose the movie, ____.", "Read the definition and write the correct English expression:\nMeans the decision depends on the person.", "Write the English expression for this Spanish meaning:\nDepende de ti"},
                             {"By the way", "Complete the sentence with the correct English expression:\n____, did you finish your homework?", "Read the definition and write the correct English expression:\nUsed to introduce a new topic or reminder.", "Write the English expression for this Spanish meaning:\nPor cierto"}
                     };
-                    // PALABRAS VOCABULARIO JUEGO PALABRAS RELACIONADAS
+                     // PALABRAS VOCABULARIO JUEGO PALABRAS RELACIONADAS
                     String[][] sinyantVerbosRegulares = {
                             {"participate",
                                     "Complete the sentence with the correct English synonym:\nShe likes to ____ soccer every weekend. (play)",
@@ -293,7 +293,7 @@ public class Main {
                             {"rest",
                                     "Complete the sentence with the correct English antonym:\nHe decided to ____ instead of working all day. (work)",
                                     "Choose the antonym of 'work':\n(a) rest, (b) labor, (c) job",
-                                    "Write the synonym of the following word: work"},
+                                    "Write the antonym of the following word: work"},
 
                             {"speak",
                                     "Complete the sentence with the correct English synonym:\nLet’s ____ about the new movie tonight. (talk)",
@@ -303,7 +303,7 @@ public class Main {
                             {"ignore",
                                     "Complete the sentence with the correct English antonym:\nDon’t just watch, try not to ____ what’s happening. (watch)",
                                     "Choose the antonym of 'watch':\n(a) ignore, (b) observe, (c) look",
-                                    "Write the synonym of the following word: watch"},
+                                    "Write the antonym of the following word: watch"},
 
                             {"tidy",
                                     "Complete the sentence with the correct English synonym:\nShe will ____ the kitchen before guests arrive. (clean)",
@@ -313,7 +313,7 @@ public class Main {
                             {"close",
                                     "Complete the sentence with the correct English antonym:\nCan you open the window? Don’t ____ it now. (open)",
                                     "Choose the antonym of 'open':\n(a) close, (b) unlock, (c) unseal",
-                                    "Write the synonym of the following word: open"},
+                                    "Write the antonym of the following word: open"},
 
                             {"assist",
                                     "Complete the sentence with the correct English synonym:\nCould you ____ me with my homework? (help)",
@@ -323,7 +323,7 @@ public class Main {
                             {"finish",
                                     "Complete the sentence with the correct English antonym:\nWe will start the meeting at 10 a.m. and ____ it at noon. (start)",
                                     "Choose the antonym of 'start':\n(a) finish, (b) begin, (c) commence",
-                                    "Write the synonym of the following word: start"},
+                                    "Write the antonym of the following word: start"},
 
                             {"phone",
                                     "Complete the sentence with the correct English synonym:\nI will ____ my friend to invite her to the party. (call)",
@@ -333,7 +333,7 @@ public class Main {
                             {"die",
                                     "Complete the sentence with the correct English antonym:\nThey live in a small town, but many people ____ in the city. (live)",
                                     "Choose the antonym of 'live':\n(a) die, (b) survive, (c) exist",
-                                    "Write the synonym of the following word: live"}
+                                    "Write the antonym of the following word: live"}
                     };
                     String[][] sinyantVerbosIrregulares = {
                             {"travel",
@@ -344,7 +344,7 @@ public class Main {
                             {"fast",
                                     "Complete the sentence with the correct English antonym:\nInstead of eating, he decided to ____ for the day. (eat)",
                                     "Choose the antonym of 'eat':\n(a) fast, (b) consume, (c) devour",
-                                    "Write the synonym of the following word: eat"},
+                                    "Write the antonym of the following word: eat"},
 
                             {"notice",
                                     "Complete the sentence with the correct English synonym:\nDid you ____ the rainbow yesterday? (see)",
@@ -354,7 +354,7 @@ public class Main {
                             {"give",
                                     "Complete the sentence with the correct English antonym:\nDon’t take the gift, try to ____ it. (take)",
                                     "Choose the antonym of 'take':\n(a) give, (b) grab, (c) seize",
-                                    "Write the synonym of the following word: take"},
+                                    "Write the antonym of the following word: take"},
 
                             {"arrive",
                                     "Complete the sentence with the correct English synonym:\nShe will ____ to the party later. (come)",
@@ -364,7 +364,7 @@ public class Main {
                             {"abstain",
                                     "Complete the sentence with the correct English antonym:\nShe drinks tea daily, but today she decided to ____. (drink)",
                                     "Choose the antonym of 'drink':\n(a) abstain, (b) sip, (c) gulp",
-                                    "Write the synonym of the following word: drink"},
+                                    "Write the antonym of the following word: drink"},
 
                             {"compose",
                                     "Complete the sentence with the correct English synonym:\nHe likes to ____ letters to his friends. (write)",
@@ -374,7 +374,7 @@ public class Main {
                             {"end",
                                     "Complete the sentence with the correct English antonym:\nWe will begin the meeting at 10 a.m. and ____ it at noon. (begin)",
                                     "Choose the antonym of 'begin':\n(a) end, (b) start, (c) commence",
-                                    "Write the synonym of the following word: begin"},
+                                    "Write the antonym of the following word: begin"},
 
                             {"sprint",
                                     "Complete the sentence with the correct English synonym:\nHe can ____ very fast in competitions. (run)",
@@ -384,7 +384,7 @@ public class Main {
                             {"fix",
                                     "Complete the sentence with the correct English antonym:\nThe vase broke, but she managed to ____ it. (break)",
                                     "Choose the antonym of 'break':\n(a) fix, (b) shatter, (c) crack",
-                                    "Write the synonym of the following word: break"}
+                                    "Write the antonym of the following word: break"}
                     };
                     String[][] sinyantSustantivos ={
                             {"profession",
@@ -395,7 +395,7 @@ public class Main {
                             {"incompetence",
                                     "Complete the sentence with the correct English antonym:\nThat student shows skill, but the other shows ____. (skill)",
                                     "Choose the antonym of 'skill':\n(a) incompetence, (b) ability, (c) expertise",
-                                    "Write the synonym of the following word: skill"},
+                                    "Write the antonym of the following word: skill"},
 
                             {"understanding",
                                     "Complete the sentence with the correct English synonym:\nReading gives us more ____. (knowledge)",
@@ -405,7 +405,7 @@ public class Main {
                             {"problem",
                                     "Complete the sentence with the correct English antonym:\nWe found a solution, but another team found a ____. (solution)",
                                     "Choose the antonym of 'solution':\n(a) problem, (b) answer, (c) resolution",
-                                    "Write the synonym of the following word: solution"},
+                                    "Write the antonym of the following word: solution"},
 
                             {"surroundings",
                                     "Complete the sentence with the correct English synonym:\nWe must protect our ____. (environment)",
@@ -415,7 +415,7 @@ public class Main {
                             {"inexperience",
                                     "Complete the sentence with the correct English antonym:\nHe has a lot of experience, but she has ____. (experience)",
                                     "Choose the antonym of 'experience':\n(a) inexperience, (b) practice, (c) expertise",
-                                    "Write the synonym of the following word: experience"},
+                                    "Write the antonym of the following word: experience"},
 
                             {"baggage",
                                     "Complete the sentence with the correct English synonym:\nShe packed her ____ before the trip. (luggage)",
@@ -425,7 +425,7 @@ public class Main {
                             {"vendor",
                                     "Complete the sentence with the correct English antonym:\nThe customer bought fruit, but the ____ sold it. (customer)",
                                     "Choose the antonym of 'customer':\n(a) vendor, (b) client, (c) buyer",
-                                    "Write the synonym of the following word: customer"},
+                                    "Write the antonym of the following word: customer"},
 
                             {"view",
                                     "Complete the sentence with the correct English synonym:\nEveryone has a different ____. (opinion)",
@@ -435,7 +435,7 @@ public class Main {
                             {"free flow",
                                     "Complete the sentence with the correct English antonym:\nThe traffic was heavy yesterday, but today there is ____. (traffic)",
                                     "Choose the antonym of 'traffic':\n(a) free flow, (b) jam, (c) congestion",
-                                    "Write the synonym of the following word: traffic"}
+                                    "Write the antonym of the following word: traffic"}
                     };
                     String[][] sinyantPreposiciones ={
                             {"over",
@@ -446,7 +446,7 @@ public class Main {
                             {"above",
                                     "Complete the sentence with the correct English antonym:\nThe shoes are below the bed, not ____ it. (below)",
                                     "Choose the antonym of 'below':\n(a) above, (b) under, (c) beneath",
-                                    "Write the synonym of the following word: below"},
+                                    "Write the antonym of the following word: below"},
 
                             {"amid",
                                     "Complete the sentence with the correct English synonym:\nShe was happy to be ____ friends. (among)",
@@ -456,7 +456,7 @@ public class Main {
                             {"alone",
                                     "Complete the sentence with the correct English antonym:\nHe was among friends yesterday, but today he is ____. (among)",
                                     "Choose the antonym of 'among':\n(a) alone, (b) together, (c) amidst",
-                                    "Write the synonym of the following word: among"},
+                                    "Write the antonym of the following word: among"},
 
                             {"within",
                                     "Complete the sentence with the correct English synonym:\nThe cat is hiding ____ the box. (inside)",
@@ -466,7 +466,7 @@ public class Main {
                             {"exterior",
                                     "Complete the sentence with the correct English antonym:\nThe cat is inside the box, not ____ it. (inside)",
                                     "Choose the antonym of 'inside':\n(a) exterior, (b) within, (c) inside",
-                                    "Write the synonym of the following word: inside"},
+                                    "Write the antonym of the following word: inside"},
 
                             {"onto",
                                     "Complete the sentence with the correct English synonym:\nHe climbed ____ the roof quickly. (onto)",
@@ -476,7 +476,7 @@ public class Main {
                             {"off",
                                     "Complete the sentence with the correct English antonym:\nHe jumped onto the roof, then got ____. (onto)",
                                     "Choose the antonym of 'onto':\n(a) off, (b) upon, (c) down",
-                                    "Write the synonym of the following word: onto"},
+                                    "Write the antonym of the following word: onto"},
 
                             {"around",
                                     "Complete the sentence with the correct English synonym:\nThey walked ____ the park. (around)",
@@ -486,7 +486,7 @@ public class Main {
                             {"far",
                                     "Complete the sentence with the correct English antonym:\nThe school is near the library, not ____ it. (near)",
                                     "Choose the antonym of 'near':\n(a) far, (b) close, (c) nearby",
-                                    "Write the synonym of the following word: near"}
+                                    "Write the antonym of the following word: near"}
                     };
                     String[][] sinyantAdjetivos ={
                             {"joyful",
@@ -497,7 +497,7 @@ public class Main {
                             {"happy",
                                     "Complete the sentence with the correct English antonym:\nHe looked sad, but later he was ____. (sad)",
                                     "Choose the antonym of 'sad':\n(a) happy, (b) joyful, (c) cheerful",
-                                    "Write the synonym of the following word: sad"},
+                                    "Write the antonym of the following word: sad"},
 
                             {"large",
                                     "Complete the sentence with the correct English synonym:\nThat is a very ____ house. (big)",
@@ -507,7 +507,7 @@ public class Main {
                             {"tiny",
                                     "Complete the sentence with the correct English antonym:\nThe puppy is big, but the kitten is ____. (small)",
                                     "Choose the antonym of 'small':\n(a) tiny, (b) large, (c) huge",
-                                    "Write the synonym of the following word: small"},
+                                    "Write the antonym of the following word: small"},
 
                             {"quick",
                                     "Complete the sentence with the correct English synonym:\nThe car is ____ and very expensive. (fast)",
@@ -517,7 +517,7 @@ public class Main {
                             {"sluggish",
                                     "Complete the sentence with the correct English antonym:\nThe cheetah is fast, but the turtle is ____. (fast)",
                                     "Choose the antonym of 'fast':\n(a) sluggish, (b) quick, (c) rapid",
-                                    "Write the synonym of the following word: fast"},
+                                    "Write the antonym of the following word: fast"},
 
                             {"lovely",
                                     "Complete the sentence with the correct English synonym:\nThe painting is ____. (beautiful)",
@@ -527,7 +527,7 @@ public class Main {
                             {"hideous",
                                     "Complete the sentence with the correct English antonym:\nThe painting is beautiful, but the wall is ____. (beautiful)",
                                     "Choose the antonym of 'beautiful':\n(a) hideous, (b) lovely, (c) pretty",
-                                    "Write the synonym of the following word: beautiful"},
+                                    "Write the antonym of the following word: beautiful"},
 
                             {"powerful",
                                     "Complete the sentence with the correct English synonym:\nShe is ____ enough to lift heavy boxes. (strong)",
@@ -537,7 +537,7 @@ public class Main {
                             {"fragile",
                                     "Complete the sentence with the correct English antonym:\nHe is strong, but after the illness he became ____. (strong)",
                                     "Choose the antonym of 'strong':\n(a) fragile, (b) mighty, (c) powerful",
-                                    "Write the synonym of the following word: strong"}
+                                    "Write the antonym of the following word: strong"}
                     };
                     String[][] sinyantExpresionesComunes ={
                             {"how’s it going?",
@@ -548,7 +548,7 @@ public class Main {
                             {"goodbye",
                                     "Complete the sentence with the correct English antonym:\nInstead of saying “how are you?”, he just said ____. (how are you?)",
                                     "Choose the antonym of 'how are you?':\n(a) goodbye, (b) hello, (c) hi",
-                                    "Write the synonym of the following expression: how are you?"},
+                                    "Write the antonym of the following expression: how are you?"},
 
                             {"it’s been a while",
                                     "Complete the sentence with the correct English synonym:\n“____, I missed you!” (long time no see)",
@@ -558,7 +558,7 @@ public class Main {
                             {"see you often",
                                     "Complete the sentence with the correct English antonym:\nInstead of “long time no see”, they said “____, we meet every day.” (long time no see)",
                                     "Choose the antonym of 'long time no see':\n(a) see you often, (b) it’s been a while, (c) rarely",
-                                    "Write the synonym of the following expression: long time no see"},
+                                    "Write the antonym of the following expression: long time no see"},
 
                             {"catch you later",
                                     "Complete the sentence with the correct English synonym:\nBye, ____! (see you later)",
@@ -568,7 +568,7 @@ public class Main {
                             {"goodbye forever",
                                     "Complete the sentence with the correct English antonym:\nInstead of “see you later”, she said “____ forever.” (see you later)",
                                     "Choose the antonym of 'see you later':\n(a) goodbye forever, (b) catch you later, (c) bye now",
-                                    "Write the synonym of the following expression: see you later"}
+                                    "Write the antonym of the following expression: see you later"}
                     };
 
                     //PALABRAS VOCABULARIO JUEGO COMPLETAR ORACIONES
