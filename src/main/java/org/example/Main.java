@@ -1467,68 +1467,6 @@ public class Main {
 
     }
     public static void modalidadJuegosVocabulario() {
-            String[][] PR_ACCIONES = {
-                    {"play", "Write a synonym of the following word:", "Write an antonym of the following word:", "participate", "stop"},
-                    {"work", "Write a synonym of the following word:", "Write an antonym of the following word:", "labor", "rest"},
-                    {"talk", "Write a synonym of the following word:", "Write an antonym of the following word:", "speak", "stay silent"},
-                    {"watch", "Write a synonym of the following word:", "Write an antonym of the following word:", "observe", "ignore"},
-                    {"clean", "Write a synonym of the following word:", "Write an antonym of the following word:", "tidy", "mess"},
-                    {"open", "Write a synonym of the following word:", "Write an antonym of the following word:", "unlock", "close"},
-                    {"help", "Write a synonym of the following word:", "Write an antonym of the following word:", "assist", "abandon"},
-                    {"start", "Write a synonym of the following word:", "Write an antonym of the following word:", "begin", "finish"},
-                    {"call", "Write a synonym of the following word:", "Write an antonym of the following word:", "phone", "ignore"},
-                    {"live", "Write a synonym of the following word:", "Write an antonym of the following word:", "reside", "die"}
-            };
-            String[][] PR_PERSONASYRELACIONES = {
-                    {"career", "Write a synonym of the following word:", "Write an antonym of the following word:", "profession", "unemployment"},
-                    {"skill", "Write a synonym of the following word:", "Write an antonym of the following word:", "ability", "incompetence"},
-                    {"knowledge", "Write a synonym of the following word:", "Write an antonym of the following word:", "understanding", "ignorance"},
-                    {"solution", "Write a synonym of the following word:", "Write an antonym of the following word:", "answer", "problem"},
-                    {"environment", "Write a synonym of the following word:", "Write an antonym of the following word:", "surroundings", "pollution"},
-                    {"experience", "Write a synonym of the following word:", "Write an antonym of the following word:", "practice", "inexperience"},
-                    {"luggage", "Write a synonym of the following word:", "Write an antonym of the following word:", "baggage", "unpacked items"},
-                    {"customer", "Write a synonym of the following word:", "Write an antonym of the following word:", "client", "seller"},
-                    {"opinion", "Write a synonym of the following word:", "Write an antonym of the following word:", "view", "fact"},
-                    {"traffic", "Write a synonym of the following word:", "Write an antonym of the following word:", "vehicles", "free flow"}
-            };
-            String[][] PR_DESCRIPCIONES = {
-                    {"happy", "Write a synonym of the following word:", "Write an antonym of the following word:", "joyful", "sad"},
-                    {"sad", "Write a synonym of the following word:", "Write an antonym of the following word:", "unhappy", "happy"},
-                    {"big", "Write a synonym of the following word:", "Write an antonym of the following word:", "large", "small"},
-                    {"small", "Write a synonym of the following word:", "Write an antonym of the following word:", "tiny", "big"},
-                    {"fast", "Write a synonym of the following word:", "Write an antonym of the following word:", "quick", "slow"},
-                    {"slow", "Write a synonym of the following word:", "Write an antonym of the following word:", "unhurried", "fast"},
-                    {"beautiful", "Write a synonym of the following word:", "Write an antonym of the following word:", "lovely", "ugly"},
-                    {"ugly", "Write a synonym of the following word:", "Write an antonym of the following word:", "unpleasant", "beautiful"},
-                    {"strong", "Write a synonym of the following word:", "Write an antonym of the following word:", "powerful", "weak"},
-                    {"weak", "Write a synonym of the following word:", "Write an antonym of the following word:", "fragile", "strong"}
-            };
-
-            String[][] PR_UBICACION = {
-                    {"above", "Write a synonym of the following word:", "Write an antonym of the following word:", "over", "below"},
-                    {"below", "Write a synonym of the following word:", "Write an antonym of the following word:", "under", "above"},
-                    {"between", "Write a synonym of the following word:", "Write an antonym of the following word:", "in the middle", "outside"},
-                    {"among", "Write a synonym of the following word:", "Write an antonym of the following word:", "amid", "alone"},
-                    {"inside", "Write a synonym of the following word:", "Write an antonym of the following word:", "within", "outside"},
-                    {"outside", "Write a synonym of the following word:", "Write an antonym of the following word:", "outdoors", "inside"},
-                    {"onto", "Write a synonym of the following word:", "Write an antonym of the following word:", "on top of", "off"},
-                    {"off", "Write a synonym of the following word:", "Write an antonym of the following word:", "away", "onto"},
-                    {"around", "Write a synonym of the following word:", "Write an antonym of the following word:", "surrounding", "far"},
-                    {"near", "Write a synonym of the following word:", "Write an antonym of the following word:", "close", "far"}
-            };
-            String[][] PR_EXPRESIONES = {
-                    {"How are you?", "Write a synonym of the following expression:", "Write an antonym of the following expression:", "How's it going?", "Goodbye"},
-                    {"What's up?", "Write a synonym of the following expression:", "Write an antonym of the following expression:", "What's going on?", "Nothing"},
-                    {"Long time no see", "Write a synonym of the following expression:", "Write an antonym of the following expression:", "It's been a while", "See you every day"},
-                    {"Take care", "Write a synonym of the following expression:", "Write an antonym of the following expression:", "Be safe", "Be careless"},
-                    {"See you later", "Write a synonym of the following expression:", "Write an antonym of the following expression:", "Catch you later", "Goodbye forever"},
-                    {"Nice to meet you", "Write a synonym of the following expression:", "Write an antonym of the following expression:", "Pleased to meet you", ""},
-                    {"Have a good day", "Write a synonym of the following expression:", "Write an antonym of the following expression:", "Have a nice day", ""},
-                    {"Don't worry", "Write a synonym of the following expression:", "Write an antonym of the following expression:", "It's okay", "Be anxious"},
-                    {"It's up to you", "Write a synonym of the following expression:", "Write an antonym of the following expression:", "You decide", "I decide"},
-                    {"By the way", "Write a synonym of the following expression:", "Write an antonym of the following expression:", "Incidentally", ""}
-            };
-
             System.out.println("Has elegido la Modalidad Juegos, en el nivel " + nnombre);
         int vjuego;
         System.out.println("Ingresa el juego que te gustaría jugar\n1- Palabras relacionadas\n2- Completar oraciones\n3- Adivinar la palabra");
@@ -1561,7 +1499,6 @@ public class Main {
     }
 
     public static void vjPalabrasRelacionadas() {
-
         aciertos = 0;
         errores = 0;
         contadorFallos = 0;
