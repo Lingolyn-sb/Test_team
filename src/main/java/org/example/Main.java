@@ -23,6 +23,7 @@ public class Main {
         static String[][] PALABRAS_VOCABULARIO;
         static String[][] PALABRAS_RELACIONADAS;
         static String[][] COMPLETAR_ORACIONES;
+         static String[][] ADIVINAR_PALABRAS;
         static String palabraSecreta;
         static char[] palabraAdivinada;
         static char[] letrasIncorrectas = new char[6];
@@ -804,7 +805,79 @@ public class Main {
                                     "Complete the sentence with the correct English expression:\nDuring the discussion, she used ______ to introduce a new topic."
                             }
                     };
-                    //PALABRAS VOCABULARIO ADIVIDAR PALABRAS
+                   //PALABRAS VOCABULARIO ADIVIDAR PALABRAS (ap)
+                    String[][] apVerboregulares = {
+                            {"play", "Try to guess the next word\nP__y", "Try to guess the next word\nPl__", "Try to guess the next word\n__ay" },
+                            {"work","Try to guess the next word\nW__k","Try to guess the next word\nWo__","Try to guess the next word\n__rk"},
+                            {"talk","Try to guess the next word\nT__k","Try to guess the next word\nTa__","Try to guess the next word\n__lk"},
+                            {"watch","Try to guess the next word\nW___h","Try to guess the next word\nWa___","Try to guess the next word\n___hc"},
+                            {"clean","Try to guess the next word\nC___n","Try to guess the next word\nCl___","Try to guess the next word\n___an"},
+                            {"open","Try to guess the next word\nO__n","Try to guess the next word\nOp__","Try to guess the next word\n__en"},
+                            {"help","Try to guess the next word\nH__p","Try to guess the next word\nHe__","Try to guess the next word\n__lp"},
+                            {"start","Try to guess the next word\nS___t","Try to guess the next word\nSt___","Try to guess the next word\n___rt"},
+                            {"call","Try to guess the next word\nC__l","Try to guess the next word\nCa__","Try to guess the next word\n__ll"},
+                            {"live","Try to guess the next word\nL__e","Try to guess the next word\nLi__","Try to guess the next word\n__ve"}
+                            };
+                    String[][] apVerboIrregulares = {
+                            {"go", "Try to guess the next word\nG_", "Try to guess the next word\n_o", "Try to guess the next word\n_o"},
+                            {"eat", "Try to guess the next word\nE__", "Try to guess the next word\n_at", "Try to guess the next word\nEa_"},
+                            {"see", "Try to guess the next word\nS_e", "Try to guess the next word\n_ee", "Try to guess the next word\nSe_"},
+                            {"take", "Try to guess the next word\nT_k_", "Try to guess the next word\nTa__", "Try to guess the next word\n__ke"},
+                            {"come", "Try to guess the next word\nC_me", "Try to guess the next word\nCo__", "Try to guess the next word\n__me"},
+                            {"drink", "Try to guess the next word\nD__nk", "Try to guess the next word\nDr___", "Try to guess the next word\n___nk"},
+                            {"write", "Try to guess the next word\nWr__e", "Try to guess the next word\nWr___", "Try to guess the next word\n___te"},
+                            {"begin", "Try to guess the next word\nB____", "Try to guess the next word\nBe___", "Try to guess the next word\n___in"},
+                            {"run", "Try to guess the next word\nR__", "Try to guess the next word\nRu_", "Try to guess the next word\n_un"},
+                            {"break", "Try to guess the next word\nB__ak", "Try to guess the next word\nBr___", "Try to guess the next word\n___ak"}
+                    };
+                    String[][] apSustantivo = {
+                            {"career", "Try to guess the next word\nC____r", "Try to guess the next word\nCa__er", "Try to guess the next word\n___eer"},
+                            {"skill", "Try to guess the next word\nS___l", "Try to guess the next word\nSk___", "Try to guess the next word\n___ill"},
+                            {"knowledge", "Try to guess the next word\nKnow____e", "Try to guess the next word\nKn_____ge", "Try to guess the next word\n___wledge"},
+                            {"solution", "Try to guess the next word\nS_____on", "Try to guess the next word\nSolu____", "Try to guess the next word\n____tion"},
+                            {"environment", "Try to guess the next word\nE_____nment", "Try to guess the next word\nEn____nment", "Try to guess the next word\n_______ment"},
+                            {"experience", "Try to guess the next word\nEx____ence", "Try to guess the next word\nEx______ce", "Try to guess the next word\n______ence"},
+                            {"luggage", "Try to guess the next word\nL___age", "Try to guess the next word\nLu___ge", "Try to guess the next word\n___gage"},
+                            {"customer", "Try to guess the next word\nC____mer", "Try to guess the next word\nCu____er", "Try to guess the next word\n____omer"},
+                            {"opinion", "Try to guess the next word\nOpi____", "Try to guess the next word\nOp___on", "Try to guess the next word\n___nion"},
+                            {"traffic", "Try to guess the next word\nT____ic", "Try to guess the next word\nTr___ic", "Try to guess the next word\n___ffic"}
+                    };
+                    String[][] apPreposiciones = {
+                            {"above", "Try to guess the next word\nAb__e", "Try to guess the next word\nAb___", "Try to guess the next word\n__ove"},
+                            {"below", "Try to guess the next word\nB_l_w", "Try to guess the next word\nBe___", "Try to guess the next word\n__low"},
+                            {"between", "Try to guess the next word\nB_tw__n", "Try to guess the next word\nBe_w___", "Try to guess the next word\n___ween"},
+                            {"among", "Try to guess the next word\nA__ng", "Try to guess the next word\nAm___", "Try to guess the next word\n__ong"},
+                            {"inside", "Try to guess the next word\nIn___e", "Try to guess the next word\nIn____", "Try to guess the next word\n__side"},
+                            {"outside", "Try to guess the next word\nO_t___e", "Try to guess the next word\nOu___de", "Try to guess the next word\n___side"},
+                            {"onto", "Try to guess the next word\nO_to", "Try to guess the next word\nOn__", "Try to guess the next word\n__to"},
+                            {"off", "Try to guess the next word\nO_f", "Try to guess the next word\nOf_", "Try to guess the next word\n_ff"},
+                            {"around", "Try to guess the next word\nAro__d", "Try to guess the next word\nAr____", "Try to guess the next word\n__ound"},
+                            {"near", "Try to guess the next word\nN_ar", "Try to guess the next word\nNe__", "Try to guess the next word\n__ar"}
+                    };
+                    String[][] apAdjetivos = {
+                            {"happy", "Try to guess the next word\nH___y", "Try to guess the next word\nHa___", "Try to guess the next word\n__ppy"},
+                            {"sad", "Try to guess the next word\nS__", "Try to guess the next word\nSa_", "Try to guess the next word\n_ad"},
+                            {"big", "Try to guess the next word\nB__", "Try to guess the next word\nBi_", "Try to guess the next word\n_ig"},
+                            {"small", "Try to guess the next word\nS____", "Try to guess the next word\nSm___", "Try to guess the next word\n__all"},
+                            {"fast", "Try to guess the next word\nF___", "Try to guess the next word\nFa__", "Try to guess the next word\n__st"},
+                            {"slow", "Try to guess the next word\nS___", "Try to guess the next word\nSl__", "Try to guess the next word\n__ow"},
+                            {"beautiful", "Try to guess the next word\nBea_____l", "Try to guess the next word\nBe_uti__l", "Try to guess the next word\n___utiful"},
+                            {"ugly", "Try to guess the next word\nU___", "Try to guess the next word\nUg__", "Try to guess the next word\n__ly"},
+                            {"strong", "Try to guess the next word\nStr__g", "Try to guess the next word\nSt_on_", "Try to guess the next word\n__rong"},
+                            {"weak", "Try to guess the next word\nW___", "Try to guess the next word\nWe__", "Try to guess the next word\n__ak"}
+                    };
+                    String[][] apExpresionescomunes = {
+                            {"How are you?", "Try to guess the next word\nH__ are you?", "Try to guess the next word\nHo_ ___ you?", "Try to guess the next word\n__w are you?"},
+                            {"What’s up?", "Try to guess the next word\nW___’s up?", "Try to guess the next word\nWh__’s __", "Try to guess the next word\n__at’s up?"},
+                            {"Long time no see", "Try to guess the next word\nL___ time no see", "Try to guess the next word\nLo__ ____ no see", "Try to guess the next word\n___g time no see"},
+                            {"Take care", "Try to guess the next word\nT___ care", "Try to guess the next word\nTa__ ____", "Try to guess the next word\n___e care"},
+                            {"See you later", "Try to guess the next word\nS__ you later", "Try to guess the next word\nSe_ ___ later", "Try to guess the next word\n__e you later"},
+                            {"Nice to meet you", "Try to guess the next word\nN___ to meet you", "Try to guess the next word\nNi__ __ meet you", "Try to guess the next word\n___e to meet you"},
+                            {"Have a good day", "Try to guess the next word\nH___ a good day", "Try to guess the next word\nHa__ a go__ day", "Try to guess the next word\n___e a good day"},
+                            {"Don’t worry", "Try to guess the next word\nD__'_ worry", "Try to guess the next word\nDo_'_ __rry", "Try to guess the next word\n__n’t worry"},
+                            {"It’s up to you", "Try to guess the next word\nI_'_ up to you", "Try to guess the next word\nIt'_ __ to you", "Try to guess the next word\n__’s up to you"},
+                            {"By the way", "Try to guess the next word\nB_ the way", "Try to guess the next word\nBy_ ___ way", "Try to guess the next word\n___ the way"}
+                    };
                         int nivelVocabulario;
                     System.out.println("            Ingresa la categoría gramatical que deseas estudiar (recuerda que se dara por hecho que ya has cursado las categorías gramaticales anterirores a ella):");
                     System.out.println("            1.Verbo\n" + "            2.Sustantivo\n" + "            3.Preposiciones\n" + "            4.Adjetivos\n" + "            5.Expresiones comunes");
@@ -818,19 +891,21 @@ public class Main {
                                 System.out.println("Selecciona la forma de verbo que deseas estudiar");
                                 System.out.println("1.Verbos Regulares\n" + "2.Verbos Irregulares");
                                 formadeverbo = sc.nextInt();
-                                do {
+                              do {
                                     switch (formadeverbo) {
                                         case 1:
                                             System.out.println("Has elegido verbos regulares");
                                             PALABRAS_VOCABULARIO = nvVerboregulares;
                                             PALABRAS_RELACIONADAS = sinyantVerbosRegulares;
                                             COMPLETAR_ORACIONES = coVerbosregulares;
+                                            ADIVINAR_PALABRAS = apVerboregulares;
                                          break;
                                         case 2:
                                             System.out.println("Has elegido verbos irregulares");
                                             PALABRAS_VOCABULARIO = nvVerbosirregulares;
                                             PALABRAS_RELACIONADAS = sinyantVerbosIrregulares;
                                             COMPLETAR_ORACIONES = coVerbosIrregulares;
+                                            ADIVINAR_PALABRAS = apVerboIrregulares;
                                             break;
                                         default:
                                             System.out.print("Opción invalida, debes ingresar 1 o 2. Intenta de nuevo: ");
@@ -845,6 +920,7 @@ public class Main {
                                 PALABRAS_VOCABULARIO = nvSustantivo;
                                 PALABRAS_RELACIONADAS = sinyantSustantivos;
                                 COMPLETAR_ORACIONES = coSustantivos;
+                                ADIVINAR_PALABRAS = apSustantivo;
                                 break;
 
                             case 3:
@@ -852,6 +928,7 @@ public class Main {
                                 PALABRAS_VOCABULARIO = nvPreposiciones;
                                 PALABRAS_RELACIONADAS = sinyantPreposiciones;
                                 COMPLETAR_ORACIONES = coPreposiciones;
+                                ADIVINAR_PALABRAS = apPreposiciones;
                                 break;
 
                             case 4:
@@ -859,6 +936,7 @@ public class Main {
                                 PALABRAS_VOCABULARIO = nvAdjetivos;
                                 PALABRAS_RELACIONADAS = sinyantAdjetivos;
                                 COMPLETAR_ORACIONES = coAdjetivos;
+                                ADIVINAR_PALABRAS = apAdjetivos;
                                 break;
 
                             case 5:
@@ -866,6 +944,7 @@ public class Main {
                                 PALABRAS_VOCABULARIO = nvExpresionescomunes;
                                 PALABRAS_RELACIONADAS = sinyantExpresionesComunes;
                                 COMPLETAR_ORACIONES = coExpresionesComunes;
+                                ADIVINAR_PALABRAS = apExpresionescomunes;
                                 break;
 
                             default:
@@ -1584,12 +1663,86 @@ public class Main {
 
     }
 
-    public static void vjAdiviniarPalabras() {
+     public static void vjAdiviniarPalabras() {
+        aciertos = 0;
+        errores = 0;
+        contadorFallos = 0;
+        for (int i = 0; i < palabrasFalladas.length; i++) palabrasFalladas[i] = -1;
         bienvenida();
         System.out.println("En este juego deberás:\n1. Adivinar la palabra en inglés que se te presenta escribiéndola correctamente, usando las pistas que recibas.\n2. Cada intento recibirá retroalimentación inmediata, y si fallas, el sistema mostrará la palabra correcta.\n3. Al finalizar la ronda, verás un resumen de resultados con tus aciertos y errores.");
         contador();
-    }
 
-   
+        // PRIMERA RONDA
+        for (int i = 0; i < 10; i++) {
+            int pista = (int) (Math.random() * 3);
+            pistaUsada[i] = pista;
+
+            String prompt = ADIVINAR_PALABRAS[i][pista + 1];
+            System.out.println("Pregunta " + (i + 1) + ":");
+            System.out.println(ADIVINAR_PALABRAS[i][pista + 1]);
+            System.out.print("Tu respuesta: ");
+            String respuesta = sc.nextLine().trim();
+
+            String correcta = ADIVINAR_PALABRAS[i][0].trim();
+
+            if (respuesta.equalsIgnoreCase(correcta)) {
+                System.out.println("\n✔ Correcto!");
+                aciertos++;
+            } else {
+                System.out.println("\n✘ Incorrecto. La respuesta correcta era: " + correcta);
+                errores++;
+                palabrasFalladas[contadorFallos++] = i;
+            }
+
+            System.out.println("Presiona ENTER para continuar...");
+            sc.nextLine();// pausa hasta que el usuario presione Enter
+        }
+
+        // SEGUNDA RONDA
+        if (contadorFallos > 0) {
+            System.out.println("\n--- Ronda de repaso para palabras falladas ---");
+            for (int f = 0; f < contadorFallos; f++) {
+                int indicePalabra = palabrasFalladas[f];
+
+
+                int pista2;
+                do {
+                    pista2 = (int) (Math.random() * 3);
+                } while (pista2 == pistaUsada[indicePalabra]);
+
+                String prompt2 = ADIVINAR_PALABRAS[indicePalabra][pista2 + 1];
+                System.out.println("\nRepetición palabra " + (f + 1) + ":");
+                System.out.println(prompt2);
+
+                System.out.print("Tu respuesta: ");
+                String respuesta2 = sc.nextLine().trim().toLowerCase();
+
+                String correcta2 = ADIVINAR_PALABRAS[indicePalabra][0].toLowerCase();
+
+                if (respuesta2.equals(correcta2)) {
+                    System.out.println("✔ Correcto!");
+                    aciertos++;
+                } else {
+                    System.out.println("✘ Incorrecto de nuevo. La correcta era: " + correcta2);
+                    errores++;
+                }
+
+                System.out.println("Presiona ENTER para continuar...");
+                sc.nextLine();
+            }
+        }
+
+        // RESUMEN FINAL
+        System.out.println("\n--- RESULTADOS FINALES ---");
+        System.out.println("Aciertos: " + aciertos);
+        System.out.println("Errores: " + errores);
+        if (contadorFallos > 0) {
+            System.out.print("Palabras que preguntamos otra vez: ");
+            for (int i = 0; i < contadorFallos; i++) {
+                System.out.print(ADIVINAR_PALABRAS[palabrasFalladas[i]][0] + (i < contadorFallos - 1 ? ", " : "\n"));
+            }
+        }
+
+    }
 
 }
