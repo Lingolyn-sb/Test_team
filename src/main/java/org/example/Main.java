@@ -199,7 +199,7 @@ public class Main {
                 case 2:
                     nivel = "la categoría gramatical";
                     /*Preguntar modalidad Vocabulario*/
-                    System.out.println(usuario + ", elegiste:\n ");
+                    System.out.println(                  usuario + ", elegiste:\n ");
                     String art2 =
                             "           /==========================================================\\\n" +
                                     "           ||__     __              _           _            _       ||\n" +
