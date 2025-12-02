@@ -15,7 +15,7 @@ public class FF {
     static int contadorFallos = 0;
     static int[] pistaUsada = new int[10];
     static Random random = new Random();
-    
+
     static final String[] PALABRAS_BASE = {};
     static String[] PALABRAS_JUEGO = PALABRAS_BASE;
     static String[][] PALABRAS_VOCABULARIO;
@@ -1153,7 +1153,7 @@ public class FF {
         int sbRetoJuego;
         do {
             System.out.print("          ");
-                sbRetoJuego = sc.nextInt();
+            sbRetoJuego = sc.nextInt();
             switch (sbRetoJuego) {
                 case 1:
                     String artRetoSpb=("          __________        __                \n" +
@@ -1167,7 +1167,7 @@ public class FF {
                     System.out.println("          ¡Excelente decisión! Ahora porfavor ingresa el numero de reto que te gustaría jugar\n          1- Deletreo Rápido\n          2- Desafío de Precisión");
                     int sbReto;
                     do {
-                            sbReto = sc.nextInt();
+                        sbReto = sc.nextInt();
                         switch (sbReto) {
                             case 1:
                                 allnombre = "reto Deletreo Rápido";
@@ -1197,7 +1197,7 @@ public class FF {
                     int sbJuego;
                     do {
                         System.out.print("          ");
-                            sbJuego = sc.nextInt();
+                        sbJuego = sc.nextInt();
                         switch (sbJuego) {
                             case 1:
                                 allnombre = "juego Ahorcado";
@@ -1241,87 +1241,87 @@ public class FF {
                 "                         /_/                             ");
         System.out.println(artDeletreo);
         String[][] matriz = obtenerMatrizPorNivel();
-            aciertos = 0;
-            errores = 0;
+        aciertos = 0;
+        errores = 0;
 
-            bienvenida();
-            System.out.println("En este reto deberás:\n-Escribir la mayor cantidad de palabras correctamente en 1 MINUTO (60 segundos).\n-La pista será siempre la traducción al español.\n-No hay límite de errores; solo el tiempo.");
-            contador();
-
-
-            long tiempoInicio = System.currentTimeMillis();
-            long duracionLimite = 60000;
+        bienvenida();
+        System.out.println("En este reto deberás:\n-Escribir la mayor cantidad de palabras correctamente en 1 MINUTO (60 segundos).\n-La pista será siempre la traducción al español.\n-No hay límite de errores; solo el tiempo.");
+        contador();
 
 
-            int palabraActualIndex = 0;
+        long tiempoInicio = System.currentTimeMillis();
+        long duracionLimite = 60000;
 
 
-            String[] palabrasFalladasRapido = new String[matriz.length * 2];
-            int indiceFalladasRapido = 0;
-
-            sc.nextLine();
-
-            System.out.println("--- ¡INICIA EL RETO! Tienes 1 minuto. ---");
+        int palabraActualIndex = 0;
 
 
-            while (System.currentTimeMillis() - tiempoInicio < duracionLimite) {
+        String[] palabrasFalladasRapido = new String[matriz.length * 2];
+        int indiceFalladasRapido = 0;
+
+        sc.nextLine();
+
+        System.out.println("--- ¡INICIA EL RETO! Tienes 1 minuto. ---");
 
 
-                int indice = palabraActualIndex % matriz.length;
-                String palabraCorrecta = matriz[indice][0].trim();
-                String pistaTraduccion = matriz[indice][3];
+        while (System.currentTimeMillis() - tiempoInicio < duracionLimite) {
 
 
-                long tiempoTranscurrido = System.currentTimeMillis() - tiempoInicio;
-                long tiempoRestante = (duracionLimite - tiempoTranscurrido) / 1000;
-
-                System.out.println("\n(Tiempo restante: " + tiempoRestante + "s) | Palabra #" + (palabraActualIndex + 1));
-                System.out.println(pistaTraduccion);
+            int indice = palabraActualIndex % matriz.length;
+            String palabraCorrecta = matriz[indice][0].trim();
+            String pistaTraduccion = matriz[indice][3];
 
 
-                if (tiempoRestante <= 0) {
-                    break;
-                }
+            long tiempoTranscurrido = System.currentTimeMillis() - tiempoInicio;
+            long tiempoRestante = (duracionLimite - tiempoTranscurrido) / 1000;
 
-                System.out.print("Tu respuesta: ");
-                String respuesta = sc.nextLine().trim();
-
-
-                if (System.currentTimeMillis() - tiempoInicio >= duracionLimite) {
-                    System.out.println("\n*** ¡TIEMPO TERMINADO! Su respuesta fue fuera de tiempo. ***");
-                    break;
-                }
+            System.out.println("\n(Tiempo restante: " + tiempoRestante + "s) | Palabra #" + (palabraActualIndex + 1));
+            System.out.println(pistaTraduccion);
 
 
-                if (respuesta.equalsIgnoreCase(palabraCorrecta)) {
-                    System.out.println("✔ ¡CORRECTO!");
-                    aciertos++;
-                } else {
-                    System.out.println("✘ INCORRECTO. La respuesta correcta era: " + palabraCorrecta);
-                    errores++;
-                    if (indiceFalladasRapido < palabrasFalladasRapido.length) {
-                        palabrasFalladasRapido[indiceFalladasRapido] = palabraCorrecta;
-                        indiceFalladasRapido++;
-                    }
-                }
+            if (tiempoRestante <= 0) {
+                break;
+            }
 
-                palabraActualIndex++;
+            System.out.print("Tu respuesta: ");
+            String respuesta = sc.nextLine().trim();
+
+
+            if (System.currentTimeMillis() - tiempoInicio >= duracionLimite) {
+                System.out.println("\n*** ¡TIEMPO TERMINADO! Su respuesta fue fuera de tiempo. ***");
+                break;
             }
 
 
-            System.out.println("\n--- ¡TIEMPO TERMINADO! ---");
-            System.out.println("--- RESULTADOS RETO DELETREO RÁPIDO (" + nnombre + ") ---");
-            System.out.println("Total de palabras intentadas: " + palabraActualIndex);
-            System.out.println("✔ Aciertos: " + aciertos);
-            System.out.println("✘ Errores: " + errores);
-
-            if (indiceFalladasRapido > 0) {
-                System.out.println("\nPalabras falladas (para repasar):");
-                for (int i = 0; i < indiceFalladasRapido; i++) {
-                    System.out.print(palabrasFalladasRapido[i] + (i < indiceFalladasRapido - 1 ? ", " : ""));
+            if (respuesta.equalsIgnoreCase(palabraCorrecta)) {
+                System.out.println("✔ ¡CORRECTO!");
+                aciertos++;
+            } else {
+                System.out.println("✘ INCORRECTO. La respuesta correcta era: " + palabraCorrecta);
+                errores++;
+                if (indiceFalladasRapido < palabrasFalladasRapido.length) {
+                    palabrasFalladasRapido[indiceFalladasRapido] = palabraCorrecta;
+                    indiceFalladasRapido++;
                 }
-                System.out.println();
             }
+
+            palabraActualIndex++;
+        }
+
+
+        System.out.println("\n--- ¡TIEMPO TERMINADO! ---");
+        System.out.println("--- RESULTADOS RETO DELETREO RÁPIDO (" + nnombre + ") ---");
+        System.out.println("Total de palabras intentadas: " + palabraActualIndex);
+        System.out.println("✔ Aciertos: " + aciertos);
+        System.out.println("✘ Errores: " + errores);
+
+        if (indiceFalladasRapido > 0) {
+            System.out.println("\nPalabras falladas (para repasar):");
+            for (int i = 0; i < indiceFalladasRapido; i++) {
+                System.out.print(palabrasFalladasRapido[i] + (i < indiceFalladasRapido - 1 ? ", " : ""));
+            }
+            System.out.println();
+        }
     }
 
     public static void sbrDesafioPrecision() {
@@ -1622,6 +1622,83 @@ public class FF {
         bienvenida();
         System.out.println("           En este juego deberás:\n           1. Completar la palabra escribiendo las letras que faltan en los espacios correspondientes.\n           2. Cada intento recibirá retroalimentación inmediata, y se contabilizarán tus aciertos y errores.\n           3. Presta atención a la posición de cada letra, ya que solo contará si la colocas en el lugar correcto.");
         contador();
+        String[] nsbBasicoA = {"ADD", "EYE", "EAR", "BOAT", "HAPPY", "LION", "NIGHT", "MILK", "UNCLE", "THANK"};
+        String[] nsbMedioA = {"CHEF", "BRUSH", "SISTER", "DESERT", "KITCHEN", "MONDAY", "BREAKFAST", "HORSE", "QUITE", "LISTEN"};
+        String[] nsbNormalA = {"INTELLIGENT", "INCREDIBLE", "CLASSMATE", "CELEBRATION", "SCISSORS", "TELEVISION", "KILOMETER", "DIAGRAM", "JANUARY", "MEXICAN"};
+        String[] nsbDificilA = {"DISAPPEAR", "APOLOGIZE", "APPRECIATE", "IMMEDIATELY", "KNOCK", "LICENSE", "WEIGH", "RHYME", "MULTIMEDIA", "MYSTERIOUS"};
+        String[] nsbExpertA = {"EMBARRASS", "PUNCTURE", "SUSTAINABLE", "ACKNOWLEDGE", "WRIGGLE", "GREASE", "HARASS", "DECEIVE", "GUARANTEE"};
+
+        switch (nivelSpellingBee) {
+            case 1:
+                nnombre = "Básico";
+                PALABRAS_JUEGO = nsbBasicoA;
+                break;
+            case 2:
+                nnombre = "Medio";
+                PALABRAS_JUEGO = nsbMedioA;
+                break;
+            case 3:
+                nnombre = "Normal";
+                PALABRAS_JUEGO = nsbNormalA;
+                break;
+            case 4:
+                nnombre = "Difícil";
+                PALABRAS_JUEGO = nsbDificilA;
+                break;
+            case 5:
+                nnombre = "Experto";
+                PALABRAS_JUEGO = nsbExpertA;
+                break;
+            default:
+                System.out.print("              Opción invalida. Ese número no corresponde a ningún nivel. Intenta de nuevo: ");
+                break;
+        }
+        contadorIncorrectas = 0;
+        letrasIncorrectas = new char[INTENTOS_MAXIMOS];
+        seleccionarPalabra();
+        inicializarPalabraAdivinada();
+
+
+        Scanner sc = new Scanner(System.in);
+
+        while (!juegoTerminado()) {
+            mostrarEstadoDelJuego();
+            System.out.print("          Introduce letra y posición (ejemplo: A 0): ");
+            String input = sc.next().toUpperCase();
+
+            if (input.length() != 1 || !Character.isLetter(input.charAt(0))) {
+                System.out.println("          Entrada inválida. Por favor, introduce una sola letra.");
+                continue;
+            }
+            char letra = input.charAt(0);
+
+            int posicion = sc.nextInt();
+
+            if (posicion < 0 || posicion >= palabraSecreta.length()) {
+                System.out.println("          Posición fuera de rango.");
+                continue;
+            }
+
+            if (palabraSecreta.charAt(posicion) == letra) {
+                if (palabraAdivinada[posicion] == '_') {
+                    palabraAdivinada[posicion] = letra;
+                    System.out.println("          ¡Correcto!");
+                } else {
+                    System.out.println("          Esa posición ya está completa.");
+                }
+            } else {
+                System.out.println("          Error, esa letra no corresponde en esa posición.");
+                letrasIncorrectas[contadorIncorrectas] = letra;
+                contadorIncorrectas++;
+            }
+        }
+
+        mostrarEstadoDelJuego();
+        if (palabraCompletada()) {
+            System.out.println("          ¡Ganaste! La palabra era: " + palabraSecreta);
+        } else {
+            System.out.println("          ¡Perdiste! La palabra era: " + palabraSecreta);
+        }
     }
 
     public static void sbjOrdenarLetras(){
