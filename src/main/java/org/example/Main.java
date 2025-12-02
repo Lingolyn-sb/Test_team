@@ -1,9 +1,7 @@
-package org.example;
-
 import java.util.Scanner;
 import java.util.Random;
 import java.util.Arrays;
-public class Main {
+public class FF {
     static Scanner sc = new Scanner(System.in);
     static String usuario;
     static String nnombre;
@@ -17,9 +15,7 @@ public class Main {
     static int contadorFallos = 0;
     static int[] pistaUsada = new int[10];
     static Random random = new Random();
-
-
-
+    
     static final String[] PALABRAS_BASE = {};
     static String[] PALABRAS_JUEGO = PALABRAS_BASE;
     static String[][] PALABRAS_VOCABULARIO;
@@ -87,9 +83,9 @@ public class Main {
                 "                =:::::::::::::::::::::::::::::#+:-@-:::::::::::::::::::::::::::::\n" +
                 "                =::::::::::::::::::::::::::#@@@=:-@@@@-::::::::::::::::::::::::::\n");
         System.out.println("       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" +
-                "       ~░█▀▄░▀█▀░█▀▀░█▀█░█░█░█▀▀░█▀█░▀█▀░█▀▄░▄▀▄░░░█▀█░░░█░░░▀█▀░█▀█░█▀▀░█▀█░█░░░█░█░█▀█~\n" +
-                "       ~░█▀▄░░█░░█▀▀░█░█░▀▄▀░█▀▀░█░█░░█░░█░█░█▀▀░░░█▀█░░░█░░░░█░░█░█░█░█░█░█░█░░░░█░░█░█~\n" +
-                "       ~░▀▀░░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀░▀▀▀░▀▀░░░▀░░░░▀░▀░░░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░▀░░▀░▀~\n" +
+                "       ~░█▀▄░▀█▀░█▀▀░█▀█░█░█░█▀▀░█▀█░▀█▀░█▀▄░█▀█░░░█▀█░░░█░░░▀█▀░█▀█░█▀▀░█▀█░█░░░█░█░█▀█~\n" +
+                "       ~░█▀▄░░█░░█▀▀░█░█░▀▄▀░█▀▀░█░█░░█░░█░█░█░█░░░█▀█░░░█░░░░█░░█░█░█░█░█░█░█░░░░█░░█░█~\n" +
+                "       ~░▀▀░░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀░▀▀▀░▀▀░░▀▀▀░░░▀░▀░░░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░▀░░▀░▀~\n" +
                 "       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("\n");
         registro();
@@ -106,7 +102,7 @@ public class Main {
         /*Preguntar que desea practicar*/
         int opcionprincipal;
         System.out.println("            +======================================================================+");
-        System.out.println("            ||       Hola  " + usuario + ", ¿Qué modo deseas practicar?                     ||");
+        System.out.println("            ||       Hola " + usuario + ", ¿Qué modo deseas practicar?                     ||");
         System.out.println("            ||       1.Spelling Bee (deletreo)                                    ||");
         System.out.println("            ||       2.Vocabulario (ampliar palabras)                             ||");
         System.out.println("            +======================================================================+");
@@ -143,7 +139,7 @@ public class Main {
                     System.out.println("          1- Básico\n          2- Medio\n          3- Normal\n          4- Difícil\n          5- Experto");
 
                     do {
-                        System.out.print("                ");
+                        System.out.print("          ");
                         nivelSpellingBee = sc.nextInt();
                         switch (nivelSpellingBee) {
                             case 1:
@@ -219,106 +215,106 @@ public class Main {
                     String [][] nvVerboregulares = {
                             {"play","          Complete the sentence with the correct English word:\nWould you ____ chess with me after the soccer training","Read the definition and write the correct English word:\nTo engage in a game or sport for fun or competition","Write the English word for this Spanish meaning:\nJugar"},
                             {"work","          Complete the sentence with the correct English word:\nHow can you ____ for long hours without coffee","Read the definition and write the correct English word:\nTo perform tasks or duties, usually for money or effort","Write the English word for this Spanish meaning:\nTrabajar"},
-                            {"talk","Complete the sentence with the correct English word:\nNow that we don´t ____ on instagram, i feel better","Read the definition and write the correct English word:\nTo communicate with someone using words","Write the English word for this Spanish meaning:\nHablar"},
-                            {"watch","Complete the sentence with the correct English word:\nIf i was you, i will don´t want to _____ that movie, it´s so sad", "Read the definition and write the correct English word:\nTo look at something attentively, especially a movie or TV show.","Write the English word for this Spanish meaning:\nMirar"},
-                            {"clean","Complete the sentence with the correct English word:\nOh wow, you have to _____ really well, this place is so spotless", "Read the definition and write the correct English word:\nTo make a place free from dirt or mess.","Write the English word for this Spanish meaning:\nLimpiar"},
-                            {"open","Complete the sentence with the correct English word:\nCan you ____ the windows, i´ts getting hot in here", "Read the definition and write the correct English word:\nTo move something so that it is no longer closed.","Write the English word for this Spanish meaning:\nAbrir"},
-                            {"help","Complete the sentence with the correct English word:\nI need some ____, this shopping bags are too heavy", "Read the definition and write the correct English word:\nTo give assistance to someone in need.","Write the English word for this Spanish meaning:\nAyudar"},
-                            {"start","Complete the sentence with the correct English word:\nAre you ready to _____, the time is ending", "Read the definition and write the correct English word:\nTo begin an activity or action.","Write the English word for this Spanish meaning:\nEmpezar"},
-                            {"call","Complete the sentence with the correct English word:\nMy party has been updated. ____ me to know the new information","Read the definition and write the correct English word:\nTo contact someone by phone.","Write the English word for this Spanish meaning:\nLlamar"},
-                            {"live","Complete the sentence with the correct English word:\nI don´t wanna ____ forever, because I know I´ll be living in vain", "Read the definition and write the correct English word:\nTo exist in a particular place or time.","Write the English word for this Spanish meaning:\nVivir"}
+                            {"talk","          Complete the sentence with the correct English word:\nNow that we don´t ____ on instagram, i feel better","Read the definition and write the correct English word:\nTo communicate with someone using words","Write the English word for this Spanish meaning:\nHablar"},
+                            {"watch","           Complete the sentence with the correct English word:\nIf i was you, i will don´t want to _____ that movie, it´s so sad", "Read the definition and write the correct English word:\nTo look at something attentively, especially a movie or TV show.","Write the English word for this Spanish meaning:\nMirar"},
+                            {"clean","          Complete the sentence with the correct English word:\nOh wow, you have to _____ really well, this place is so spotless", "Read the definition and write the correct English word:\nTo make a place free from dirt or mess.","Write the English word for this Spanish meaning:\nLimpiar"},
+                            {"open","          Complete the sentence with the correct English word:\nCan you ____ the windows, i´ts getting hot in here", "Read the definition and write the correct English word:\nTo move something so that it is no longer closed.","Write the English word for this Spanish meaning:\nAbrir"},
+                            {"help","          Complete the sentence with the correct English word:\nI need some ____, this shopping bags are too heavy", "Read the definition and write the correct English word:\nTo give assistance to someone in need.","Write the English word for this Spanish meaning:\nAyudar"},
+                            {"start","          Complete the sentence with the correct English word:\nAre you ready to _____, the time is ending", "Read the definition and write the correct English word:\nTo begin an activity or action.","Write the English word for this Spanish meaning:\nEmpezar"},
+                            {"call","          Complete the sentence with the correct English word:\nMy party has been updated. ____ me to know the new information","Read the definition and write the correct English word:\nTo contact someone by phone.","Write the English word for this Spanish meaning:\nLlamar"},
+                            {"live","          Complete the sentence with the correct English word:\nI don´t wanna ____ forever, because I know I´ll be living in vain", "Read the definition and write the correct English word:\nTo exist in a particular place or time.","Write the English word for this Spanish meaning:\nVivir"}
                     };
                     String[][] nvVerbosirregulares = {
-                            {"go","Complete the sentence with the correct English word:\nI want to ____ to the park this afternoon.","Read the definition and write the correct English word:\nTo move from one place to another.","Write the English word for this Spanish meaning:\nIr"},
-                            {"eat","Complete the sentence with the correct English word:\nLet’s ____ pizza for dinner tonight.","Read the definition and write the correct English word:\nTo put food into the mouth, chew, and swallow.","Write the English word for this Spanish meaning:\nComer"},
-                            {"see","Complete the sentence with the correct English word:\nDid you ____ that amazing rainbow yesterday?","Read the definition and write the correct English word:\nTo notice or perceive with the eyes.","Write the English word for this Spanish meaning:\nVer"},
-                            {"take","Complete the sentence with the correct English word:\nCan you ____ this book back to the library?","Read the definition and write the correct English word:\nTo get into one’s possession; to carry or bring.","Write the English word for this Spanish meaning:\nTomar"},
-                            {"come","Complete the sentence with the correct English word:\nPlease ____ to my house tomorrow for lunch.","Read the definition and write the correct English word:\nTo move toward or arrive at a place.","Write the English word for this Spanish meaning:\nCome"},
-                            {"drink","Complete the sentence with the correct English word:\nI need to ____ some water after running.","Read the definition and write the correct English word:\nTo swallow liquid.","Write the English word for this Spanish meaning:\nBeber"},
-                            {"write","Complete the sentence with the correct English word:\nShe wants to ____ a letter to her friend.","Read the definition and write the correct English word:\nTo form words on paper or screen with a pen or keyboard.","Write the English word for this Spanish meaning:\nEscribir"},
-                            {"begin","Complete the sentence with the correct English word:\nThe class will ____ at nine o’clock sharp.","Read the definition and write the correct English word:\nTo start or commence something.","Write the English word for this Spanish meaning:\nComenzar"},
-                            {"run","Complete the sentence with the correct English word:\nHe likes to ____ every morning before breakfast.","Read the definition and write the correct English word:\nTo move quickly with your legs.","Write the English word for this Spanish meaning:\nCorrer"},
-                            {"break","Complete the sentence with the correct English word:\nBe careful not to ____ that glass, it’s fragile.","Read the definition and write the correct English word:\nTo separate into pieces by force.","Write the English word for this Spanish meaning:\nRomper"},
+                            {"go","          Complete the sentence with the correct English word:\nI want to ____ to the park this afternoon.","Read the definition and write the correct English word:\nTo move from one place to another.","Write the English word for this Spanish meaning:\nIr"},
+                            {"eat","          Complete the sentence with the correct English word:\nLet’s ____ pizza for dinner tonight.","Read the definition and write the correct English word:\nTo put food into the mouth, chew, and swallow.","Write the English word for this Spanish meaning:\nComer"},
+                            {"see","          Complete the sentence with the correct English word:\nDid you ____ that amazing rainbow yesterday?","Read the definition and write the correct English word:\nTo notice or perceive with the eyes.","Write the English word for this Spanish meaning:\nVer"},
+                            {"take","          Complete the sentence with the correct English word:\nCan you ____ this book back to the library?","Read the definition and write the correct English word:\nTo get into one’s possession; to carry or bring.","Write the English word for this Spanish meaning:\nTomar"},
+                            {"come","          Complete the sentence with the correct English word:\nPlease ____ to my house tomorrow for lunch.","Read the definition and write the correct English word:\nTo move toward or arrive at a place.","Write the English word for this Spanish meaning:\nCome"},
+                            {"drink","          Complete the sentence with the correct English word:\nI need to ____ some water after running.","Read the definition and write the correct English word:\nTo swallow liquid.","Write the English word for this Spanish meaning:\nBeber"},
+                            {"write","          Complete the sentence with the correct English word:\nShe wants to ____ a letter to her friend.","Read the definition and write the correct English word:\nTo form words on paper or screen with a pen or keyboard.","Write the English word for this Spanish meaning:\nEscribir"},
+                            {"begin","          Complete the sentence with the correct English word:\nThe class will ____ at nine o’clock sharp.","Read the definition and write the correct English word:\nTo start or commence something.","Write the English word for this Spanish meaning:\nComenzar"},
+                            {"run","          Complete the sentence with the correct English word:\nHe likes to ____ every morning before breakfast.","Read the definition and write the correct English word:\nTo move quickly with your legs.","Write the English word for this Spanish meaning:\nCorrer"},
+                            {"break","          Complete the sentence with the correct English word:\nBe careful not to ____ that glass, it’s fragile.","Read the definition and write the correct English word:\nTo separate into pieces by force.","Write the English word for this Spanish meaning:\nRomper"},
                     };
                     String[][] nvSustantivo = {
-                            {"career","Complete the sentence with the correct English word:\nShe built a successful ____ in medicine.","Read the definition and write the correct English word:\nA profession or occupation pursued for a significant period of life.","Write the English word for this Spanish meaning:\nCarrera"},
-                            {"skill","Complete the sentence with the correct English word:\nGood communication is an important ____.","Read the definition and write the correct English word:\nThe ability to do something well, usually gained through training or practice.","Write the English word for this Spanish meaning:\nHabilidad"},
-                            {"knowledge","Complete the sentence with the correct English word:\nHis ____ of history is impressive.","Read the definition and write the correct English word:\nInformation, understanding, or awareness gained through learning or experience.","Write the English word for this Spanish meaning:\nConocimiento"},
-                            {"solution","Complete the sentence with the correct English word:\nWe need a ____ to fix this problem.","Read the definition and write the correct English word:\nAn answer or way to resolve a difficulty.","Write the English word for this Spanish meaning:\nSolución"},
-                            {"environment","Complete the sentence with the correct English word:\nProtecting the ____ is everyone’s responsibility.","Read the definition and write the correct English word:\nThe surroundings or conditions in which people, animals, or plants live.","Write the English word for this Spanish meaning:\nAmbiente"},
-                            {"experience","Complete the sentence with the correct English word:\nShe has five years of ____ in teaching.","Read the definition and write the correct English word:\nPractical contact with and observation of facts or events.","Write the English word for this Spanish meaning:\nExperencia"},
-                            {"luggage","Complete the sentence with the correct English word:\nDon’t forget your ____ at the airport.","Read the definition and write the correct English word:\nBags and suitcases used for traveling.","Write the English word for this Spanish meaning:\nEquipaje"},
-                            {"customer","Complete the sentence with the correct English word:\nThe shop assistant helped the ____.","Read the definition and write the correct English word:\nA person who buys goods or services.","Write the English word for this Spanish meaning:\nCliente"},
-                            {"opinion","Complete the sentence with the correct English word:\nIn my ____, this book is excellent.","Read the definition and write the correct English word:\nA personal view, belief, or judgment.","Write the English word for this Spanish meaning:\nOpinión"},
-                            {"traffic","Complete the sentence with the correct English word:\nWe were late because of heavy ____.","Read the definition and write the correct English word:\nThe movement of vehicles on roads.","Write the English word for this Spanish meaning:\nTráfico"},
+                            {"career","          Complete the sentence with the correct English word:\nShe built a successful ____ in medicine.","Read the definition and write the correct English word:\nA profession or occupation pursued for a significant period of life.","Write the English word for this Spanish meaning:\nCarrera"},
+                            {"skill","          Complete the sentence with the correct English word:\nGood communication is an important ____.","Read the definition and write the correct English word:\nThe ability to do something well, usually gained through training or practice.","Write the English word for this Spanish meaning:\nHabilidad"},
+                            {"knowledge","          Complete the sentence with the correct English word:\nHis ____ of history is impressive.","Read the definition and write the correct English word:\nInformation, understanding, or awareness gained through learning or experience.","Write the English word for this Spanish meaning:\nConocimiento"},
+                            {"solution","          Complete the sentence with the correct English word:\nWe need a ____ to fix this problem.","Read the definition and write the correct English word:\nAn answer or way to resolve a difficulty.","Write the English word for this Spanish meaning:\nSolución"},
+                            {"environment","          Complete the sentence with the correct English word:\nProtecting the ____ is everyone’s responsibility.","Read the definition and write the correct English word:\nThe surroundings or conditions in which people, animals, or plants live.","Write the English word for this Spanish meaning:\nAmbiente"},
+                            {"experience","          Complete the sentence with the correct English word:\nShe has five years of ____ in teaching.","Read the definition and write the correct English word:\nPractical contact with and observation of facts or events.","Write the English word for this Spanish meaning:\nExperencia"},
+                            {"luggage","          Complete the sentence with the correct English word:\nDon’t forget your ____ at the airport.","Read the definition and write the correct English word:\nBags and suitcases used for traveling.","Write the English word for this Spanish meaning:\nEquipaje"},
+                            {"customer","          Complete the sentence with the correct English word:\nThe shop assistant helped the ____.","Read the definition and write the correct English word:\nA person who buys goods or services.","Write the English word for this Spanish meaning:\nCliente"},
+                            {"opinion","          Complete the sentence with the correct English word:\nIn my ____, this book is excellent.","Read the definition and write the correct English word:\nA personal view, belief, or judgment.","Write the English word for this Spanish meaning:\nOpinión"},
+                            {"traffic","          Complete the sentence with the correct English word:\nWe were late because of heavy ____.","Read the definition and write the correct English word:\nThe movement of vehicles on roads.","Write the English word for this Spanish meaning:\nTráfico"},
                     };
                     String[][] nvPreposiciones = {
-                            {"above","Complete the sentence with the correct English word:\nThe picture is hanging ____ the fireplace.","Read the definition and write the correct English word:\nAt a higher level or position.","Write the English word for this Spanish meaning:\nEncima de"},
-                            {"below","Complete the sentence with the correct English word:\nThe valley lies ____ the mountains.","Read the definition and write the correct English word:\nAt a lower level or position.","Write the English word for this Spanish meaning:\nDebajo de"},
-                            {"between","Complete the sentence with the correct English word:\nThe ball is ____ the two chairs.","Read the definition and write the correct English word:\nIn the middle of two things.","Write the English word for this Spanish meaning:\nEntre"},
-                            {"among","Complete the sentence with the correct English word:\nShe was happy to be ____ friends.","Read the definition and write the correct English word:\nSurrounded by, in the company of.","Write the English word for this Spanish meaning:\nEntre"},
-                            {"inside","Complete the sentence with the correct English word:\nThe cat is hiding ____ the box.","Read the definition and write the correct English word:\nWithin the interior of something.","Write the English word for this Spanish meaning:\nDentro de"},
-                            {"outside","Complete the sentence with the correct English word:\nLet’s wait ____ the house until they arrive.","Read the definition and write the correct English word:\nNot inside; in the open air.","Write the English word for this Spanish meaning:\nFuera de"},
-                            {"onto","Complete the sentence with the correct English word:\nHe climbed ____ the roof to fix it.","Read the definition and write the correct English word:\nMoving to a position on top of something.","Write the English word for this Spanish meaning:\nSobre"},
-                            {"off","Complete the sentence with the correct English word:\nPlease take your shoes ____ the table.","Read the definition and write the correct English word:\nAway from a place or position.","Write the English word for this Spanish meaning:\nFuera de"},
-                            {"around","Complete the sentence with the correct English word:\nThey walked ____ the park together.","Read the definition and write the correct English word:\nIn a circular direction or surrounding.","Write the English word for this Spanish meaning:\nAlrededor de"},
-                            {"near","Complete the sentence with the correct English word:\nThe school is ____ the library.","Read the definition and write the correct English word:\nClose to something.","Write the English word for this Spanish meaning:\nCerca de"}
+                            {"above","          Complete the sentence with the correct English word:\nThe picture is hanging ____ the fireplace.","Read the definition and write the correct English word:\nAt a higher level or position.","Write the English word for this Spanish meaning:\nEncima de"},
+                            {"below","          Complete the sentence with the correct English word:\nThe valley lies ____ the mountains.","Read the definition and write the correct English word:\nAt a lower level or position.","Write the English word for this Spanish meaning:\nDebajo de"},
+                            {"between","          Complete the sentence with the correct English word:\nThe ball is ____ the two chairs.","Read the definition and write the correct English word:\nIn the middle of two things.","Write the English word for this Spanish meaning:\nEntre"},
+                            {"among","          Complete the sentence with the correct English word:\nShe was happy to be ____ friends.","Read the definition and write the correct English word:\nSurrounded by, in the company of.","Write the English word for this Spanish meaning:\nEntre"},
+                            {"inside","          Complete the sentence with the correct English word:\nThe cat is hiding ____ the box.","Read the definition and write the correct English word:\nWithin the interior of something.","Write the English word for this Spanish meaning:\nDentro de"},
+                            {"outside","          Complete the sentence with the correct English word:\nLet’s wait ____ the house until they arrive.","Read the definition and write the correct English word:\nNot inside; in the open air.","Write the English word for this Spanish meaning:\nFuera de"},
+                            {"onto","          Complete the sentence with the correct English word:\nHe climbed ____ the roof to fix it.","Read the definition and write the correct English word:\nMoving to a position on top of something.","Write the English word for this Spanish meaning:\nSobre"},
+                            {"off","          Complete the sentence with the correct English word:\nPlease take your shoes ____ the table.","Read the definition and write the correct English word:\nAway from a place or position.","Write the English word for this Spanish meaning:\nFuera de"},
+                            {"around","          Complete the sentence with the correct English word:\nThey walked ____ the park together.","Read the definition and write the correct English word:\nIn a circular direction or surrounding.","Write the English word for this Spanish meaning:\nAlrededor de"},
+                            {"near","          Complete the sentence with the correct English word:\nThe school is ____ the library.","Read the definition and write the correct English word:\nClose to something.","Write the English word for this Spanish meaning:\nCerca de"}
                     };
                     String[][] nvAdjetivos = {
-                            {"happy","Complete the sentence with the correct English word:\nShe feels ____ because she passed the exam.","Read the definition and write the correct English word:\nFeeling or showing pleasure.","Write the English word for this Spanish meaning:\nFeliz"},
-                            {"sad","Complete the sentence with the correct English word:\nHe looked ____ after hearing the bad news.","Read the definition and write the correct English word:\nFeeling sorrow or unhappiness.","Write the English word for this Spanish meaning:\nTriste"},
-                            {"big","Complete the sentence with the correct English word:\nThat is a very ____ house.","Read the definition and write the correct English word:\nOf large size.","Write the English word for this Spanish meaning:\nGrande"},
-                            {"small","Complete the sentence with the correct English word:\nThe puppy is so ____.","Read the definition and write the correct English word:\nOf little size.","Write the English word for this Spanish meaning:\nPequeño"},
-                            {"fast","Complete the sentence with the correct English word:\nThe car is really ____.","Read the definition and write the correct English word:\nMoving quickly.","Write the English word for this Spanish meaning:\nRápido"},
-                            {"slow","Complete the sentence with the correct English word:\nThe turtle is ____.","Read the definition and write the correct English word:\nNot fast.","Write the English word for this Spanish meaning:\nLento"},
-                            {"beautiful","Complete the sentence with the correct English word:\nThe garden looks ____.","Read the definition and write the correct English word:\nPleasing to the senses.","Write the English word for this Spanish meaning:\nHermoso"},
-                            {"ugly","Complete the sentence with the correct English word:\nThe painting is ____.","Read the definition and write the correct English word:\nNot attractive.","Write the English word for this Spanish meaning:\nFeo"},
-                            {"strong","Complete the sentence with the correct English word:\nShe is ____ enough to lift heavy boxes.","Read the definition and write the correct English word:\nHaving power or force.","Write the English word for this Spanish meaning:\nFuerte"},
-                            {"weak","Complete the sentence with the correct English word:\nHe felt ____ after the long illness.","Read the definition and write the correct English word:\nLacking strength.","Write the English word for this Spanish meaning:\nDébil"}
+                            {"happy","          Complete the sentence with the correct English word:\nShe feels ____ because she passed the exam.","Read the definition and write the correct English word:\nFeeling or showing pleasure.","Write the English word for this Spanish meaning:\nFeliz"},
+                            {"sad","          Complete the sentence with the correct English word:\nHe looked ____ after hearing the bad news.","Read the definition and write the correct English word:\nFeeling sorrow or unhappiness.","Write the English word for this Spanish meaning:\nTriste"},
+                            {"big","          Complete the sentence with the correct English word:\nThat is a very ____ house.","Read the definition and write the correct English word:\nOf large size.","Write the English word for this Spanish meaning:\nGrande"},
+                            {"small","          Complete the sentence with the correct English word:\nThe puppy is so ____.","Read the definition and write the correct English word:\nOf little size.","Write the English word for this Spanish meaning:\nPequeño"},
+                            {"fast","          Complete the sentence with the correct English word:\nThe car is really ____.","Read the definition and write the correct English word:\nMoving quickly.","Write the English word for this Spanish meaning:\nRápido"},
+                            {"slow","          Complete the sentence with the correct English word:\nThe turtle is ____.","Read the definition and write the correct English word:\nNot fast.","Write the English word for this Spanish meaning:\nLento"},
+                            {"beautiful","          Complete the sentence with the correct English word:\nThe garden looks ____.","Read the definition and write the correct English word:\nPleasing to the senses.","Write the English word for this Spanish meaning:\nHermoso"},
+                            {"ugly","          Complete the sentence with the correct English word:\nThe painting is ____.","Read the definition and write the correct English word:\nNot attractive.","Write the English word for this Spanish meaning:\nFeo"},
+                            {"strong","          Complete the sentence with the correct English word:\nShe is ____ enough to lift heavy boxes.","Read the definition and write the correct English word:\nHaving power or force.","Write the English word for this Spanish meaning:\nFuerte"},
+                            {"weak","          Complete the sentence with the correct English word:\nHe felt ____ after the long illness.","Read the definition and write the correct English word:\nLacking strength.","Write the English word for this Spanish meaning:\nDébil"}
                     };
                     String[][] nvExpresionescomunes = {
-                            {"How are you?", "Complete the sentence with the correct English expression:\n____, I’m fine thanks.", "Read the definition and write the correct English expression:\nA common greeting asking about someone’s well-being.", "Write the English expression for this Spanish meaning:\n¿Cómo estás?"},
-                            {"What’s up?", "Complete the sentence with the correct English expression:\n____, nothing much.", "Read the definition and write the correct English expression:\nAn informal way to ask what is happening.", "Write the English expression for this Spanish meaning:\n¿Qué tal?"},
-                            {"Long time no see", "Complete the sentence with the correct English expression:\n____, I missed you!", "Read the definition and write the correct English expression:\nUsed when you meet someone after a long period.", "Write the English expression for this Spanish meaning:\n¡Cuánto tiempo sin verte!"},
-                            {"Take care", "Complete the sentence with the correct English expression:\nGoodbye and ____.", "Read the definition and write the correct English expression:\nA phrase used to wish safety and well-being.", "Write the English expression for this Spanish meaning:\nCuídate"},
-                            {"See you later", "Complete the sentence with the correct English expression:\nBye, ____!", "Read the definition and write the correct English expression:\nA casual way to say farewell until next time.", "Write the English expression for this Spanish meaning:\nNos vemos luego"},
-                            {"Nice to meet you", "Complete the sentence with the correct English expression:\nHello, ____.", "Read the definition and write the correct English expression:\nA polite phrase when meeting someone for the first time.", "Write the English expression for this Spanish meaning:\nEncantado de conocerte"},
-                            {"Have a good day", "Complete the sentence with the correct English expression:\nBye, ____!", "Read the definition and write the correct English expression:\nA phrase wishing someone a pleasant day.", "Write the English expression for this Spanish meaning:\nQue tengas un buen día"},
-                            {"Don’t worry", "Complete the sentence with the correct English expression:\n____, everything will be fine.", "Read the definition and write the correct English expression:\nUsed to reassure someone not to be concerned.", "Write the English expression for this Spanish meaning:\nNo te preocupes"},
-                            {"It’s up to you", "Complete the sentence with the correct English expression:\nChoose the movie, ____.", "Read the definition and write the correct English expression:\nMeans the decision depends on the person.", "Write the English expression for this Spanish meaning:\nDepende de ti"},
-                            {"By the way", "Complete the sentence with the correct English expression:\n____, did you finish your homework?", "Read the definition and write the correct English expression:\nUsed to introduce a new topic or reminder.", "Write the English expression for this Spanish meaning:\nPor cierto"}
+                            {"How are you?", "          Complete the sentence with the correct English expression:\n____, I’m fine thanks.", "Read the definition and write the correct English expression:\nA common greeting asking about someone’s well-being.", "Write the English expression for this Spanish meaning:\n¿Cómo estás?"},
+                            {"What’s up?", "          Complete the sentence with the correct English expression:\n____, nothing much.", "Read the definition and write the correct English expression:\nAn informal way to ask what is happening.", "Write the English expression for this Spanish meaning:\n¿Qué tal?"},
+                            {"Long time no see", "          Complete the sentence with the correct English expression:\n____, I missed you!", "Read the definition and write the correct English expression:\nUsed when you meet someone after a long period.", "Write the English expression for this Spanish meaning:\n¡Cuánto tiempo sin verte!"},
+                            {"Take care", "          Complete the sentence with the correct English expression:\nGoodbye and ____.", "Read the definition and write the correct English expression:\nA phrase used to wish safety and well-being.", "Write the English expression for this Spanish meaning:\nCuídate"},
+                            {"See you later", "          Complete the sentence with the correct English expression:\nBye, ____!", "Read the definition and write the correct English expression:\nA casual way to say farewell until next time.", "Write the English expression for this Spanish meaning:\nNos vemos luego"},
+                            {"Nice to meet you", "          Complete the sentence with the correct English expression:\nHello, ____.", "Read the definition and write the correct English expression:\nA polite phrase when meeting someone for the first time.", "Write the English expression for this Spanish meaning:\nEncantado de conocerte"},
+                            {"Have a good day", "          Complete the sentence with the correct English expression:\nBye, ____!", "Read the definition and write the correct English expression:\nA phrase wishing someone a pleasant day.", "Write the English expression for this Spanish meaning:\nQue tengas un buen día"},
+                            {"Don’t worry", "          Complete the sentence with the correct English expression:\n____, everything will be fine.", "Read the definition and write the correct English expression:\nUsed to reassure someone not to be concerned.", "Write the English expression for this Spanish meaning:\nNo te preocupes"},
+                            {"It’s up to you", "          Complete the sentence with the correct English expression:\nChoose the movie, ____.", "Read the definition and write the correct English expression:\nMeans the decision depends on the person.", "Write the English expression for this Spanish meaning:\nDepende de ti"},
+                            {"By the way", "          Complete the sentence with the correct English expression:\n____, did you finish your homework?", "Read the definition and write the correct English expression:\nUsed to introduce a new topic or reminder.", "Write the English expression for this Spanish meaning:\nPor cierto"}
                     };
                     // PALABRAS VOCABULARIO JUEGO PALABRAS RELACIONADAS
                     String[][] sinyantVerbosRegulares = {
                             {"participate",
-                                    "Complete the sentence with the correct English synonym:\nShe likes to ____ soccer every weekend. (play)",
-                                    "Choose the synonym of 'play':\n(a) participate, (b) rest, (c) ignore",
-                                    "Write the synonym of the following word: play"},
+                                    "          Complete the sentence with the correct English synonym:\nShe likes to ____ soccer every weekend. (play)",
+                                    "          Choose the synonym of 'play':\n(a) participate, (b) rest, (c) ignore",
+                                    "          Write the synonym of the following word: play"},
 
                             {"rest",
-                                    "Complete the sentence with the correct English antonym:\nHe decided to ____ instead of working all day. (work)",
-                                    "Choose the antonym of 'work':\n(a) rest, (b) labor, (c) job",
-                                    "Write the antonym of the following word: work"},
+                                    "          Complete the sentence with the correct English antonym:\nHe decided to ____ instead of working all day. (work)",
+                                    "          Choose the antonym of 'work':\n(a) rest, (b) labor, (c) job",
+                                    "          Write the antonym of the following word: work"},
 
                             {"speak",
-                                    "Complete the sentence with the correct English synonym:\nLet’s ____ about the new movie tonight. (talk)",
-                                    "Choose the synonym of 'talk':\n(a) speak, (b) run, (c) watch",
-                                    "Write the synonym of the following word: talk"},
+                                    "          Complete the sentence with the correct English synonym:\nLet’s ____ about the new movie tonight. (talk)",
+                                    "          Choose the synonym of 'talk':\n(a) speak, (b) run, (c) watch",
+                                    "          Write the synonym of the following word: talk"},
 
                             {"ignore",
-                                    "Complete the sentence with the correct English antonym:\nDon’t just watch, try not to ____ what’s happening. (watch)",
-                                    "Choose the antonym of 'watch':\n(a) ignore, (b) observe, (c) look",
-                                    "Write the antonym of the following word: watch"},
+                                    "          Complete the sentence with the correct English antonym:\nDon’t just watch, try not to ____ what’s happening. (watch)",
+                                    "          Choose the antonym of 'watch':\n(a) ignore, (b) observe, (c) look",
+                                    "          Write the antonym of the following word: watch"},
 
                             {"tidy",
-                                    "Complete the sentence with the correct English synonym:\nShe will ____ the kitchen before guests arrive. (clean)",
-                                    "Choose the synonym of 'clean':\n(a) tidy, (b) dirty, (c) mess",
-                                    "Write the synonym of the following word: clean"},
+                                    "          Complete the sentence with the correct English synonym:\nShe will ____ the kitchen before guests arrive. (clean)",
+                                    "          Choose the synonym of 'clean':\n(a) tidy, (b) dirty, (c) mess",
+                                    "          Write the synonym of the following word: clean"},
 
                             {"close",
-                                    "Complete the sentence with the correct English antonym:\nCan you open the window? Don’t ____ it now. (open)",
-                                    "Choose the antonym of 'open':\n(a) close, (b) unlock, (c) unseal",
-                                    "Write the antonym of the following word: open"},
+                                    "          Complete the sentence with the correct English antonym:\nCan you open the window? Don’t ____ it now. (open)",
+                                    "          Choose the antonym of 'open':\n(a) close, (b) unlock, (c) unseal",
+                                    "          Write the antonym of the following word: open"},
 
                             {"assist",
                                     "Complete the sentence with the correct English synonym:\nCould you ____ me with my homework? (help)",
@@ -893,27 +889,29 @@ public class Main {
                             case 1:
                                 nnombre = "Verbo";
                                 int formadeverbo;
-                                System.out.println("Selecciona la forma de verbo que deseas estudiar");
-                                System.out.println("1.Verbos Regulares\n" + "2.Verbos Irregulares");
+                                System.out.println("\n          Selecciona la forma de verbo que deseas estudiar");
+                                System.out.println("          1.Verbos Regulares\n" + "          2.Verbos Irregulares");
+                                System.out.print("          ");
                                 formadeverbo = sc.nextInt();
+                                System.out.println("           ");
                                 do {
                                     switch (formadeverbo) {
                                         case 1:
-                                            System.out.println("Has elegido verbos regulares");
+                                            System.out.println("          Has elegido verbos regulares");
                                             PALABRAS_VOCABULARIO = nvVerboregulares;
                                             PALABRAS_RELACIONADAS = sinyantVerbosRegulares;
                                             COMPLETAR_ORACIONES = coVerbosregulares;
                                             ADIVINAR_PALABRAS = apVerboregulares;
                                             break;
                                         case 2:
-                                            System.out.println("Has elegido verbos irregulares");
+                                            System.out.println("          Has elegido verbos irregulares");
                                             PALABRAS_VOCABULARIO = nvVerbosirregulares;
                                             PALABRAS_RELACIONADAS = sinyantVerbosIrregulares;
                                             COMPLETAR_ORACIONES = coVerbosIrregulares;
                                             ADIVINAR_PALABRAS = apVerboIrregulares;
                                             break;
                                         default:
-                                            System.out.print("Opción invalida, debes ingresar 1 o 2. Intenta de nuevo: ");
+                                            System.out.print("          Opción invalida, debes ingresar 1 o 2. Intenta de nuevo: ");
                                             break;
                                     }
                                 }
@@ -953,7 +951,7 @@ public class Main {
                                 break;
 
                             default:
-                                System.out.print("Opción invalida. Ese número no corresponde a ninguna categoría gramatical. Intenta de nuevo: ");
+                                System.out.print("          Opción invalida. Ese número no corresponde a ninguna categoría gramatical. Intenta de nuevo: ");
                                 break;
 
                         }
@@ -979,14 +977,14 @@ public class Main {
                                 modalidadJuegosVocabulario();
                                 break;
                             default:
-                                System.out.print("Opción invalida, Esa opción no corresponde a ninguna modalidad. Intenta de nuevo: ");
+                                System.out.print("          Opción invalida, Esa opción no corresponde a ninguna modalidad. Intenta de nuevo: ");
                                 break;
                         }
                     }
                     while (modalidadVocabulario != 1 && modalidadVocabulario != 2);
                     break;
                 default:
-                    System.out.print("Opción invalida, debes ingresar 1 o 2. Intenta de nuevo: ");
+                    System.out.print("          Opción invalida, debes ingresar 1 o 2. Intenta de nuevo: ");
             }
         }
         while (opcionprincipal != 1 && opcionprincipal != 2);
@@ -1030,7 +1028,7 @@ public class Main {
         pause(800);
         System.out.println("\n          Cargando instrucciones...\n");
         pause(1500);
-        System.out.println("          ¡Bienvenid@ " + usuario + " :D!\n\n  A continuación iniciará la ronda de " + allnombre + ", en " + nivel + " " + nnombre+"\n");
+        System.out.println("          ¡Bienvenid@ " + usuario + " :D!\n\n          A continuación iniciará la ronda de " + allnombre + ", en " + nivel + " " + nnombre+"\n");
         System.out.println("          ---------------------8<-------------[Instrucciones:]-----------------------\n");
 
     }
@@ -1061,9 +1059,17 @@ public class Main {
         errores = 0;
         contadorFallos = 0;
         for (int i = 0; i < palabrasFalladas.length; i++) palabrasFalladas[i] = -1;
-
+        String artTradicional=("          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" +
+                "          ~ _________                      __   _           _                          __  ~\n" +
+                "          ~|  _   _  |                    |  ] (_)         (_)                        [  | ~\n" +
+                "          ~|_/ | | \\_|_ .--.  ,--.    .--.| |  __   .---.  __   .--.   _ .--.   ,--.   | | ~\n" +
+                "          ~    | |   [ `/'`\\]`'_\\ : / /'`\\' | [  | / /'`\\][  |/ .'`\\ \\[ `.-. | `'_\\ :  | | ~\n" +
+                "          ~   _| |_   | |    // | |,| \\__/  |  | | | \\__.  | || \\__. | | | | | // | |, | | ~\n" +
+                "          ~  |_____| [___]   \\'-;__/ '.__.;__][___]'.___.'[___]'.__.' [___||__]\\'-;__/[___]~\n" +
+                "          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println(artTradicional);
         bienvenida();
-        System.out.println("1- Se te mostrará la traducción, la definición en inglés de una palabra, o una oración con un espacio en blanco.\n2- Escribe la palabra correcta.\n3- Cada intento recibe retroalimentación inmediata.\n4- Al final verás tu resumen.");
+        System.out.println("          1- Se te mostrará la traducción, la definición en inglés de una palabra, o una oración con un espacio en blanco.\n          2- Escribe la palabra correcta.\n          3- Cada intento recibe retroalimentación inmediata.\n          4- Al final verás tu resumen.");
         contador();
 
         // PRIMERA RONDA
@@ -1089,13 +1095,13 @@ public class Main {
                 palabrasFalladas[contadorFallos++] = i;
             }
 
-            System.out.println("Presiona ENTER para continuar...");
+            System.out.println("          Presiona ENTER para continuar...");
             sc.nextLine();
         }
 
         // SEGUNDA RONDA
         if (contadorFallos > 0) {
-            System.out.println("\n--- Ronda de repaso para palabras falladas ---");
+            System.out.println("\n          --- Ronda de repaso para palabras falladas ---");
             for (int f = 0; f < contadorFallos; f++) {
 
                 int indicePalabra = palabrasFalladas[f];
@@ -1122,7 +1128,7 @@ public class Main {
                     errores++;
                 }
 
-                System.out.println("Presiona ENTER para continuar...");
+                System.out.println("          Presiona ENTER para continuar...");
                 sc.nextLine();
             }
         }
@@ -1143,27 +1149,26 @@ public class Main {
 
 
     public static void modalidadRetosyJuegosSpellingBee() {
-        System.out.println("Has elegido la Modalidad Retos y Juegos, en el nivel " + nnombre);
-        System.out.println("¿Deseas cursar 1- Retos o 2-Juegos?");
+        System.out.println("          Has elegido la Modalidad Retos y Juegos, en el nivel " + nnombre);
+        System.out.println("          ¿Deseas cursar 1- Retos o 2-Juegos?");
         int sbRetoJuego;
         do {
-            if (sc.hasNextInt()) {
+            System.out.print("          ");
                 sbRetoJuego = sc.nextInt();
-            } else {
-                sc.next();
-                sbRetoJuego = 0;
-            }
             switch (sbRetoJuego) {
                 case 1:
-                    System.out.println("¡Excelente decisión! Ahora porfavor ingresa el numero de reto que te gustaría jugar\n1- Deletreo Rápido\n2- Desafío de Precisión");
+                    String artRetoSpb=("          __________        __                \n" +
+                            "          \\______   \\ _____/  |_  ____  ______\n" +
+                            "           |       _// __ \\   __\\/  _ \\/  ___/\n" +
+                            "           |    |   \\  ___/|  | (  <_> )___ \\ \n" +
+                            "           |____|_  /\\___  >__|  \\____/____  >\n" +
+                            "                  \\/     \\/                \\/ \n");
+                    System.out.println(artRetoSpb);
+                    System.out.println("          ");
+                    System.out.println("          ¡Excelente decisión! Ahora porfavor ingresa el numero de reto que te gustaría jugar\n          1- Deletreo Rápido\n          2- Desafío de Precisión");
                     int sbReto;
                     do {
-                        if (sc.hasNextInt()) {
                             sbReto = sc.nextInt();
-                        } else {
-                            sc.next();
-                            sbReto = 0;
-                        }
                         switch (sbReto) {
                             case 1:
                                 allnombre = "reto Deletreo Rápido";
@@ -1174,22 +1179,26 @@ public class Main {
                                 sbrDesafioPrecision();
                                 break;
                             default:
-                                System.out.print("Opción invalida. Ese número no corresponde a ningun reto. Intenta de nuevo: ");
+                                System.out.print("          Opción invalida. Ese número no corresponde a ningun reto. Intenta de nuevo: ");
                                 break;
                         }
                     }
                     while (sbReto < 1 || sbReto > 3);
                     break;
                 case 2:
-                    System.out.println("¡Excelente decisión! Ahora porfavor ingresa el numero de juego que te gustaría jugar\n1- Ahorcado\n2- Completar letras faltantes\n3- Ordenar letras");
+                    String artJuegoSpb=("               ___  __   __  _______  _______  _______  _______ \n" +
+                            "              |   ||  | |  ||       ||       ||       ||       |\n" +
+                            "              |   ||  | |  ||    ___||    ___||   _   ||  _____|\n" +
+                            "              |   ||  |_|  ||   |___ |   | __ |  | |  || |_____ \n" +
+                            "           ___|   ||       ||    ___||   ||  ||  |_|  ||_____  |\n" +
+                            "          |       ||       ||   |___ |   |_| ||       | _____| |\n" +
+                            "          |_______||_______||_______||_______||_______||_______|\n");
+                    System.out.println(artJuegoSpb);
+                    System.out.println("          ¡Excelente decisión! Ahora porfavor ingresa el numero de juego que te gustaría jugar\n          1- Ahorcado\n          2- Completar letras faltantes\n          3- Ordenar letras");
                     int sbJuego;
                     do {
-                        if (sc.hasNextInt()) {
+                        System.out.print("          ");
                             sbJuego = sc.nextInt();
-                        } else {
-                            sc.next();
-                            sbJuego = 0;
-                        }
                         switch (sbJuego) {
                             case 1:
                                 allnombre = "juego Ahorcado";
@@ -1204,14 +1213,14 @@ public class Main {
                                 sbjOrdenarLetras();
                                 break;
                             default:
-                                System.out.print("Opción invalida. Ese número no corresponde a ningun juego. Intenta de nuevo: ");
+                                System.out.print("          Opción invalida. Ese número no corresponde a ningun juego. Intenta de nuevo: ");
                                 break;
                         }
                     }
                     while (sbJuego < 1 || sbJuego > 3);
                     break;
                 default:
-                    System.out.print("Opción invalida. Ese número no corresponde a ninguna opcion. Intenta de nuevo: ");
+                    System.out.print("          Opción invalida. Ese número no corresponde a ninguna opcion. Intenta de nuevo: ");
                     break;
             }
         }
@@ -1219,14 +1228,41 @@ public class Main {
     }
 
     public static void sbrDeletreoRapido() {
+        String artDeletreo = ("          ________     ______    _____                   \n" +
+                "          ___  __ \\_______  /______  /__________________ \n" +
+                "          __  / / /  _ \\_  /_  _ \\  __/_  ___/  _ \\  __ \\\n" +
+                "          _  /_/ //  __/  / /  __/ /_ _  /   /  __/ /_/ /\n" +
+                "          /_____/ \\___//_/  \\___/\\__/ /_/    \\___/\\____/ \n" +
+                "                                               \n" +
+                "          ________               ______________          \n" +
+                "          ___  __ \\_____ ___________(_)_____  /_____     \n" +
+                "          __  /_/ /  __ `/__  __ \\_  /_  __  /_  __ \\    \n" +
+                "          _  _, _// /_/ /__  /_/ /  / / /_/ / / /_/ /    \n" +
+                "          /_/ |_| \\__,_/ _  .___//_/  \\__,_/  \\____/     \n" +
+                "                         /_/                             ");
+        System.out.println(artDeletreo);
         bienvenida();
-        System.out.println("En este reto deberás:\n-Escribir la mayor cantidad de palabras correctamente en 3 minutos.\n-Escribir cada palabra en inglés a partir de su traducción al español, de manera consecutiva, antes de pasar a la siguiente. \n-Al terminar el tiempo, revisar un resumen de resultados que muestra tus aciertos, errores y palabras falladas.");
+        System.out.println("          En este reto deberás:\n          -Escribir la mayor cantidad de palabras correctamente en 3 minutos.\n-          Escribir cada palabra en inglés a partir de su traducción al español, de manera consecutiva, antes de pasar a la siguiente. \n          -Al terminar el tiempo, revisar un resumen de resultados que muestra tus aciertos, errores y palabras falladas.");
         contador();
     }
 
     public static void sbrDesafioPrecision() {
+        String artPrecision=("          _____  _______________________________________     _____  _______\n" +
+                "          7    \\ 7     77     77  _  77     77  77     7     7    \\ 7     7\n" +
+                "          |  7  ||  ___!|  ___!|  _  ||  ___!|  ||  7  |     |  7  ||  ___!\n" +
+                "          |  |  ||  __|_!__   7|  7  ||  __| |  ||  |  |     |  |  ||  __|_\n" +
+                "          |  !  ||     77     ||  |  ||  7   |  ||  !  |     |  !  ||     7\n" +
+                "          !_____!!_____!!_____!!__!__!!__!   !__!!_____!     !_____!!_____!\n" +
+                "                                                                 \n" +
+                "          _________________________________________________________        \n" +
+                "          7     77  _  77     77     77  77     77  77     77     7        \n" +
+                "          |  -  ||    _||  ___!|  ___!|  ||  ___!|  ||  7  ||  _  |        \n" +
+                "          |  ___!|  _ \\ |  __|_|  7___|  |!__   7|  ||  |  ||  7  |        \n" +
+                "          |  7   |  7  ||     7|     7|  |7     ||  ||  !  ||  |  |        \n" +
+                "          !__!   !__!__!!_____!!_____!!__!!_____!!__!!_____!!__!__!        ");
+        System.out.println(artPrecision);
         bienvenida();
-        System.out.println("En este reto deberás:\n-Deletrear la mayor cantidad de palabras posible, pero solo puedes cometer tres errores.\n-Cuando cometas el tercer error, el reto terminará automáticamente y verás un resumen con tus aciertos y errores.\n-Este reto te ayudará a mejorar tu precisión y concentración mientras escribes.");
+        System.out.println("          En este reto deberás:\n          -Deletrear la mayor cantidad de palabras posible, pero solo puedes cometer tres errores.\n          -Cuando cometas el tercer error, el reto terminará automáticamente y verás un resumen con tus aciertos y errores.\n          -Este reto te ayudará a mejorar tu precisión y concentración mientras escribes.");
         contador();
     }
     public static void sbjAhorcado()
@@ -1236,13 +1272,17 @@ public class Main {
         }
         contadorIncorrectas = 0;
         letrasIncorrectas = new char[INTENTOS_MAXIMOS];
-        String artAhorcado=("/==========================================================================\\\n" +
-                "||01000001 01101000 01101111 01110010 01100011 01100001 01100100 01101111 ||\n" +
-                "\\==========================================================================/");
+        String artAhorcado=("             _       _   _     U  ___ u   ____       ____     _      ____      U  ___ u\n" +
+                "         U  /\"\\  u  |'| |'|     \\/\"_ \\/U |  _\"\\ u U /\"___|U  /\"\\  u |  _\"\\      \\/\"_ \\/\n" +
+                "          \\/ _ \\/  /| |_| |\\    | | | | \\| |_) |/ \\| | u   \\/ _ \\/ /| | | |     | | | |\n" +
+                "          / ___ \\  U|  _  |u.-,_| |_| |  |  _ <    | |/__  / ___ \\ U| |_| |\\.-,_| |_| |\n" +
+                "         /_/   \\_\\  |_| |_|  \\_)-\\___/   |_| \\_\\    \\____|/_/   \\_\\ |____/ u \\_)-\\___/ \n" +
+                "          \\\\    >>  //   \\\\       \\\\     //   \\\\_  _// \\\\  \\\\    >>  |||_         \\\\   \n" +
+                "         (__)  (__)(_\") (\"_)     (__)   (__)  (__)(__)(__)(__)  (__)(__)_)       (__)  ");
         System.out.print(artAhorcado);
         System.out.println(" ");
         bienvenida();
-        System.out.println("En este juego deberás:\n"+ "1. Adivinar la palabra letra por letra, completándola antes de que se terminen tus intentos.\n" + "2. Cada letra correcta se mostrará en su posición correspondiente, mientras que los errores se contabilizan.\n" + "3. Recibirás retroalimentación inmediata, y si no logras adivinar la palabra, al finalizar se mostrará la palabra completa.");
+        System.out.println("          En este juego deberás:\n"+ "          1. Adivinar la palabra letra por letra, completándola antes de que se terminen tus intentos.\n" + "          2. Cada letra correcta se mostrará en su posición correspondiente, mientras que los errores se contabilizan.\n" + "          3. Recibirás retroalimentación inmediata, y si no logras adivinar la palabra, al finalizar se mostrará la palabra completa.");
         contador();
         seleccionarPalabra();
         inicializarPalabraAdivinada();
@@ -1251,36 +1291,36 @@ public class Main {
             mostrarEstadoDelJuego();
             mostrarMuñeco();
             Scanner sc = new Scanner(System.in);
-            System.out.print("Introduce una letra: ");
+            System.out.print("          Introduce una letra: ");
             String input = sc.nextLine().toUpperCase();
 
             if (input.length() != 1 || !Character.isLetter(input.charAt(0))) {
-                System.out.println("Entrada inválida. Por favor, introduce una sola letra.");
+                System.out.println("          Entrada inválida. Por favor, introduce una sola letra.");
                 continue;
             }
             char letra = input.charAt(0);
 
             if (yaSeIntento(letra)) {
-                System.out.println("Ya intentaste la letra '" + letra + "'. Intenta con otra.");
+                System.out.println("          Ya intentaste la letra '" + letra + "'. Intenta con otra.");
                 continue;
             }
 
             if (!adivinarLetra(letra)) {
-                System.out.println("Letra incorrecta!");
+                System.out.println("          Letra incorrecta!");
                 letrasIncorrectas[contadorIncorrectas] = letra;
                 contadorIncorrectas++;
             } else {
-                System.out.println("Letra correcta!");
+                System.out.println("          Letra correcta!");
             }
         }
 
         mostrarEstadoDelJuego();
         mostrarMuñeco();
         if (palabraCompletada()) {
-            System.out.println("¡Ganaste! La palabra era: " + palabraSecreta);
+            System.out.println("          ¡Ganaste! La palabra era: " + palabraSecreta);
             ganaste();
         } else {
-            System.out.println("¡Perdiste! El ahorcado se completó. La palabra era: " + palabraSecreta);
+            System.out.println("          ¡Perdiste! El ahorcado se completó. La palabra era: " + palabraSecreta);
             perdiste();
         }
     }
@@ -1305,10 +1345,10 @@ public class Main {
     }
 
     private static void mostrarEstadoDelJuego() {
-        System.out.println("\n--- Estado Actual ---");
-        System.out.println("Palabra: " + String.valueOf(palabraAdivinada));
-        System.out.println("Intentos fallidos: " + contadorIncorrectas + "/" + INTENTOS_MAXIMOS);
-        System.out.print("Letras incorrectas: ");
+        System.out.println("\n          --- Estado Actual ---");
+        System.out.println("          Palabra: " + String.valueOf(palabraAdivinada));
+        System.out.println("          Intentos fallidos: " + contadorIncorrectas + "/" + INTENTOS_MAXIMOS);
+        System.out.print("          Letras incorrectas: ");
         for (int i = 0; i < contadorIncorrectas; i++) {
             System.out.print(letrasIncorrectas[i]);
             if (i < contadorIncorrectas - 1) System.out.print(", ");
@@ -1344,13 +1384,13 @@ public class Main {
 
     private static void mostrarMuñeco() {
         String[] muñeco = {
-                " _______ \n |/      |\n |      \n |      \n |      \n |      \n_|___  ", // 0
-                " _______ \n |/      |\n |      O\n |      \n |      \n |      \n_|___  ", // 1
-                " _______ \n |/      |\n |      O\n |      | \n |      \n |      \n_|___  ", // 2
-                " _______ \n |/      |\n |      O\n |     /|\\\n |      \n |      \n_|___  ", // 3
-                " _______ \n |/      |\n |      O\n |     /|\\\n |     / \n |      \n_|___  ", // 4
-                " _______ \n |/      |\n |      O\n |     /|\\\n |     / \\\n |      \n_|___  ", // 5 (último error antes de perder)
-                " _______ \n |/      |\n |      O\n |     /|\\\n |     / \\\n |      \n_|___  ", // 6 (Estado final de pérdida)
+                "           _______ \n           |/      |\n           |      \n           |      \n           |      \n           |      \n          _|___  ", // 0
+                "           _______ \n           |/      |\n           |      O\n           |      \n           |      \n           |      \n          _|___  ", // 1
+                "           _______ \n           |/      |\n           |      O\n           |      | \n           |      \n           |      \n          _|___  ", // 2
+                "           _______ \n           |/      |\n           |      O\n           |     /|\\\n           |      \n           |      \n          _|___  ", // 3
+                "           _______ \n           |/      |\n           |      O\n           |     /|\\\n           |     / \n           |      \n          _|___  ", // 4
+                "           _______ \n           |/      |\n           |      O\n           |     /|\\\n           |     / \\\n           |      \n          _|___  ", // 5 (último error antes de perder)
+                "           _______ \n           |/      |\n           |      O\n           |     /|\\\n           |     / \\\n           |      \n          _|___  ",
         };
         int indice = Math.min(contadorIncorrectas, INTENTOS_MAXIMOS);
         if (indice < muñeco.length) {
@@ -1392,17 +1432,41 @@ public class Main {
     }
 
     public static void sbjCompletarLetrasFaltantes(){
+        String artCompletarletras=("           ┌──────────────────────────────────────────────────────────────────────────────────────────────┐\n" +
+                "           │  ___  __   _  _  ____  __    ____  ____  __   ____        __    ____  ____  ____   __   ____ │\n" +
+                "           │ / __)/  \\ ( \\/ )(  _ \\(  )  (  __)(_  _)/ _\\ (  _ \\      (  )  (  __)(_  _)(  _ \\ / _\\ / ___)│\n" +
+                "           │( (__(  O )/ \\/ \\ ) __// (_/\\ ) _)   )( /    \\ )   /      / (_/\\ ) _)   )(   )   //    \\\\___ \\│\n" +
+                "           │ \\___)\\__/ \\_)(_/(__)  \\____/(____) (__)\\_/\\_/(__\\_)      \\____/(____) (__) (__\\_)\\_/\\_/(____/│\n" +
+                "           └──────────────────────────────────────────────────────────────────────────────────────────────┘\n");
+        System.out.println(artCompletarletras);
+        System.out.println("           ");
         bienvenida();
-        System.out.println("En este juego deberás:\n1. Completar la palabra escribiendo las letras que faltan en los espacios correspondientes.\n2. Cada intento recibirá retroalimentación inmediata, y se contabilizarán tus aciertos y errores.\n3. Presta atención a la posición de cada letra, ya que solo contará si la colocas en el lugar correcto.");
+        System.out.println("           En este juego deberás:\n           1. Completar la palabra escribiendo las letras que faltan en los espacios correspondientes.\n           2. Cada intento recibirá retroalimentación inmediata, y se contabilizarán tus aciertos y errores.\n           3. Presta atención a la posición de cada letra, ya que solo contará si la colocas en el lugar correcto.");
         contador();
     }
 
     public static void sbjOrdenarLetras(){
+        String artOrdenarLetras=("            _______          _                            _                               \n" +
+                "           (_______)        | |                          | |         _                    \n" +
+                "            _     _  ____ __| |_____ ____  _____  ____   | | _____ _| |_  ____ _____  ___ \n" +
+                "           | |   | |/ ___) _  | ___ |  _ \\(____ |/ ___)  | || ___ (_   _)/ ___|____ |/___)\n" +
+                "           | |___| | |  ( (_| | ____| | | / ___ | |      | || ____| | |_| |   / ___ |___ |\n" +
+                "            \\_____/|_|   \\____|_____)_| |_\\_____|_|       \\_)_____)  \\__)_|   \\_____(___/ \n");
+        System.out.println(artOrdenarLetras);
+        System.out.println("           ");
         bienvenida();
-        System.out.println("En este juego deberás:\n1. Recibirás una palabra con las letras desordenadas y deberás escribirla en su forma correcta.\n2. Cada intento recibirá retroalimentación inmediata, y se contabilizarán tus aciertos y errores.");
+        System.out.println("           En este juego deberás:\n           1. Recibirás una palabra con las letras desordenadas y deberás escribirla en su forma correcta.\n           2. Cada intento recibirá retroalimentación inmediata, y se contabilizarán tus aciertos y errores.");
         contador();
     }
     public static void modalidadTradicionalVocabulario(){
+        String artTraVocabulario=("             _____                      _      _               _                               _                     \n" +
+                "            |_   _|    _ _   __ _    __| |    (_)     __      (_)     ___    _ _     __ _     | |      o O O    o O O\n" +
+                "              | |     | '_| / _` |  / _` |    | |    / _|     | |    / _ \\  | ' \\   / _` |    | |     o        o     \n" +
+                "             _|_|_   _|_|_  \\__,_|  \\__,_|   _|_|_   \\__|_   _|_|_   \\___/  |_||_|  \\__,_|   _|_|_   TS__[O]  TS__[O]\n" +
+                "           _|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"| {======| {======|\n" +
+                "           \"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'./o--000'./o--000'");
+        System.out.println("           ");
+        System.out.println(artTraVocabulario);
         aciertos = 0;
         errores = 0;
         contadorFallos = 0;
@@ -1484,6 +1548,7 @@ public class Main {
 
     }
     public static void modalidadJuegosVocabulario() {
+        String artJuegosVocabulario=("");
         System.out.println("Has elegido la Modalidad Juegos, en el nivel " + nnombre);
         int vjuego;
         System.out.println("Ingresa el juego que te gustaría jugar\n1- Palabras relacionadas\n2- Completar oraciones\n3- Adivinar la palabra");
@@ -1516,6 +1581,17 @@ public class Main {
     }
 
     public static void vjPalabrasRelacionadas() {
+        String artPalabrasRelacionadas=("            ______         __         __                                            \n" +
+                "           |   __ \\.---.-.|  |.---.-.|  |--.----.---.-.-----.                       \n" +
+                "           |    __/|  _  ||  ||  _  ||  _  |   _|  _  |__ --|                       \n" +
+                "           |___|   |___._||__||___._||_____|__| |___._|_____|                       \n" +
+                "                                                                                    \n" +
+                "            ______         __              __                       __              \n" +
+                "           |   __ \\.-----.|  |.---.-.----.|__|.-----.-----.---.-.--|  |.---.-.-----.\n" +
+                "           |      <|  -__||  ||  _  |  __||  ||  _  |     |  _  |  _  ||  _  |__ --|\n" +
+                "           |___|__||_____||__||___._|____||__||_____|__|__|___._|_____||___._|_____|\n");
+        System.out.println(artPalabrasRelacionadas);
+        System.out.println("      ");
         aciertos = 0;
         errores = 0;
         contadorFallos = 0;
@@ -1598,6 +1674,23 @@ public class Main {
     }
 
     public static void vjCompletarOraciones() {
+        String artCompletarOraciones=("               __   ___   ___ ___  ____  _        ___  ______   ____  ____   \n" +
+                "              /  ] /   \\ |   T   T|    \\| T      /  _]|      T /    T|    \\  \n" +
+                "             /  / Y     Y| _   _ ||  o  ) |     /  [_ |      |Y  o  ||  D  ) \n" +
+                "            /  /  |  O  ||  \\_/  ||   _/| l___ Y    _]l_j  l_j|     ||    /  \n" +
+                "           /   \\_ |     ||   |   ||  |  |     T|   [_   |  |  |  _  ||    \\  \n" +
+                "           \\     |l     !|   |   ||  |  |     ||     T  |  |  |  |  ||  .  Y \n" +
+                "            \\____j \\___/ l___j___jl__j  l_____jl_____j  l__j  l__j__jl__j\\_j \n" +
+                "                                                                  \n" +
+                "             ___   ____    ____    __  ____  ___   ____     ___  _____       \n" +
+                "            /   \\ |    \\  /    T  /  ]l    j/   \\ |    \\   /  _]/ ___/       \n" +
+                "           Y     Y|  D  )Y  o  | /  /  |  TY     Y|  _  Y /  [_(   \\_        \n" +
+                "           |  O  ||    / |     |/  /   |  ||  O  ||  |  |Y    _]\\__  T       \n" +
+                "           |     ||    \\ |  _  /   \\_  |  ||     ||  |  ||   [_ /  \\ |       \n" +
+                "           l     !|  .  Y|  |  \\     | j  ll     !|  |  ||     T\\    |       \n" +
+                "            \\___/ l__j\\_jl__j__j\\____j|____j\\___/ l__j__jl_____j \\___j       \n");
+        System.out.println(artCompletarOraciones);
+        System.out.println("   ");
         aciertos = 0;
         errores = 0;
         contadorFallos = 0;
@@ -1680,6 +1773,17 @@ public class Main {
     }
 
     public static void vjAdiviniarPalabras() {
+        String artAdovoinarpalabras=("           .---------------------------------------------------------------------------------------------------.\n" +
+                "           | _______    __ __       __                      _______       __       __                          |\n" +
+                "           ||   _   .--|  |__.--.--|__.-----.---.-.----.   |   _   .---.-|  .---.-|  |--.----.---.-.-----.     |\n" +
+                "           ||.  1   |  _  |  |  |  |  |     |  _  |   _|   |.  1   |  _  |  |  _  |  _  |   _|  _  |__ --|     |\n" +
+                "           ||.  _   |_____|__|\\___/|__|__|__|___._|__|     |.  ____|___._|__|___._|_____|__| |___._|_____|     |\n" +
+                "           ||:  |   |                                      |:  |                                               |\n" +
+                "           ||::.|:. |                                      |::.|                                               |\n" +
+                "           |`--- ---'                                      `---'                                               |\n" +
+                "           '---------------------------------------------------------------------------------------------------'\n");
+        System.out.println(artAdovoinarpalabras);
+        System.out.println("           ");
         aciertos = 0;
         errores = 0;
         contadorFallos = 0;
