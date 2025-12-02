@@ -133,7 +133,6 @@ public class FF {
                     String[] nsbDificil = {"DISAPPEAR", "APOLOGIZE", "APPRECIATE", "IMMEDIATELY", "KNOCK", "LICENSE", "WEIGH", "RHYME", "MULTIMEDIA", "MYSTERIOUS"};
                     String[] nsbExpert = {"EMBARRASS", "PUNCTURE", "SUSTAINABLE", "ACKNOWLEDGE", "WRIGGLE", "GREASE", "HARASS", "DECEIVE", "GUARANTEE"};
 
-                    int nivelSpellingBee;
 
                     System.out.println("          Ingresa el nivel que deseas cursar (recuerda que se dara por hecho que ya has\n          cursado los niveles anteriores a el):\n");
                     System.out.println("          1- Básico\n          2- Medio\n          3- Normal\n          4- Difícil\n          5- Experto");
