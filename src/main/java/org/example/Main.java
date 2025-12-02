@@ -1240,9 +1240,88 @@ public class FF {
                 "          /_/ |_| \\__,_/ _  .___//_/  \\__,_/  \\____/     \n" +
                 "                         /_/                             ");
         System.out.println(artDeletreo);
-        bienvenida();
-        System.out.println("          En este reto deberás:\n          -Escribir la mayor cantidad de palabras correctamente en 3 minutos.\n-          Escribir cada palabra en inglés a partir de su traducción al español, de manera consecutiva, antes de pasar a la siguiente. \n          -Al terminar el tiempo, revisar un resumen de resultados que muestra tus aciertos, errores y palabras falladas.");
-        contador();
+        String[][] matriz = obtenerMatrizPorNivel();
+            aciertos = 0;
+            errores = 0;
+
+            bienvenida();
+            System.out.println("En este reto deberás:\n-Escribir la mayor cantidad de palabras correctamente en 1 MINUTO (60 segundos).\n-La pista será siempre la traducción al español.\n-No hay límite de errores; solo el tiempo.");
+            contador();
+
+
+            long tiempoInicio = System.currentTimeMillis();
+            long duracionLimite = 60000;
+
+
+            int palabraActualIndex = 0;
+
+
+            String[] palabrasFalladasRapido = new String[matriz.length * 2];
+            int indiceFalladasRapido = 0;
+
+            sc.nextLine();
+
+            System.out.println("--- ¡INICIA EL RETO! Tienes 1 minuto. ---");
+
+
+            while (System.currentTimeMillis() - tiempoInicio < duracionLimite) {
+
+
+                int indice = palabraActualIndex % matriz.length;
+                String palabraCorrecta = matriz[indice][0].trim();
+                String pistaTraduccion = matriz[indice][3];
+
+
+                long tiempoTranscurrido = System.currentTimeMillis() - tiempoInicio;
+                long tiempoRestante = (duracionLimite - tiempoTranscurrido) / 1000;
+
+                System.out.println("\n(Tiempo restante: " + tiempoRestante + "s) | Palabra #" + (palabraActualIndex + 1));
+                System.out.println(pistaTraduccion);
+
+
+                if (tiempoRestante <= 0) {
+                    break;
+                }
+
+                System.out.print("Tu respuesta: ");
+                String respuesta = sc.nextLine().trim();
+
+
+                if (System.currentTimeMillis() - tiempoInicio >= duracionLimite) {
+                    System.out.println("\n*** ¡TIEMPO TERMINADO! Su respuesta fue fuera de tiempo. ***");
+                    break;
+                }
+
+
+                if (respuesta.equalsIgnoreCase(palabraCorrecta)) {
+                    System.out.println("✔ ¡CORRECTO!");
+                    aciertos++;
+                } else {
+                    System.out.println("✘ INCORRECTO. La respuesta correcta era: " + palabraCorrecta);
+                    errores++;
+                    if (indiceFalladasRapido < palabrasFalladasRapido.length) {
+                        palabrasFalladasRapido[indiceFalladasRapido] = palabraCorrecta;
+                        indiceFalladasRapido++;
+                    }
+                }
+
+                palabraActualIndex++;
+            }
+
+
+            System.out.println("\n--- ¡TIEMPO TERMINADO! ---");
+            System.out.println("--- RESULTADOS RETO DELETREO RÁPIDO (" + nnombre + ") ---");
+            System.out.println("Total de palabras intentadas: " + palabraActualIndex);
+            System.out.println("✔ Aciertos: " + aciertos);
+            System.out.println("✘ Errores: " + errores);
+
+            if (indiceFalladasRapido > 0) {
+                System.out.println("\nPalabras falladas (para repasar):");
+                for (int i = 0; i < indiceFalladasRapido; i++) {
+                    System.out.print(palabrasFalladasRapido[i] + (i < indiceFalladasRapido - 1 ? ", " : ""));
+                }
+                System.out.println();
+            }
     }
 
     public static void sbrDesafioPrecision() {
@@ -1260,9 +1339,110 @@ public class FF {
                 "          |  7   |  7  ||     7|     7|  |7     ||  ||  !  ||  |  |        \n" +
                 "          !__!   !__!__!!_____!!_____!!__!!_____!!__!!_____!!__!__!        ");
         System.out.println(artPrecision);
+        String[][] matriz = obtenerMatrizPorNivel();
+        aciertos = 0;
+        errores = 0;
+        int contadorFallosFatal = 0;
+
         bienvenida();
-        System.out.println("          En este reto deberás:\n          -Deletrear la mayor cantidad de palabras posible, pero solo puedes cometer tres errores.\n          -Cuando cometas el tercer error, el reto terminará automáticamente y verás un resumen con tus aciertos y errores.\n          -Este reto te ayudará a mejorar tu precisión y concentración mientras escribes.");
+        System.out.println("En este reto deberás:\n-Responder correctamente la mayor cantidad de palabras en 1 MINUTO (60 segundos).\n-El reto TERMINA inmediatamente si cometes TRES ERRORES o si el tiempo se agota.\n-Si completas 10 palabras correctamente, ganas el reto.\n-Se te dará una pista ALEATORIA por palabra.");
         contador();
+
+
+        long tiempoInicio = System.currentTimeMillis();
+        long duracionLimite = 60000;
+
+        String[] palabrasFalladasReto = new String[matriz.length];
+        int indiceFalladas = 0;
+
+
+        int[] indicesAleatorios = new int[matriz.length];
+        for (int i = 0; i < matriz.length; i++) {
+            indicesAleatorios[i] = i;
+        }
+        for (int i = matriz.length - 1; i > 0; i--) {
+            int j = random.nextInt(i + 1);
+            int temp = indicesAleatorios[i];
+            indicesAleatorios[i] = indicesAleatorios[j];
+            indicesAleatorios[j] = temp;
+        }
+
+        System.out.println("--- ¡INICIA EL DESAFÍO DE PRECISIÓN! Tienes 60 segundos. ---");
+
+
+        for (int i = 0; i < matriz.length; i++) {
+
+
+            long tiempoTranscurrido = System.currentTimeMillis() - tiempoInicio;
+            long tiempoRestante = (duracionLimite - tiempoTranscurrido) / 1000;
+
+            if (tiempoTranscurrido >= duracionLimite) {
+                System.out.println("\n*** ¡TIEMPO TERMINADO! (0 segundos restantes) ***");
+                break;
+            }
+            if (aciertos >= 10) {
+                System.out.println("\n*** ¡FELICIDADES " + usuario + "! Has completado las 10 palabras con éxito. ***");
+                break;
+            }
+            if (contadorFallosFatal >= 3) {
+                System.out.println("\n*** ¡TERCER ERROR COMETIDO! El desafío TERMINA AHORA. ***");
+                break;
+            }
+
+
+            int indicePalabra = indicesAleatorios[i];
+            int pista = random.nextInt(3);
+
+            String palabraCorrecta = matriz[indicePalabra][0].trim();
+            String prompt = matriz[indicePalabra][pista + 1];
+
+            System.out.println("\n(Tiempo restante: " + tiempoRestante + "s) | Palabra #" + (aciertos + errores + 1));
+            System.out.println("Errores totales: " + contadorFallosFatal + "/3");
+            System.out.println(prompt);
+
+            System.out.print("Tu respuesta: ");
+            String respuesta = sc.nextLine().trim();
+
+
+            if (System.currentTimeMillis() - tiempoInicio >= duracionLimite) {
+                System.out.println("\n*** ¡TIEMPO TERMINADO! Su respuesta fue fuera de tiempo. ***");
+                break;
+            }
+
+            boolean falloTurno = false;
+
+            if (respuesta.equalsIgnoreCase(palabraCorrecta)) {
+                System.out.println("✔ ¡CORRECTO!");
+                aciertos++;
+            } else {
+                System.out.println("✘ ¡ERROR! La respuesta correcta era: " + palabraCorrecta);
+                falloTurno = true;
+            }
+
+
+            if (falloTurno) {
+                errores++;
+                contadorFallosFatal++;
+                if (indiceFalladas < palabrasFalladasReto.length) {
+                    palabrasFalladasReto[indiceFalladas] = palabraCorrecta;
+                    indiceFalladas++;
+                }
+            }
+
+        }
+
+
+        System.out.println("\n--- RESULTADOS RETO DESAFÍO DE PRECISIÓN (" + nnombre + ") ---");
+        System.out.println("Total de aciertos: " + aciertos + " / 10");
+        System.out.println("Total de errores: " + errores + " (Límite fatal: 3)");
+
+        if (indiceFalladas > 0) {
+            System.out.print("\nPalabras falladas (para repasar): ");
+            for (int i = 0; i < indiceFalladas; i++) {
+                System.out.print(palabrasFalladasReto[i] + (i < indiceFalladas - 1 ? ", " : ""));
+            }
+            System.out.println();
+        }
     }
     public static void sbjAhorcado()
     {
