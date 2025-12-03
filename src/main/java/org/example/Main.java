@@ -1031,7 +1031,7 @@ public class FF {
         System.out.println("          ---------------------8<-------------[Instrucciones:]-----------------------\n");
 
     }
-    public static String[][] obtenerMatrizPorNivel(String nivel) {
+    public static String[][] obtenerMatrizPorNivel() {
         switch (nivelSpellingBee) {
             case 1:
                 return nsbBasico;
@@ -1052,7 +1052,7 @@ public class FF {
 
     public static void modalidadTradicionalSpellingBee() {
 
-        String[][] matriz = obtenerMatrizPorNivel(nivel);
+        String[][] matriz = obtenerMatrizPorNivel();
 
         aciertos = 0;
         errores = 0;
