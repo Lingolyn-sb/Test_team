@@ -1497,10 +1497,8 @@ public class FF {
         mostrarMuñeco();
         if (palabraCompletada()) {
             System.out.println("          ¡Ganaste! La palabra era: " + palabraSecreta);
-            ganaste();
         } else {
-            System.out.println("          ¡Perdiste! El ahorcado se completó. La palabra era: " + palabraSecreta);
-            perdiste();
+            System.out.println("          ¡Perdiste! El ahorcado se completó. La palabra era: " + palabraSecreta); 
         }
     }
     private static void seleccionarPalabra() {
@@ -1575,39 +1573,6 @@ public class FF {
         if (indice < muñeco.length) {
             System.out.println(muñeco[indice]);
         }
-    }
-
-    public static void ganaste()
-    {
-        System.out.println("Que bien");
-        String artGanaste=("      .-.         .--''-.\n" +
-                "    .'   '.     /'       `.\n" +
-                "    '.     '. ,'          |\n" +
-                " o    '.o   ,'        _.-'\n" +
-                "  \\.--./'. /.:. :._:.'\n" +
-                " .'    '._-': ': ': ': ':\n" +
-                ":(#) (#) :  ': ': ': ': ':>-\n" +
-                " ' ____ .'_.:' :' :' :' :'\n" +
-                "  '\\__/'/ | | :' :' :'\n" +
-                "        \\  \\ \\\n" +
-                "        '  ' '");
-        System.out.print(artGanaste);
-    }
-    public static void perdiste()
-    {
-        System.out.println("BUena suerte para la proxima");
-        String artPerdiste=("      .-.         .--''-.\n" +
-                "    .'   '.     /'       `.\n" +
-                "    '.     '. ,'          |\n" +
-                " o    '.o   ,'        _.-'\n" +
-                "  \\.--./'. /.:. :._:.'\n" +
-                " .\\   /'._-':#0: ':#0: ':\n" +
-                ":(#) (#) :  ':#0: ':#0: ':>#=-\n" +
-                " ' ____ .'_.:J0:' :J0:' :'\n" +
-                "  'V  V'/ | |\":' :'\":'\n" +
-                "        \\  \\ \\\n" +
-                "        '  ' '");
-        System.out.print(artPerdiste);
     }
 
     public static void sbjCompletarLetrasFaltantes(){
@@ -1701,18 +1666,92 @@ public class FF {
         }
     }
 
-    public static void sbjOrdenarLetras(){
-        String artOrdenarLetras=("            _______          _                            _                               \n" +
-                "           (_______)        | |                          | |         _                    \n" +
-                "            _     _  ____ __| |_____ ____  _____  ____   | | _____ _| |_  ____ _____  ___ \n" +
-                "           | |   | |/ ___) _  | ___ |  _ \\(____ |/ ___)  | || ___ (_   _)/ ___|____ |/___)\n" +
-                "           | |___| | |  ( (_| | ____| | | / ___ | |      | || ____| | |_| |   / ___ |___ |\n" +
-                "            \\_____/|_|   \\____|_____)_| |_\\_____|_|       \\_)_____)  \\__)_|   \\_____(___/ \n");
+   public static void sbjOrdenarLetras() {
+        String artOrdenarLetras = """
+                      _______          _                            _                               
+                     (_______)        | |                          | |         _                    
+                      _     _  ____ __| |_____ ____  _____  ____   | | _____ _| |_  ____ _____  ___ 
+                     | |   | |/ ___) _  | ___ |  _ \\(____ |/ ___)  | || ___ (_   _)/ ___|____ |/___)
+                     | |___| | |  ( (_| | ____| | | / ___ | |      | || ____| | |_| |   / ___ |___ |
+                      \\_____/|_|   \\____|_____)_| |_\\_____|_|       \\_)_____)  \\__)_|   \\_____(___/ 
+            """;
         System.out.println(artOrdenarLetras);
-        System.out.println("           ");
+
         bienvenida();
-        System.out.println("           En este juego deberás:\n           1. Recibirás una palabra con las letras desordenadas y deberás escribirla en su forma correcta.\n           2. Cada intento recibirá retroalimentación inmediata, y se contabilizarán tus aciertos y errores.");
+        System.out.println("          En este juego deberás:\n          1. Recibirás una palabra con las letras desordenadas y deberás escribirla en su forma correcta.\n          2. Cada intento recibirá retroalimentación inmediata, y se contabilizarán tus aciertos y errores.");
         contador();
+
+        // Arreglos de palabras
+        String[] nsbBasicoB = {"ADD", "EYE", "EAR", "BOAT", "HAPPY", "LION", "NIGHT", "MILK", "UNCLE", "THANK"};
+        String[] nsbMedioB = {"CHEF", "BRUSH", "SISTER", "DESERT", "KITCHEN", "MONDAY", "BREAKFAST", "HORSE", "QUITE", "LISTEN"};
+        String[] nsbNormalB = {"INTELLIGENT", "INCREDIBLE", "CLASSMATE", "CELEBRATION", "SCISSORS", "TELEVISION", "KILOMETER", "DIAGRAM", "JANUARY", "MEXICAN"};
+        String[] nsbDificilB = {"DISAPPEAR", "APOLOGIZE", "APPRECIATE", "IMMEDIATELY", "KNOCK", "LICENSE", "WEIGH", "RHYME", "MULTIMEDIA", "MYSTERIOUS"};
+        String[] nsbExpertB = {"EMBARRASS", "PUNCTURE", "SUSTAINABLE", "ACKNOWLEDGE", "WRIGGLE", "GREASE", "HARASS", "DECEIVE", "GUARANTEE"};
+
+        String[] nsbBasicoScrambled = {"DAD", "YEE", "RAE", "OATB", "PYHAP", "NILO", "HTGIN", "KLIM", "CELNU", "KNAHT"};
+        String[] nsbMedioScrambled = {"FEHC", "HSBUR", "RTSESI", "RTDESE", "NTEHKCI", "ADNYOM", "TSABFREAK", "OSEHR", "ETQUI", "TINESL"};
+        String[] nsbNormalScrambled = {"TNEGILLINET", "EDICRINBEL", "TAMCELASS", "TIONCELEBRA", "SORCSISS", "SIONTELEVI", "TERKILOME", "GRAMDIA", "UARYJAN", "CANMEXI"};
+        String[] nsbDificilScrambled = {"PEARSDISA", "LOGAPOIZE", "IATEAPPRCE", "MEDIATELYIM", "CKKNO", "CENSELI", "GHWEI", "MYRHE", "TIMEDIAUL", "STERYMIOU"};
+        String[] nsbExpertScrambled = {"RASSBEMAR", "TUREPUNC", "TAINABLESUS", "KNOWLEDGEACK", "GLEWRIG", "ASEGRE", "ASSHAR", "CEIVEDE", "RANTEEGUA"};
+
+        int aciertos = 0;
+        int errores = 0;
+        Scanner sc = new Scanner(System.in);
+
+        boolean continuar = true;
+        while (continuar) {
+            Random rand = new Random();
+            int index = 0;
+            String palabraCorrecta = "";
+            String palabraDesordenada = "";
+
+            switch (nivelSpellingBee) {
+                case 1 -> {
+                    index = rand.nextInt(nsbBasicoB.length);
+                    palabraCorrecta = nsbBasicoB[index];
+                    palabraDesordenada = nsbBasicoScrambled[index];
+                }
+                case 2 -> {
+                    index = rand.nextInt(nsbMedioB.length);
+                    palabraCorrecta = nsbMedioB[index];
+                    palabraDesordenada = nsbMedioScrambled[index];
+                }
+                case 3 -> {
+                    index = rand.nextInt(nsbNormalB.length);
+                    palabraCorrecta = nsbNormalB[index];
+                    palabraDesordenada = nsbNormalScrambled[index];
+                }
+                case 4 -> {
+                    index = rand.nextInt(nsbDificilB.length);
+                    palabraCorrecta = nsbDificilB[index];
+                    palabraDesordenada = nsbDificilScrambled[index];
+                }
+                case 5 -> {
+                    index = rand.nextInt(nsbExpertB.length);
+                    palabraCorrecta = nsbExpertB[index];
+                    palabraDesordenada = nsbExpertScrambled[index];
+                }
+            }
+
+            System.out.println("\n          Ordena las letras: " + palabraDesordenada);
+            String intento = sc.nextLine().toUpperCase();
+
+            if (intento.equals(palabraCorrecta)) {
+                System.out.println("          ¡Correcto!");
+                aciertos++;
+            } else {
+                System.out.println("          Incorrecto. La palabra era: " + palabraCorrecta);
+                errores++;
+            }
+
+            System.out.println("\n          ¿Quieres jugar otra ronda? (s/n)");
+            String respuesta = sc.nextLine().toLowerCase();
+            if (!respuesta.equals("si")) {
+                continuar = false;
+            }
+        }
+
+        System.out.println("\nJuego terminado. Aciertos: " + aciertos + "  Errores: " + errores);
     }
     public static void modalidadTradicionalVocabulario(){
         String artTraVocabulario=("             _____                      _      _               _                               _                     \n" +
