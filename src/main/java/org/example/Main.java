@@ -41,7 +41,7 @@ public class Main {
 
 
     /*DECLARACION DE NIVELES SPELLING BEE PARA ordenar palabras juego*/
-   static String[] nsbBasicoOL = {"ADD", "EYE", "EAR", "BOAT", "HAPPY", "LION", "NIGHT", "MILK", "UNCLE", "THANK"};
+    static String[] nsbBasicoOL = {"ADD", "EYE", "EAR", "BOAT", "HAPPY", "LION", "NIGHT", "MILK", "UNCLE", "THANK"};
     static String[] nsbMedioOL = {"CHEF", "BRUSH", "SISTER", "DESERT", "KITCHEN", "MONDAY", "BREAKFAST", "HORSE", "QUITE", "LISTEN"};
     static String[] nsbNormalOL = {"INTELLIGENT", "INCREDIBLE", "CLASSMATE", "CELEBRATION", "SCISSORS", "TELEVISION", "KILOMETER", "DIAGRAM", "JANUARY", "MEXICAN"};
     static String[] nsbDificilOL = {"DISAPPEAR", "APOLOGIZE", "APPRECIATE", "IMMEDIATELY", "KNOCK", "LICENSE", "WEIGH", "RHYME", "MULTIMEDIA", "MYSTERIOUS"};
@@ -1027,7 +1027,7 @@ public class Main {
 
     }
 
-
+// Pausa la ejecución del programa durante la cantidad de milisegundos especificada.
     public static void pause(long ms) {
         try {
             Thread.sleep(ms);
@@ -1123,7 +1123,7 @@ public class Main {
 
             String correcta = matriz[i][0].trim();
 
-                if (respuesta.equalsIgnoreCase(correcta)) {
+            if (respuesta.equalsIgnoreCase(correcta)) {
                 System.out.println("\n✔ Correcto!");
                 aciertos++;
             } else {
@@ -1287,7 +1287,7 @@ public class Main {
         contador();
 
 
-        long tiempoInicio = System.currentTimeMillis();
+        long tiempoInicio = System.currentTimeMillis();//pide hora actual (System.currentTime
         long duracionLimite = 60000;
 
 
@@ -1399,7 +1399,7 @@ public class Main {
             indicesAleatorios[i] = i;
         }
         for (int i = matriz.length - 1; i > 0; i--) {
-            int j = random.nextInt(i + 1);
+            int j = random.nextInt(i + 1);//numero random del 0 hasta i +1
             int temp = indicesAleatorios[i];
             indicesAleatorios[i] = indicesAleatorios[j];
             indicesAleatorios[j] = temp;
@@ -1429,7 +1429,7 @@ public class Main {
 
 
             int indicePalabra = indicesAleatorios[i];
-            int pista = random.nextInt(3);
+            int pista = random.nextInt(3);// Elige al azar una de tres posibles opciones (0, 1 o 2) para dar una pista.
 
             String palabraCorrecta = matriz[indicePalabra][0].trim();
             String prompt = matriz[indicePalabra][pista + 1];
@@ -1485,6 +1485,7 @@ public class Main {
     public static void sbjAhorcado()
     {
         if (PALABRAS_JUEGO == null || PALABRAS_JUEGO.length == 0) {
+            // Verifica si la lista de palabras está vacía o no ha sido creada para evitar que el programa falle.
             PALABRAS_JUEGO = PALABRAS_BASE;
         }
         contadorIncorrectas = 0;
@@ -1505,13 +1506,15 @@ public class Main {
         inicializarPalabraAdivinada();
 
         while (!juegoTerminado()) {
+            //Este bucle no se detiene hasta que se cumpla una de dos condiciones ganar o perder
             mostrarEstadoDelJuego();
             mostrarMuñeco();
             Scanner sc = new Scanner(System.in);
             System.out.print("          Introduce una letra: ");
-            String input = sc.nextLine().toUpperCase();
+            String input = sc.nextLine().toUpperCase();//convierte la cadena a mayusculas
 
             if (input.length() != 1 || !Character.isLetter(input.charAt(0))) {
+                //verifica que la longitud sea 1. Toma el primer y unico caracter y que sea letra
                 System.out.println("          Entrada inválida. Por favor, introduce una sola letra.");
                 continue;
             }
@@ -1541,16 +1544,18 @@ public class Main {
     }
     private static void seleccionarPalabra() {
         int indiceAleatorio = (int) (Math.random() * PALABRAS_JUEGO.length);
+        // Elige un índice al azar dentro del rango de la lista de palabras.
         palabraSecreta = PALABRAS_JUEGO[indiceAleatorio];
     }
 
     private static void inicializarPalabraAdivinada() {
         palabraAdivinada = new char[palabraSecreta.length()];
         Arrays.fill(palabraAdivinada, '_');
+        //uso del objeto arrays . Llena todo el arreglo con guiones bajos de la misma longitud de la palabra
     }
 
-    private static boolean yaSeIntento(char letra) {
-        for (char c : palabraAdivinada) {
+    private static boolean yaSeIntento(char letra) {//Revisa si la letra ya fue adivinada y está en la palabra.
+        for (char c : palabraAdivinada) {//Mira cada letra que ya ha sido revelada.
             if (c == letra) return true;
         }
         for (int i = 0; i < contadorIncorrectas; i++) {
@@ -1572,6 +1577,7 @@ public class Main {
     }
 
     private static boolean adivinarLetra(char letra) {
+        // Busca la letra en la palabra secreta y, si la encuentra, revela su posición.
         boolean letraAdivinada = false;
         for (int i = 0; i < palabraSecreta.length(); i++) {
             if (palabraSecreta.charAt(i) == letra) {
@@ -1586,9 +1592,11 @@ public class Main {
 
     private static boolean juegoTerminado() {
         return palabraCompletada() || contadorIncorrectas >= INTENTOS_MAXIMOS;
+        // Verifica si el juego acabó ya sea porque ganaste o porque te quedaste sin intentos.
     }
 
     private static boolean palabraCompletada() {
+        // Revisa si aún quedan guiones bajos. si no hay ninguno, la palabra está completa.
         for (char c : palabraAdivinada) {
             if (c == '_') {
                 return false;
@@ -1608,6 +1616,7 @@ public class Main {
                 "           _______ \n           |/      |\n           |      O\n           |     /|\\\n           |     / \\\n           |      \n          _|___  ",
         };
         int indice = Math.min(contadorIncorrectas, INTENTOS_MAXIMOS);
+        // Asegura que el índice no supere el límite del arreglo para evitar errores al dibujar el muñeco.
         if (indice < muñeco.length) {
             System.out.println(muñeco[indice]);
         }
@@ -1727,20 +1736,20 @@ public class Main {
     }
 
     public static String[] obtenerPalabrasOrdenadas() {
-            switch (nivelSpellingBee) {
-                case 1:
-                    return nsbBasicoOL;
-                case 2:
-                    return nsbMedioOL;
-                case 3:
-                    return nsbNormalOL;
-                case 4:
-                    return nsbDificilOL;
-                case 5:
-                    return nsbExpertOL;
-                default:
-                    return nsbBasicoOL; // solo formalidad
-            }
+        switch (nivelSpellingBee) {
+            case 1:
+                return nsbBasicoOL;
+            case 2:
+                return nsbMedioOL;
+            case 3:
+                return nsbNormalOL;
+            case 4:
+                return nsbDificilOL;
+            case 5:
+                return nsbExpertOL;
+            default:
+                return nsbBasicoOL; // solo formalidad
+        }
 
     }
 
@@ -1762,7 +1771,7 @@ public class Main {
     }
 
     public static void sbjOrdenarLetras() {
-            String artOrdenarLetras = """
+        String artOrdenarLetras = """
                       _______          _                            _                               
                      (_______)        | |                          | |         _                    
                       _     _  ____ __| |_____ ____  _____  ____   | | _____ _| |_  ____ _____  ___ 
@@ -1770,93 +1779,93 @@ public class Main {
                      | |___| | |  ( (_| | ____| | | / ___ | |      | | ____| | |_| |   / ___ |___ |
                        \\_____/|_|   \\____|_____)_| |_\\_____|_|       \\_)_____)  \\__)_|   \\_____(___/ 
             """;
-            System.out.println(artOrdenarLetras);
+        System.out.println(artOrdenarLetras);
 
-            String[] palabrasCorrectas = obtenerPalabrasOrdenadas();
-            String[] palabrasDesordenadas = obtenerPalabrasDesordenadas();
+        String[] palabrasCorrectas = obtenerPalabrasOrdenadas();
+        String[] palabrasDesordenadas = obtenerPalabrasDesordenadas();
 
-            aciertos = 0;
-            errores = 0;
-            int contadorFallosOrdenar = 0;
+        aciertos = 0;
+        errores = 0;
+        int contadorFallosOrdenar = 0;
 
-            int[] indicesFallados = new int[palabrasCorrectas.length];
-            for (int i = 0; i < indicesFallados.length; i++) {
-                indicesFallados[i] = -1;
+        int[] indicesFallados = new int[palabrasCorrectas.length];
+        for (int i = 0; i < indicesFallados.length; i++) {
+            indicesFallados[i] = -1;
+        }
+
+        bienvenida();
+        System.out.println("          En este juego deberás:\n          1. Recibirás una palabra con las letras desordenadas y deberás escribirla en su forma correcta.\n          2. Las palabras que falles en la primera ronda serán repetidas al final.");
+        contador();
+
+        int longitudRonda = palabrasCorrectas.length;
+
+        // PRIMERA RONDA
+        for (int i = 0; i < longitudRonda; i++) {
+
+            String palabraCorrecta = palabrasCorrectas[i];
+            String palabraDesordenada = palabrasDesordenadas[i];
+
+            System.out.println("\n--- Palabra #" + (i + 1) + " ---");
+            System.out.println("          Ordena las letras: " + palabraDesordenada);
+
+            System.out.print("Tu respuesta: ");
+            String intento = sc.nextLine().trim().toUpperCase();
+
+            if (intento.equals(palabraCorrecta)) {
+                System.out.println("✔ ¡Correcto!");
+                aciertos++;
+            } else {
+                System.out.println("✘ Incorrecto. La palabra correcta era: " + palabraCorrecta);
+                errores++;
+                // Guardar el índice de la palabra fallada
+                if (contadorFallosOrdenar < indicesFallados.length) {
+                    indicesFallados[contadorFallosOrdenar] = i;
+                    contadorFallosOrdenar++;
+                }
             }
 
-            bienvenida();
-            System.out.println("          En este juego deberás:\n          1. Recibirás una palabra con las letras desordenadas y deberás escribirla en su forma correcta.\n          2. Las palabras que falles en la primera ronda serán repetidas al final.");
-            contador();
+            System.out.println("          Presiona ENTER para continuar...");
+            sc.nextLine();
+        }
 
-            int longitudRonda = palabrasCorrectas.length;
+        // SEGUNDA RONDA
+        if (contadorFallosOrdenar > 0) {
+            System.out.println("\n==========================================================");
+            System.out.println("          --- RONDA DE REPASO para " + contadorFallosOrdenar + " palabra(s) fallada(s) ---");
+            System.out.println("==========================================================\n");
 
-             // PRIMERA RONDA
-            for (int i = 0; i < longitudRonda; i++) {
+            for (int f = 0; f < contadorFallosOrdenar; f++) {
 
-                String palabraCorrecta = palabrasCorrectas[i];
-                String palabraDesordenada = palabrasDesordenadas[i];
+                int indiceOriginal = indicesFallados[f]; // Obtener el índice de la palabra original
 
-                System.out.println("\n--- Palabra #" + (i + 1) + " ---");
-                System.out.println("          Ordena las letras: " + palabraDesordenada);
+                String palabraCorrectaRepaso = palabrasCorrectas[indiceOriginal];
+                String palabraDesordenadaRepaso = palabrasDesordenadas[indiceOriginal];
+
+                System.out.println("\n--- Repaso Palabra #" + (f + 1) + " ---");
+                System.out.println("          Ordena las letras: " + palabraDesordenadaRepaso);
 
                 System.out.print("Tu respuesta: ");
-                String intento = sc.nextLine().trim().toUpperCase();
+                String intentoRepaso = sc.nextLine().trim().toUpperCase();
 
-                if (intento.equals(palabraCorrecta)) {
-                    System.out.println("✔ ¡Correcto!");
+                if (intentoRepaso.equals(palabraCorrectaRepaso)) {
+                    System.out.println("✔ ¡Correcto en el repaso!");
                     aciertos++;
                 } else {
-                    System.out.println("✘ Incorrecto. La palabra correcta era: " + palabraCorrecta);
+                    System.out.println("✘ Incorrecto de nuevo. La palabra correcta era: " + palabraCorrectaRepaso);
                     errores++;
-                    // Guardar el índice de la palabra fallada
-                    if (contadorFallosOrdenar < indicesFallados.length) {
-                        indicesFallados[contadorFallosOrdenar] = i;
-                        contadorFallosOrdenar++;
-                    }
                 }
 
                 System.out.println("          Presiona ENTER para continuar...");
                 sc.nextLine();
             }
+        }
 
-            // SEGUNDA RONDA
-            if (contadorFallosOrdenar > 0) {
-                System.out.println("\n==========================================================");
-                System.out.println("          --- RONDA DE REPASO para " + contadorFallosOrdenar + " palabra(s) fallada(s) ---");
-                System.out.println("==========================================================\n");
-
-                for (int f = 0; f < contadorFallosOrdenar; f++) {
-
-                    int indiceOriginal = indicesFallados[f]; // Obtener el índice de la palabra original
-
-                    String palabraCorrectaRepaso = palabrasCorrectas[indiceOriginal];
-                    String palabraDesordenadaRepaso = palabrasDesordenadas[indiceOriginal];
-
-                    System.out.println("\n--- Repaso Palabra #" + (f + 1) + " ---");
-                    System.out.println("          Ordena las letras: " + palabraDesordenadaRepaso);
-
-                    System.out.print("Tu respuesta: ");
-                    String intentoRepaso = sc.nextLine().trim().toUpperCase();
-
-                    if (intentoRepaso.equals(palabraCorrectaRepaso)) {
-                        System.out.println("✔ ¡Correcto en el repaso!");
-                        aciertos++;
-                    } else {
-                        System.out.println("✘ Incorrecto de nuevo. La palabra correcta era: " + palabraCorrectaRepaso);
-                        errores++;
-                    }
-
-                    System.out.println("          Presiona ENTER para continuar...");
-                    sc.nextLine();
-                }
-            }
-
-            // --- RESUMEN FINAL ---
-            System.out.println("\n==========================================================");
-            System.out.println("          Juego terminado: Ordenar Letras (" + nnombre + ")");
-            System.out.println("          Aciertos totales (incluyendo repaso): " + aciertos);
-            System.out.println("          Errores totales: " + errores);
-            System.out.println("==========================================================");
+        // --- RESUMEN FINAL ---
+        System.out.println("\n==========================================================");
+        System.out.println("          Juego terminado: Ordenar Letras (" + nnombre + ")");
+        System.out.println("          Aciertos totales (incluyendo repaso): " + aciertos);
+        System.out.println("          Errores totales: " + errores);
+        System.out.println("==========================================================");
 
     }
 
